@@ -5,7 +5,7 @@
  */
 package model;
 //import java.util.*;
-import javax.xml.bind.annotation.*;
+//import javax.xml.bind.annotation.*;
 
 
 /**
@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.*;
  * @author chris
  */
 
-@XmlRootElement
+//@XmlRootElement
 public class Seminar implements java.io.Serializable {
 
     private String SemID;
@@ -23,6 +23,7 @@ public class Seminar implements java.io.Serializable {
     private String Abstract;
     private String room;
     private int UserID;
+    
     
     public Seminar(String SemID, String name, String time, String date, String Abstract, String room, int UserID) {
         this.SemID = SemID;
