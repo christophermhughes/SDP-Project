@@ -12,9 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Organiser Main page</h1>
+        <h1>Organizer Main page</h1>
          <table width="100%" >
              <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
+             <tr><td align="right"><u><a href="CreateSeminar.jsp">Create Seminar</a></u></td></tr>
         </table>
         
     </body>
