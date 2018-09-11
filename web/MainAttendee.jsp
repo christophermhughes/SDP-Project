@@ -15,17 +15,15 @@
             <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
             <tr><td align="right"><u><a href="login.jsp">Login</a></u></td></tr>
         </table>
-
-        <c:import url="file:///C:\Users\Ankush Yamarti\Documents\GitHub\SDP-Project\build\web\WEB-INF\Seminars.xml"
+        
+        <c:import url="WEB-INF\Seminars.xml"
                   var="inputDoc" />
 
-        <!-- Replace the URL value with the location of movies.xsl on your PC-->
-        <c:import url="C:\Users\Ankush Yamarti\Documents\NetBeansProjects\Demo-lec8-SOAP\web\movies.xml"
+        <c:import url="WEB-INF\Seminars.xsl"
                   var="stylesheet" />
 
-        <!-- Transform xml inputDoc using stylesheet -->
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
-
+         </x:transform>
         </body>
     </html>

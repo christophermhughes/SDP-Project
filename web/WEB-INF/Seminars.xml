@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="seminars.xsl"?>
-<seminars>
+<?xml-stylesheet type="text/xsl" href="Seminars.xsl"?>
+<Seminars>
     <Seminar>
-        <SeminarID>1</SeminarID>
-        <SeminarName>Robotics</SeminarName>
+        <ID>1</ID>
+        <Name>Robotics</Name>
         <SeminarTime>2:10</SeminarTime>
         <SeminarDate>12/12/12</SeminarDate>
         <SeminarLocation>CB11.00.401</SeminarLocation>
@@ -15,4 +15,4 @@
             <Bio>I am groovy</Bio>
         </Speakers>
     </Seminar>
-</seminars>
+</Seminars>
