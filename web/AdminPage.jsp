@@ -13,16 +13,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Organizer Main page</h1>
+        <h1>Admin Main page</h1>
          <table width="100%" >
              <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
-             <tr><td align="right"><u><a href="CreateSeminar.jsp">Create Seminar</a></u></td></tr>
+             <tr><td align="right"><u><a href="CreateOrganiser.jsp">Add Organiser</a></u></td></tr>
         </table>
         
-         <c:import url="WEB-INF\Seminars.xml"
+         <c:import url="WEB-INF\Organisers.xml"
                   var="inputDoc" />
 
-        <c:import url="WEB-INF\Seminars.xsl"
+        <c:import url="WEB-INF\Organisers.xsl"
                   var="stylesheet" />
 
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        

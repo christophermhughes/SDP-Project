@@ -1,7 +1,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
     <xsl:param name="bgColor"/>
-    <xsl:template match="seminars">
+    <xsl:template match="Attendees">
         <html>
             <head>
                 <style>
@@ -30,16 +30,14 @@
             </body>
         </html>
     </xsl:template>
-    <xsl:template match="Seminars">
+    <xsl:template match="Attendees">
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Time</th>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Desc</th>
-                    <th>Speaker</th>
+                    <th>First Name</th>
+                     <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,27 +45,19 @@
             </tbody>
         </table>
     </xsl:template>
-    <xsl:template match="Seminar">
+    <xsl:template match="Attendee">
         <tr>
             <td>
-                <xsl:value-of select="Name" />
+                <xsl:value-of select="Firstname" />
+            </td>
+             <td>
+                <xsl:value-of select="Lastname" />
             </td>
             <td>
-                <xsl:value-of select="Time" />
+                <xsl:value-of select="Email" />
             </td>
             <td>
-                <xsl:value-of select="Date" />
-            </td>
-            <td>
-                <xsl:value-of select="Location" />
-            </td>
-            <td>
-                <xsl:value-of select="Desc"/>
-            </td>
-            <td>
-                <xsl:template match="Speakers">
-                <xsl:value-of select="Speaker"/>
-                </xsl:template>
+                <xsl:value-of select="Phone" />
             </td>
         </tr>
     </xsl:template>
