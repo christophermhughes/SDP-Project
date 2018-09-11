@@ -13,23 +13,40 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="container">
-            <div class ="header">
-                <h1>Hello World!</h1>
-            </div>
 
-            <div class ="content">
-                <form class="form" action="MainOrganiser.jsp" method="post">
-                    <input type="text" name="SemName"><br>
-                    <input type="text" name="Time"><br>
-                    <input type="text" name="Date"><br>
-                    <input type="text" name="Location"><br>
-                    <input type="text" name="Descp"><br>
-                    <input type="text" name="StaffName"><br>
-                    <br>
-                    <input type="submit" value="Create Seminar">
-                </form> 
-            </div>
+        <div class ="header">
+            <h1>Create Seminar</h1>
         </div>
+
+        <div align="center" class ="content" >
+            <form class="form" action="MainOrganiser.jsp" method="post">
+                <p>
+                    <label for="semName">Seminar Name: </label>
+                    <input type="text" name="semName">
+                </p>
+                <p>
+                    <label for="time">Time: </label>
+                    <input type="time" name="Time">
+                </p>
+                <p>
+                    <label for="date">Date: </label>
+                    <input type="date" name="Date">
+                </p>
+                <p>
+                    <label for="loc">Location: </label>
+                    <input type="text" name="Location">
+                </p>
+                <p>
+                    <label for="descp">Description: </label>
+                    <input type="text" name="descp">
+                </p>
+                <p>
+                    <label for="staffName">Staff Organiser: </label>
+                    <input type="text" name="staffName">
+                </p>
+                <input type="submit" value="Create Seminar">
+            </form> 
+        </div>
+
     </body>
 </html>

@@ -4,13 +4,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Main Page</title>
     </head>
 
     <body>
-        <h1>Seminars</h1>
+        <div class="header">
+            <h1>Seminars</h1>
+        </div>
         <table width="100%" >
             <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
             <tr><td align="right"><u><a href="login.jsp">Login</a></u></td></tr>

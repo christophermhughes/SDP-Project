@@ -1,43 +1,4 @@
-<<<<<<< HEAD
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10/09/2018, 2:51:03 PM
-    Author     : divrajsingh
-*/
 
-.header {
-    padding-top: 1px;
-    background-color: #30343F;
-    color: white;
-}
-
-body {
-    background-color: #E4D9FF; 
-    margin: 0;
-}
-
-.container {
-	min-height: 100%;
-	position: relative;
-}
-
-input[type=submit] {
-    background-color: #273469; 
-    color: white; 
-    padding: 14px 20px;
-}
-
-.form {
-    text-align: center;
-}
-
-    
-
-=======
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -51,6 +12,7 @@ and open the template in the editor.
 .header {
     background-color: #30343F;
     color: white;
+    padding-top: 1px; 
 }
 
 body {
@@ -58,10 +20,6 @@ body {
     margin: 0; 
 }
 
-.container {
-	min-height: 100%;
-	position: relative;
-}
 
 .content {
     padding-top: 40px;
@@ -77,7 +35,22 @@ input[type=submit] {
 }
 
 .form {
-    text-align: center;
+    display: table;
+    text-align: left;
+}
+
+p     { 
+    display: table-row;  
+}
+
+label { 
+    display: table-cell; 
+    margin-bottom: 10px; 
+}
+
+input { 
+    display: table-cell; 
+    margin-bottom: 10px; 
 }
 
 
@@ -150,5 +123,3 @@ input[type=submit] {
   opacity: 1;
 }
     
-
->>>>>>> a4c18b8f9e6881cdd39b2cc594f7054fb492f11c
