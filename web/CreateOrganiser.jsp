@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <head>
+   
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -19,15 +19,19 @@
             </div>
 
             <div class ="content">
-                <form class="form" action="MainOrganiser.jsp" method="post">
-                    <input type="text" name="SemName"><br>
-                    <input type="text" name="Time"><br>
-                    <input type="text" name="Date"><br>
+                <form class="form" action="AdminPage.jsp" method="post">
+                    First Name<br>
+                    <input type="text" name="FirstName"><br>
+                    Last Name<br>
+                    <input type="text" name="LastName"><br>
+                    Phone<br>
+                    <input type="text" name="Phone"><br>
+                    Email<br>
                     <input type="text" name="Location"><br>
-                    <input type="text" name="Descp"><br>
-                    <input type="text" name="StaffName"><br>
-                    <br>
-                    <input type="submit" value="Create Seminar">
+                    Faculty<br>
+                    <input type="text" name="Fac"><br>
+                    
+                    <input type="submit" value="Add organiser">
                 </form> 
             </div>
         </div>

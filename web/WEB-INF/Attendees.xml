@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Attendees>
+    <Attendee>
+        <Email>ryan@ryanheise.com</Email>
+        <Firstname>Ryan</Firstname>
+        <Lastname>Heise</Lastname>
+        <Phone>9000122112</Phone>  
+    </Attendee>
+</Attendees>

@@ -3,7 +3,8 @@
     Created on : Sep 6, 2018, 4:36:57 PM
     Author     : Ankush Yamarti
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,6 +18,16 @@
              <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
              <tr><td align="right"><u><a href="CreateSeminar.jsp">Create Seminar</a></u></td></tr>
         </table>
+        
+         <c:import url="WEB-INF\Seminars.xml"
+                  var="inputDoc" />
+
+        <c:import url="WEB-INF\Seminars.xsl"
+                  var="stylesheet" />
+
+        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+            <x:param name="bgColor"  value="lightgreen" />
+         </x:transform>
         
     </body>
 </html>
