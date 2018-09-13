@@ -20,6 +20,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
                 <a href="CreateSeminar.jsp">Create Seminar</a>
                 <a href="#">Attendees</a>
+                <a href="login.jsp">Login</a>
             </div>
 
             <div id="main">
