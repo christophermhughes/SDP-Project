@@ -6,22 +6,16 @@
             <head>
                 <style>
                     table{
-                    width:50%;
+                    width:100%;
+                    border: 1px solid black;
                     }
+                    
                     th, td {
                     text-align:left;
-                    padding: 8px;
+                    padding: 15px;
+                    border-bottom: 1px solid #ddd;
                     }
-                    th {
-                    background-color: #4CAF50;
-                    color: white;
-                    font-weight:bold;
-                    }
-                    h2,p{
-                    background-color: #4CAF50;
-                    width:50%;
-                    font-weight:bold;
-                    }					
+             		
                 </style>
             </head>
             <body>
@@ -31,7 +25,7 @@
         </html>
     </xsl:template>
     <xsl:template match="Seminars">
-        <table>
+        <table align="center">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -66,7 +60,7 @@
             </td>
             <td>
                 <xsl:template match="Speakers">
-                <xsl:value-of select="Speaker"/>
+                    <xsl:value-of select="Speaker"/>
                 </xsl:template>
             </td>
         </tr>

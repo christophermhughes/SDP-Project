@@ -38,6 +38,10 @@ input[type=submit] {
     padding: 14px 20px; 
 }
 
+input[type=submit]:hover {
+    background-color: #444;
+}
+
 .form {
     display: table;
     text-align: left;
@@ -57,11 +61,6 @@ label {
 
 input {
     padding-right: 10px; 
-}
-
-img {
-    width: 3%;
-    height:3%; 
 }
 
 

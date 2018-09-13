@@ -8,10 +8,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Manage Seminars Page</title>
     </head>
     <body>
         <div class="header">
@@ -37,23 +38,25 @@
                     document.getElementById("main").style.marginLeft = "0";
                 }
             </script>
-            
-            
+
+
         </div>
-         <table width="100%" >
-             <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
-             <tr><td align="right"><u><a href="CreateSeminar.jsp">Create Seminar</a></u></td></tr>
-        </table>
-        
-         <c:import url="WEB-INF\Seminars.xml"
-                  var="inputDoc" />
 
-        <c:import url="WEB-INF\Seminars.xsl"
-                  var="stylesheet" />
-
-        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-            <x:param name="bgColor"  value="lightgreen" />
-         </x:transform>
+        <div class="content">
         
+            <table width="100%" >
+                <tr><td align="right"><u><a href="CreateSeminar.jsp">Create Seminar</a></u></td></tr>
+            </table>
+
+            <c:import url="WEB-INF\Seminars.xml"
+                      var="inputDoc" />
+
+            <c:import url="WEB-INF\Seminars.xsl"
+                      var="stylesheet" />
+
+            <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+                <x:param name="bgColor"  value="lightgreen" />
+            </x:transform>
+        </div>
     </body>
 </html>
