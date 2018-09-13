@@ -43,10 +43,6 @@
         </div>
 
         <div class="content">
-        
-            <table width="100%" >
-                <tr><td align="right"><u><a href="CreateSeminar.jsp">Create Seminar</a></u></td></tr>
-            </table>
 
             <c:import url="WEB-INF\Seminars.xml"
                       var="inputDoc" />

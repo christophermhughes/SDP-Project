@@ -66,6 +66,23 @@ input {
     padding-right: 10px; 
 }
 
+.semTable th, td {
+    padding: 10px;
+}
+
+.loginForm {
+    width: 300px; 
+    margin: 0 auto; 
+    background-color: #273469;
+    padding: 20px; 
+}
+
+.loginForm input[type=submit] {
+    background-color: white; 
+    color: black;
+    padding: 14px 20px;
+}
+
 
 .sidebar {
     height: 100%;
@@ -123,10 +140,6 @@ input {
 @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
-}
-
-.semTable th, td {
-    padding: 10px;
 }
 
 
