@@ -1,31 +1,21 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
     <xsl:param name="bgColor"/>
-    <xsl:template match="seminars">
+    
+    <xsl:template match="/">
         <html>
             <head>
-                <style>
-                    table{
-                    width:100%;
-                    border: 1px solid black;
-                    }
-                    
-                    th, td {
-                    text-align:left;
-                    padding: 15px;
-                    border-bottom: 1px solid #ddd;
-                    }
-             		
-                </style>
+                <link rel="stylesheet" type="text/css" href="..\style.css"/>
             </head>
             <body>
-                <xsl:apply-templates />
-                <p>Seminars </p>
+                <h2>Seminars </h2>
+                <xsl:apply-templates select="Seminars"/>
             </body>
         </html>
     </xsl:template>
+    
     <xsl:template match="Seminars">
-        <table align="center">
+        <table class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -41,6 +31,7 @@
             </tbody>
         </table>
     </xsl:template>
+    
     <xsl:template match="Seminar">
         <tr>
             <td>
@@ -65,4 +56,5 @@
             </td>
         </tr>
     </xsl:template>
+    
 </xsl:stylesheet>
