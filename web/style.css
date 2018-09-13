@@ -13,13 +13,17 @@ and open the template in the editor.
     background-color: #30343F;
     color: white;
     padding-top: 1px; 
+    text-align: left; 
+}
+
+h1 {
+    display: inline; 
 }
 
 body {
     background-color: #E4D9FF; 
-    margin: 0; 
+    margin: 0; /*ensures there is no gap between body and the whole page*/
 }
-
 
 .content {
     padding-top: 40px;
@@ -31,26 +35,92 @@ body {
 input[type=submit] {
     background-color: #273469; 
     color: white; 
-    padding: 14px 20px;
+    padding: 14px 20px; 
 }
 
 .form {
     display: table;
     text-align: left;
+    width: 300px; 
+    margin: 0 auto; /*centers form on the condition that the form is assigned a width*/
 }
 
-p     { 
-    display: table-row;  
+.buttonHolder {
+    width: 300px; 
+    text-align: center;
 }
 
-label { 
-    display: table-cell; 
-    margin-bottom: 10px; 
+label {
+    display: inline-block;
+    width: 150px;
 }
 
-input { 
-    display: table-cell; 
-    margin-bottom: 10px; 
+input {
+    padding-right: 10px; 
+}
+
+img {
+    width: 3%;
+    height:3%; 
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #30343F;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #444;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #30343F;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
 }
 
 

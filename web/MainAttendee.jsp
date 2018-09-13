@@ -12,6 +12,7 @@
 
     <body>
         <div class="header">
+            
             <h1>Seminars</h1>
         </div>
         <table width="100%" >

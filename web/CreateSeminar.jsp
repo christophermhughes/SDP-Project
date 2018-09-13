@@ -15,36 +15,62 @@
     <body>
 
         <div class ="header">
-            <h1>Create Seminar</h1>
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="MainOrganiser.jsp">Seminars</a>
+                <a href="#">Attendees</a>
+            </div>
+
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">☰</button>  
+                <h1>Create Seminar</h1>
+            </div>
+
+            <script>
+                function openNav() {
+                    document.getElementById("mySidebar").style.width = "250px";
+                    document.getElementById("main").style.marginLeft = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("mySidebar").style.width = "0";
+                    document.getElementById("main").style.marginLeft = "0";
+                }
+            </script>
+            
         </div>
 
-        <div align="center" class ="content" >
+        <div class ="content" >
             <form class="form" action="MainOrganiser.jsp" method="post">
-                <p>
-                    <label for="semName">Seminar Name: </label>
-                    <input type="text" name="semName">
-                </p>
-                <p>
-                    <label for="time">Time: </label>
-                    <input type="time" name="Time">
-                </p>
-                <p>
-                    <label for="date">Date: </label>
-                    <input type="date" name="Date">
-                </p>
-                <p>
-                    <label for="loc">Location: </label>
-                    <input type="text" name="Location">
-                </p>
-                <p>
-                    <label for="descp">Description: </label>
-                    <input type="text" name="descp">
-                </p>
-                <p>
-                    <label for="staffName">Staff Organiser: </label>
-                    <input type="text" name="staffName">
-                </p>
-                <input type="submit" value="Create Seminar">
+
+                <label for="semName">Seminar Name: </label>
+                <input type="text" name="semName">
+                <br>
+                <br>
+                <label for="time">Time: </label>
+                <input type="time" name="Time">
+                <br>
+                <br>
+                <label for="date">Date: </label>
+                <input type="date" name="Date">
+                <br>
+                <br>
+                <label for="loc">Location: </label>
+                <input type="text" name="Location">
+                <br>
+                <br>
+                <label for="descp">Description: </label>
+                <input type="text" name="descp">
+                <br>
+                <br>
+                <label for="staffName">Staff Organiser: </label>
+                <input type="text" name="staffName">
+                <br>
+                <br>
+                <div class="buttonHolder">
+                    <input type="submit" value="Create Seminar">
+                </div>
+
             </form> 
         </div>
 
