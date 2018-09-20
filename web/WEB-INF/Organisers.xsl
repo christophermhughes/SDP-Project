@@ -34,11 +34,11 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Phone Number</th>
                     <th>Email</th>
-                    <th>Phone</th>
+                    <th>Password</th>
                     <th>Faculty</th>
                 </tr>
             </thead>
@@ -50,22 +50,22 @@
     <xsl:template match="Organiser">
         <tr>
             <td>
-                <xsl:value-of select="ID" />
-            </td>
-            <td>
-                <xsl:value-of select="Firstname" />
+                <xsl:value-of select="firstName" />
             </td>
              <td>
-                <xsl:value-of select="Lastname" />
+                <xsl:value-of select="lastName" />
             </td>
             <td>
-                <xsl:value-of select="Email" />
+                <xsl:value-of select="phoneNumber" />
             </td>
             <td>
-                <xsl:value-of select="Phone" />
+                <xsl:value-of select="email" />
             </td>
             <td>
-                <xsl:value-of select="Faculty" />
+                <xsl:value-of select="password" />
+            </td>
+            <td>
+                <xsl:value-of select="faculty" />
             </td>
         </tr>
     </xsl:template>

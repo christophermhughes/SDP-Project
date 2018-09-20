@@ -19,17 +19,19 @@
             </div>
 
             <div class ="content">
-                <form class="form" action="AdminPage.jsp" method="post">
+                <form class="form" action="CreateOrganiserAction.jsp" method="post">
                     First Name<br>
-                    <input type="text" name="FirstName"><br>
+                    <input type="text" name="firstName"><br>
                     Last Name<br>
-                    <input type="text" name="LastName"><br>
+                    <input type="text" name="lastName"><br>
                     Phone<br>
-                    <input type="text" name="Phone"><br>
+                    <input type="text" name="phoneNumber"><br>
                     Email<br>
-                    <input type="text" name="Location"><br>
+                    <input type="text" name="email"><br>
+                    Password<br>
+                    <input type="text" name="password"><br>
                     Faculty<br>
-                    <input type="text" name="Fac"><br>
+                    <input type="text" name="faculty"><br>
                     
                     <input type="submit" value="Add organiser">
                 </form> 
