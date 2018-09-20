@@ -46,16 +46,17 @@
                     <br>   
                     <input type="password" name="password" placeholder="Password"><br>
                     <br>
+                    
                     <c:if test="${emailErr!=null}">
-                    <c:out value ="${emailErr}"/></c:if>
+                    <font color="red"><c:out value ="${emailErr}"/></c:if></font>
                     <c:if test="${passwordErr!=null}"> 
-                    <c:out value ="${passwordErr}"/></c:if>
+                    <font color="red"><c:out value ="${passwordErr}"/></c:if></font>
                     <c:if test="${emptyErr!=null}">
-                    <font color ="red"><c:out value="${emptyErr}"/></c:if></font>
+                    <font color="red"><c:out value="${emptyErr}"/></c:if></font>
                     <c:if test="${existErr!=null}">
-                    <font color ="red"><c:out value="${existErr}"/></c:if></font>
+                    <font color="red"><c:out value="${existErr}"/></c:if></font>
                     <c:if test="${wrongPassword!=null}">
-                    <font color ="red"><c:out value="${wrongPassword}"/></c:if></font>
+                    <font color="red"><c:out value="${wrongPassword}"/></c:if></font>
                     
                     
                     <br>
