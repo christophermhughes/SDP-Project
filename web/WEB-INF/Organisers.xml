@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Organisers>
     <Organiser>
-        <ID>123</ID>
-        <Email>Joey@gmail.com</Email>
-        <Firstname>Joe</Firstname>
-        <Lastname>yeee</Lastname>
-        <Phone>9032422112</Phone> 
-        <Faculty>FEIT</Faculty>  
+        <firstName>Joe</firstName>
+        <lastName>yeee</lastName>
+        <phoneNumber>9032422112</phoneNumber>
+        <email>Joey@gmail.com</email>
+        <password>password</password>
+        <faculty>FEIT</faculty>  
     </Organiser>
 </Organisers>

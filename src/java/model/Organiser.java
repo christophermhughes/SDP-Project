@@ -4,58 +4,66 @@
  * and open the template in the editor.
  */
 package model;
-
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 /**
  *
  * @author chris
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="Organiser")
 public class Organiser implements java.io.Serializable{
-    
-    private int ID;
-    private String FName;
-    private String LName;
-    private int phoneNumber;
+   
+    @XmlElement(name = "firstName")
+    private String firstName;
+    @XmlElement(name = "lastName")
+    private String lastName;
+    @XmlElement(name = "phoneNumber")
+    private String phoneNumber;
+    @XmlElement(name = "email")
     private String email;
+    @XmlElement(name = "password")
+    private String password;
+    @XmlElement(name = "faculty")
     private String faculty;
 
-    public Organiser(int ID, String FName, String LName, int phoneNumber, String email, String faculty) {
-        this.ID = ID;
-        this.FName = FName;
-        this.LName = LName;
+
+    public Organiser(String firstName, String lastName, String phoneNumber, String email, String password, String faculty) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.password = password;
         this.faculty = faculty;
     }
+    
+    public Organiser(){}
 
-    public int getID() {
-        return ID;
+    public String getfirstName() {
+        return firstName;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getFName() {
-        return FName;
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setFName(String FName) {
-        this.FName = FName;
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getLName() {
-        return LName;
-    }
-
-    public void setLName(String LName) {
-        this.LName = LName;
-    }
-
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -73,5 +81,13 @@ public class Organiser implements java.io.Serializable{
 
     public void setFaculty(String faculty) {
         this.faculty = faculty;
+    }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
