@@ -6,17 +6,14 @@
 package model;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author chris
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="Organiser")
-public class Organiser implements java.io.Serializable{
+public class Organiser implements Serializable{
    
     @XmlElement(name = "firstName")
     private String firstName;
