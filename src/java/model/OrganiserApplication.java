@@ -11,7 +11,7 @@ import javax.xml.bind.*;
  * @author brand
  */
 public class OrganiserApplication implements Serializable {
-        private String filePath;
+    private String filePath;
     private Organisers organisers;
     
      public OrganiserApplication() {
@@ -46,8 +46,6 @@ public class OrganiserApplication implements Serializable {
         fout.close();
     }
     
-    // For the advanced step, you might consider adding a saveOrganisers() method here
-    // to be used from the welcome.jsp page
     public void saveOrganisers() throws JAXBException, IOException {
         JAXBContext jc = JAXBContext.newInstance(Organisers.class);
         Marshaller m = jc.createMarshaller();
