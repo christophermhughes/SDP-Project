@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -29,13 +30,30 @@
                     Email<br>
                     <input type="text" name="email"><br>
                     Password<br>
-                    <input type="text" name="password"><br>
+                    <input type="password" name="password"><br>
                     Faculty<br>
                     <input type="text" name="faculty"><br>
                     
-                    <input type="submit" value="Add organiser">
+                    <input type="submit" value="Add organiser"><br>
+                    
+                    <c:if test="${emptyErr!=null}">
+                    <font color="red"><c:out value ="${emptyErr}"/></c:if></font>
+                    <c:if test="${nameErr!=null}">
+                    <font color="red"><c:out value ="${nameErr}"/></c:if></font>
+                    <c:if test="${emailErr!=null}">
+                    <font color="red"><c:out value ="${emailErr}"/></c:if></font>
+                    <c:if test="${passwordErr!=null}">
+                    <font color="red"><c:out value ="${passwordErr}"/></c:if></font>
+                    <c:if test="${existErr!=null}">
+                    <font color="red"><c:out value ="${existErr}"/></c:if></font>
+                    
                 </form> 
             </div>
         </div>
+        
+        
+        <%
+            session.invalidate();
+        %>
     </body>
 </html>
