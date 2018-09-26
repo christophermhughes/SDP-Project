@@ -16,4 +16,18 @@
             <Bio>I am groovy</Bio>
         </Speakers>
     </Seminar>
+     <Seminar>
+        <ID>1</ID>
+        <Name>Sci</Name>
+        <Time>2:10</Time>
+        <Date>12/12/12</Date>
+        <Location>CB11.00.401</Location>
+        <Desc>blah blah</Desc>
+        <OrgID>102</OrgID> 
+        <Speakers>
+            <SID>1</SID>
+            <Speaker>Josh Loon</Speaker>
+            <Bio>I am groovy</Bio>
+        </Speakers>
+    </Seminar>
 </Seminars>

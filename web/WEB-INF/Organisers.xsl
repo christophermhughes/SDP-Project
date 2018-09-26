@@ -50,7 +50,10 @@
     <xsl:template match="Organiser">
         <tr>
             <td>
-                <xsl:value-of select="firstName" />
+                <form action="OrganiserDetails.jsp" method="post">   
+                    <input type="text" name="orgEmail" value="{email}" hidden="true"/>           
+                    <input type="submit" value="{firstName}"/>   <!--  <xsl:value-of select="Name" /> -->                          
+                </form>
             </td>
              <td>
                 <xsl:value-of select="lastName" />

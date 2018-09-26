@@ -35,7 +35,10 @@
     <xsl:template match="Seminar">
         <tr>
             <td>
-                <xsl:value-of select="Name" />
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="text" name="semName" value="{Name}" hidden="true"/>           
+                    <input type="submit" value="{Name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
+                </form>
             </td>
             <td>
                 <xsl:value-of select="Time" />

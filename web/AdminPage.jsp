@@ -18,7 +18,6 @@
              <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
              <tr><td align="right"><u><a href="CreateOrganiser.jsp">Add Organiser</a></u></td></tr>
         </table>
-        
         <a href="logout.jsp">Logout</a>
         
          <c:import url="WEB-INF\Organisers.xml"
