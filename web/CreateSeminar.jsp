@@ -43,7 +43,25 @@
         </div>
 
         <div class ="content" >
-            <form class="form" action="MainOrganiser.jsp" method="post">
+            <form class="form" action="CreateSeminarAction.jsp" method="post">
+                    Seminar ID<br>
+                    <input type="text" name="seminarID"><br>
+                    Seminar Name<br>
+                    <input type="text" name="seminarName"><br>
+                    Time<br>
+                    <input type="text" name="time"><br>
+                    Date<br>
+                    <input type="text" name="date"><br>
+                    Location<br>
+                    <input type="text" name="loc"><br>
+                    Description<br>
+                    <input type="text" name="desc"><br>
+                    Organiser ID<br>
+                    <input type="text" name="orgID"><br>
+                    
+                    <input type="submit" value="Add Seminar">
+                </form> 
+         <!--   <form class="form" action="MainOrganiser.jsp" method="post">
 
                 <label for="semName">Seminar Name: </label>
                 <input type="text" name="semName">
@@ -74,6 +92,7 @@
                 </div>
 
             </form> 
+         -->
         </div>
 
     </body>

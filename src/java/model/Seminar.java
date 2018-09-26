@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package model;
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
 //import java.util.*;
 //import javax.xml.bind.annotation.*;
 
@@ -13,15 +15,23 @@ package model;
  * @author chris
  */
 
-//@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name="Seminar")
 public class Seminar implements java.io.Serializable {
-
+    
+    @XmlElement(name = "ID")
     private String SemID;
+    @XmlElement(name = "Name")
     private String name;
+    @XmlElement(name = "Time")
     private String time;
+    @XmlElement(name = "Date")
     private String date;
+    @XmlElement(name = "Desc")
     private String Abstract;
+    @XmlElement(name = "Location")
     private String room;
+    @XmlElement(name = "OrgID")
     private int UserID;
     
     
@@ -34,6 +44,7 @@ public class Seminar implements java.io.Serializable {
         this.room = room;
         this.UserID = UserID;
     }
+     public Seminar(){}
 
     public String getName() {
         return name;
