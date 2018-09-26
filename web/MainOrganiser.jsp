@@ -48,7 +48,7 @@
             <c:import url="WEB-INF\Seminars.xml"
                       var="inputDoc" />
 
-            <c:import url="WEB-INF\Seminars.xsl"
+            <c:import url="WEB-INF\SeminarsOrganiser.xsl"
                       var="stylesheet" />
 
             <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        

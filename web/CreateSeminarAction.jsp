@@ -32,12 +32,19 @@
         String orgID = request.getParameter(("orgID"));
         
 
-
-        Seminar seminar = new Seminar(seminarID,seminarName, time, date, desc, loc,  Integer.parseInt(orgID));
-        session.setAttribute("seminar", seminar);
-        seminars.addSeminar(seminar);
-        seminarApp.updateXML(seminars, filePath);
-        response.sendRedirect("MainOrganiser.jsp");
+if (seminars.getSeminar(seminarName) != null) {
+                Seminar seminar = seminars.getSeminar(seminarName);
+                seminar.setTime(time);
+                seminar.setDate(date);
+                seminar.setRoom(loc);
+                seminar.setAbstract(desc);
+            } else {
+                Seminar seminar = new Seminar(seminarID, seminarName, time, date, loc, desc, Integer.parseInt(orgID));
+                session.setAttribute("seminar", seminar);
+                seminars.addSeminar(seminar);                        
+            }
+            seminarApp.updateXML(seminars, filePath); 
+            response.sendRedirect("MainOrganiser.jsp");
     %>
         
         

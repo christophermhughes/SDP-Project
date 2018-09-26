@@ -5,7 +5,7 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
-
+<%@page import="model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,25 +15,41 @@
         <title>Seminar Details</title>
     </head>
     <body>
-       <form class="form" action="MainOrganiser.jsp" method="post">
-                    Seminar Name<br>
-                    <input type="text" name="SemName"><br>
-                    Time<br>
-                    <input type="text" name="Time"><br>
-                    Date<br>
-                    <input type="text" name="Date"><br>
-                    Location<br>
-                    <input type="text" name="Location"><br>
-                    Description<br>
-                    <input type="text" name="Descp"><br>
-                    Staff Organizer<br>
-                    <input type="text" name="StaffName"><br>
-                    <br>
-                    <input type="submit" value="Update Seminar">
-                </form> 
+        <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
+        <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
+            <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
+        </jsp:useBean>
+        
+        <% 
+        String semName = request.getParameter("semName");
+        Seminars seminars = seminarApp.getSeminars();
+        Seminar seminar = seminars.getSeminar(semName);
+        String time = seminar.getTime();
+        String date = seminar.getDate();
+        String loc = seminar.getRoom();
+        String desc = seminar.getAbstract();
+        int orgID = seminar.getUserID();
+        %>
+        
+        <form class="form" action="CreateSeminarAction.jsp" method="post">
+            Seminar Name<br>
+            <input type="text" name ="seminarName" value="<%=semName%>" ><br>
+            Time<br>
+            <input type="text" name="time" value="<%=time%>"><br>
+            Date<br>
+            <input type="text" name="date" value="<%=date%>"><br>
+            Location<br>
+            <input type="text" name="loc" value="<%=loc%>"><br>
+            Description<br>
+            <input type="text" name="desc" value="<%=desc%>"><br>
+            Staff Organizer ID<br>
+            <input type="text" name="orgID" value="<%=orgID%>"><br>
+            <input type="submit" value="Update Seminar">
+     <input type="submit" value="Delete Seminar" formaction="DeleteSeminarAction.jsp"/>
+        </form> 
         <br>
         <h1>Attendees</h1>
-          <c:import url="WEB-INF\Attendees.xml"
+        <c:import url="WEB-INF\Attendees.xml"
                   var="inputDoc" />
 
         <c:import url="WEB-INF\Attendees.xsl"
@@ -41,6 +57,6 @@
 
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
-         </x:transform>
+        </x:transform>
     </body>
 </html>
