@@ -12,23 +12,21 @@
 
     <body>
         <div class="header">
-              <div class="sidenav">
-                <a href="MainOrganiser.jsp">Seminars</a>
-                <a href="#">Attendees</a>
-                <a href="login.jsp">Login</a>
-            </div>
+            
 
             <div class="title">
-                <h1>Seminars</h1>
+                <h1>Seminar Details</h1>
             </div>
 
+            <ul class="nav">
+                <li class= "nav"><a href="login.jsp"> Login </a> </li>
+            </ul>
 
-            
         </div>
         <table width="100%" >
             <tr><td align="right"><u><a href="login.jsp">Login</a></u></td></tr>
         </table>
-        
+
         <c:import url="WEB-INF\Seminars.xml"
                   var="inputDoc" />
 
@@ -37,6 +35,6 @@
 
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
-         </x:transform>
-        </body>
-    </html>
+        </x:transform>
+    </body>
+</html>
