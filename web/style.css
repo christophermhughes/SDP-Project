@@ -14,13 +14,9 @@ and open the template in the editor.
     color: white;
     padding-top: 1px; 
     text-align: center; 
+    padding-top: 20px;
 }
-h1 {
-    display: inline; 
-}
-.title {
-    text-align: center; 
-}
+
 h2 {
     text-align: center; 
 }
