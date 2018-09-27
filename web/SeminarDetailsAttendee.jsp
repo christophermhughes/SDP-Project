@@ -31,9 +31,9 @@
         int orgID = seminar.getUserID();
         %>
         
-        <form class="form" action="MainOrganiser.jsp" method="post">
+        <form class="form" method="post">
             Seminar Name<br>
-            <input type="text" value="<%=semName%>" ><br>
+            <input type="text" name="semName" value="<%=semName%>" ><br>
             Time<br>
             <input type="text" name="Time" value="<%=time%>"><br>
             Date<br>
@@ -61,18 +61,15 @@
         <button class="open-button" onclick="openForm()">Attend Seminar</button>
 
         <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-
+            <form action="AttendAction.jsp" class="form-container" method="post">
                 <label for="psw"><b>First Name</b></label>
-                <input type="text" placeholder="Enter First Name" name="Fname" required>
+                <input type="text" placeholder="Enter First Name" name="attFirstName" required>
 
                 <label for="psw"><b>Last Name</b></label>
-                <input type="text" placeholder="Enter Last Name" name="Lname" required>
+                <input type="text" placeholder="Enter Last Name" name="attLastName" required>
 
                 <label for="psw"><b>Phone no</b></label>
-                <input type="text" placeholder="Enter Phone no" name="Pno" required>
+                <input type="text" placeholder="Enter Phone no" name="attPhoneNumber" required>
 
                 <button type="submit" class="btn">Attend</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
