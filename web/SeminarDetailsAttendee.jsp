@@ -42,7 +42,7 @@
             int orgID = seminar.getUserID();
             String seminarID = seminar.getSemID();
             
-           Attendees AttendingAttendees;
+            Attendees AttendingAttendees;
            
          //Try to get the list of attendees, put all the ones with the right seminarID in another list
          //and update the xml with it.
