@@ -5,16 +5,37 @@
  */
 package model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author chris
  */
-public class Attendee implements java.io.Serializable{
-    
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "Attendee")
+public class Attendee implements java.io.Serializable {
+
+    @XmlElement(name = "Firstname")
     private String firstName;
+    @XmlElement(name = "Lastname")
     private String lastName;
+    @XmlElement(name = "Phone")
     private String phoneNumber;
+    @XmlElement(name = "SemID")
     private String seminarID;
+
+    public Attendee(String firstName, String lastName, String phoneNumber, String seminarID) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.seminarID = seminarID;
+    }
+
+    public Attendee() {
+    }
 
     public String getFirstName() {
         return firstName;
@@ -48,12 +69,4 @@ public class Attendee implements java.io.Serializable{
         this.seminarID = seminarID;
     }
 
-    public Attendee(String firstName, String lastName, String phoneNumber, String seminarID) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.seminarID = seminarID;
-    }
-
-  
 }

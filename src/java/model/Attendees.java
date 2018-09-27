@@ -34,6 +34,17 @@ public class Attendees implements Serializable{
         }
     }
 
+    public ArrayList<Attendee> getAttendingAttendees(String seminarID) {
+        ArrayList<Attendee> AttendingAttendees = new ArrayList();
+         for(Attendee attendee: list){
+            if(attendee.getSeminarID().equals(seminarID)){
+                AttendingAttendees.add(attendee);
+            }
+        }
+        
+        return AttendingAttendees;
+    }
+    
     public Attendee getAttendee(String phoneNumber) {
         for (Attendee attendee : list) {
             if (attendee.getPhoneNumber().equals(phoneNumber)) {
