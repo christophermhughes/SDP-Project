@@ -19,18 +19,38 @@
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-        
-        <% 
-        String semName = request.getParameter("semName");
-        Seminars seminars = seminarApp.getSeminars();
-        Seminar seminar = seminars.getSeminar(semName);
-        String time = seminar.getTime();
-        String date = seminar.getDate();
-        String loc = seminar.getRoom();
-        String desc = seminar.getAbstract();
-        int orgID = seminar.getUserID();
+
+        <% String filePathTwo = application.getRealPath("WEB-INF/Attendees.xml");%>
+        <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
+            <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
+        </jsp:useBean>
+
+        <%
+          
+            Attendees attendees = attendeeApp.getAttendees();
+            
+            
+           
+
+            String semName = request.getParameter("semName");
+            Seminars seminars = seminarApp.getSeminars();
+            Seminar seminar = seminars.getSeminar(semName);
+            String time = seminar.getTime();
+            String date = seminar.getDate();
+            String loc = seminar.getRoom();
+            String desc = seminar.getAbstract();
+            int orgID = seminar.getUserID();
+            String seminarID = seminar.getSemID();
+            
+           Attendees AttendingAttendees;
+           
+         //Try to get the list of attendees, put all the ones with the right seminarID in another list
+         //and update the xml with it.
+           
+           attendeeApp.updateXML(attendees, filePathTwo);
+            } 
         %>
-        
+
         <form class="form" method="post">
             Seminar Name<br>
             <input type="text" name="semName" value="<%=semName%>" ><br>
@@ -64,6 +84,8 @@
             <form action="AttendAction.jsp" class="form-container" method="post">
                 <label for="psw"><b>First Name</b></label>
                 <input type="text" placeholder="Enter First Name" name="attFirstName" required>
+
+                <input type="text" name="semName" value="<%=semName%>"/><br>
 
                 <label for="psw"><b>Last Name</b></label>
                 <input type="text" placeholder="Enter Last Name" name="attLastName" required>
