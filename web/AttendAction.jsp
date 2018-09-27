@@ -4,8 +4,10 @@
     Author     : Ankush Yamarti
 --%>
 
-<%@page import="model.*"%>
-
+<%@page import="model.Attendee"%>
+<%@page import="model.Attendees"%>
+<%@page import="model.Seminar"%>
+<%@page import="model.Seminars"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
