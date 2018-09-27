@@ -18,7 +18,9 @@ and open the template in the editor.
 h1 {
     display: inline; 
 }
-
+.title {
+    text-align: center; 
+}
 h2 {
     text-align: center; 
 }
@@ -84,62 +86,39 @@ input {
 }
 
 
-.sidebar {
+.sidenav {
     height: 100%;
-    width: 0;
+    width: 180px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #30343F;
     overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 
-.sidebar a {
-    padding: 8px 8px 8px 32px;
+.sidenav a {
+    padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
-    color: white;
+    color: #818181;
     display: block;
-    transition: 0.3s;
 }
 
-.sidebar a:hover {
-    color: #444;
+.sidenav a:hover {
+    color: #f1f1f1;
 }
 
-.sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
 }
 
-.openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #30343F;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-}
-
-.openbtn:hover {
-    background-color: #444;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
 
 

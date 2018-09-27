@@ -15,28 +15,14 @@
     </head>
     <body>
         <div class="header">
-            <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <a href="CreateSeminar.jsp">Create Seminar</a>
-                <a href="#">Attendees</a>
+            <div  class="sidenav">
+                <a href="MainAttendee.jsp">Seminars</a>
             </div>
 
-            <div id="main">
-                <button class="openbtn" onclick="openNav()">☰</button>  
+            <div class="title">
                 <h1>Login</h1>
             </div>
 
-            <script>
-                function openNav() {
-                    document.getElementById("mySidebar").style.width = "250px";
-                    document.getElementById("main").style.marginLeft = "250px";
-                }
-
-                function closeNav() {
-                    document.getElementById("mySidebar").style.width = "0";
-                    document.getElementById("main").style.marginLeft = "0";
-                }
-            </script>
             
         </div>
         <div class="content">

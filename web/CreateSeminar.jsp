@@ -16,29 +16,18 @@
     <body>
 
         <div class ="header">
-            <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div class="sidenav">
                 <a href="MainOrganiser.jsp">Seminars</a>
-                <a href="#">Attendees</a>
-                <a href="login.jsp">Login</a>
+                <a href="MainOrganiser.jsp">Attendees</a>
+                <a href="logout.jsp">Logout</a>
             </div>
 
-            <div id="main">
-                <button class="openbtn" onclick="openNav()">☰</button>  
-                <h1>Create Seminar</h1>
+            <div class="title">
+            <h1>Create Seminar</h1>
             </div>
+            
 
-            <script>
-                function openNav() {
-                    document.getElementById("mySidebar").style.width = "250px";
-                    document.getElementById("main").style.marginLeft = "250px";
-                }
-
-                function closeNav() {
-                    document.getElementById("mySidebar").style.width = "0";
-                    document.getElementById("main").style.marginLeft = "0";
-                }
-            </script>
+            
             
         </div>
 
@@ -60,6 +49,7 @@
                     <input type="text" name="orgID"><br>
                     
                     <input type="submit" value="Add Seminar">
+                    
                 </form> 
          <!--   <form class="form" action="MainOrganiser.jsp" method="post">
 

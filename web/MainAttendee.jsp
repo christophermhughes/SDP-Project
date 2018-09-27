@@ -12,11 +12,20 @@
 
     <body>
         <div class="header">
+              <div class="sidenav">
+                <a href="MainOrganiser.jsp">Seminars</a>
+                <a href="#">Attendees</a>
+                <a href="login.jsp">Login</a>
+            </div>
+
+            <div class="title">
+                <h1>Seminars</h1>
+            </div>
+
+
             
-            <h1>Seminars</h1>
         </div>
         <table width="100%" >
-            <tr bgcolor="lightgrey" ><td align="right"> </td></tr>
             <tr><td align="right"><u><a href="login.jsp">Login</a></u></td></tr>
         </table>
         
