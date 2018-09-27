@@ -4,44 +4,44 @@
  * and open the template in the editor.
  */
 package model;
-
+import java.io.Serializable;
+import javax.xml.bind.annotation.*;
+import java.util.*;
 /**
  *
- * @author chris
+ * @author brandi
  */
-public class Attendees implements java.io.Serializable{
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "Attendees")
+public class Attendees implements Serializable{
     
-    private int number;
-    private String FName;
-    private String LName;
+    @XmlElement(name = "Attendee")
+    private ArrayList<Attendee> list = new ArrayList();
 
-    public Attendees(int number, String FName, String LName) {
-        this.number = number;
-        this.FName = FName;
-        this.LName = LName;
+    public ArrayList<Attendee> getList() {
+        return list;
     }
 
-    public int getNumber() {
-        return number;
+    public void addAttendee(Attendee attendee) {
+        list.add(attendee);
+    }
+    public void removeExistingAttendee(String phoneNumber){
+        for(Attendee attendee: list){
+            if(attendee.getPhoneNumber().equals(phoneNumber)){
+                list.remove(attendee);
+                break;
+            }
+        }
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public Attendee getAttendee(String phoneNumber) {
+        for (Attendee attendee : list) {
+            if (attendee.getPhoneNumber().equals(phoneNumber)) {
+                return attendee;
+            }
+        }
+        return null;
     }
 
-    public String getFName() {
-        return FName;
-    }
-
-    public void setFName(String FName) {
-        this.FName = FName;
-    }
-
-    public String getLName() {
-        return LName;
-    }
-
-    public void setLName(String LName) {
-        this.LName = LName;
-    }
+    
 }
