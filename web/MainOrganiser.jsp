@@ -16,14 +16,16 @@
     </head>
     <body>
         <div class="header">
-            <div class="sidenav">
-                <a href="CreateSeminar.jsp">Create Seminar</a>
-                <a href="logout.jsp">Logout</a>
-            </div>
+            
 
             <div class="title">
                 <h1>Manage Seminars</h1>
             </div>
+            
+             <ul class="nav">
+                <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
+                <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
+            </ul>
 
 
         </div>

@@ -16,73 +16,72 @@
     <body>
 
         <div class ="header">
-            <div class="sidenav">
-                <a href="MainOrganiser.jsp">Seminars</a>
-                <a href="MainOrganiser.jsp">Attendees</a>
-                <a href="logout.jsp">Logout</a>
-            </div>
 
             <div class="title">
-            <h1>Create Seminar</h1>
+                <h1>Create Seminar</h1>
             </div>
             
+            <ul class="nav">
+                <li class= "nav"><a href="MainOrganiser.jsp"> Seminars </a> </li>
+                <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
+            </ul>
 
-            
-            
+
+
         </div>
 
         <div class ="content" >
             <form class="form" action="CreateSeminarAction.jsp" method="post">
-                    Seminar ID<br>
-                    <input type="text" name="seminarID"><br>
-                    Seminar Name<br>
-                    <input type="text" name="seminarName"><br>
-                    Time<br>
-                    <input type="text" name="time"><br>
-                    Date<br>
-                    <input type="text" name="date"><br>
-                    Location<br>
-                    <input type="text" name="loc"><br>
-                    Description<br>
-                    <input type="text" name="desc"><br>
-                    Organiser ID<br>
-                    <input type="text" name="orgID"><br>
-                    
-                    <input type="submit" value="Add Seminar">
-                    
-                </form> 
-         <!--   <form class="form" action="MainOrganiser.jsp" method="post">
+                Seminar ID<br>
+                <input type="text" name="seminarID"><br>
+                Seminar Name<br>
+                <input type="text" name="seminarName"><br>
+                Time<br>
+                <input type="text" name="time"><br>
+                Date<br>
+                <input type="text" name="date"><br>
+                Location<br>
+                <input type="text" name="loc"><br>
+                Description<br>
+                <input type="text" name="desc"><br>
+                Organiser ID<br>
+                <input type="text" name="orgID"><br>
 
-                <label for="semName">Seminar Name: </label>
-                <input type="text" name="semName">
-                <br>
-                <br>
-                <label for="time">Time: </label>
-                <input type="time" name="Time">
-                <br>
-                <br>
-                <label for="date">Date: </label>
-                <input type="date" name="Date">
-                <br>
-                <br>
-                <label for="loc">Location: </label>
-                <input type="text" name="Location">
-                <br>
-                <br>
-                <label for="descp">Description: </label>
-                <input type="text" name="descp">
-                <br>
-                <br>
-                <label for="staffName">Staff Organiser: </label>
-                <input type="text" name="staffName">
-                <br>
-                <br>
-                <div class="buttonHolder">
-                    <input type="submit" value="Create Seminar">
-                </div>
+                <input type="submit" value="Add Seminar">
 
             </form> 
-         -->
+            <!--   <form class="form" action="MainOrganiser.jsp" method="post">
+   
+                   <label for="semName">Seminar Name: </label>
+                   <input type="text" name="semName">
+                   <br>
+                   <br>
+                   <label for="time">Time: </label>
+                   <input type="time" name="Time">
+                   <br>
+                   <br>
+                   <label for="date">Date: </label>
+                   <input type="date" name="Date">
+                   <br>
+                   <br>
+                   <label for="loc">Location: </label>
+                   <input type="text" name="Location">
+                   <br>
+                   <br>
+                   <label for="descp">Description: </label>
+                   <input type="text" name="descp">
+                   <br>
+                   <br>
+                   <label for="staffName">Staff Organiser: </label>
+                   <input type="text" name="staffName">
+                   <br>
+                   <br>
+                   <div class="buttonHolder">
+                       <input type="submit" value="Create Seminar">
+                   </div>
+   
+               </form> 
+            -->
         </div>
 
     </body>

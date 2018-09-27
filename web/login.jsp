@@ -15,13 +15,14 @@
     </head>
     <body>
         <div class="header">
-            <div  class="sidenav">
-                <a href="MainAttendee.jsp">Seminars</a>
-            </div>
 
             <div class="title">
                 <h1>Login</h1>
             </div>
+            
+            <ul class="nav">
+                <li class= "nav"><a href="MainAttendee.jsp"> Seminars </a> </li>
+            </ul>
 
             
         </div>
