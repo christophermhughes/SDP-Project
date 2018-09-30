@@ -24,20 +24,19 @@
         <%
             if (session.getAttribute("organiser") == null) {%>
         You do not have access to this page.
-
-
         <%} else {%>
+
 
         <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-        
+
         <% String resultsPath = application.getRealPath("WEB-INF/SeminarResults.xml");%>
         <jsp:useBean id="seminarResultsApp" class="model.SeminarApplication" scope="application">
-            <jsp:setProperty name="seminarApp" property="filePath" value="<%=resultsPath%>"/>
+            <jsp:setProperty name="seminarResultsApp" property="filePath" value="<%=resultsPath%>"/>
         </jsp:useBean>
-        
+
         <div class="header">
 
             <div class="title">
@@ -45,8 +44,8 @@
             </div>
 
             <ul class="nav">
-                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
+                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
                 <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
@@ -54,16 +53,28 @@
 
         </div>
         <%
+            // Get organiser who is logged in information
             Organiser organiser = (Organiser) session.getAttribute("organiser");
             String email = organiser.getEmail();
+
+            // Retrieve all the seminars in the XML
             Seminars seminars = seminarApp.getSeminars();
+            Seminars resultSeminars = seminarApp.getSeminars();
+
+            // Create a variable to store the results
             Seminars results = new Seminars();
+
+            // Create an array list to store the seminars of the organiser
             ArrayList<Seminar> organiserSeminars;
             organiserSeminars = seminars.getOrganiserSeminars(email);
-            for(Seminar s : organiserSeminars){
+
+            // Go through the list and add it to the results
+            for (Seminar s : organiserSeminars) {
                 results.addSeminar(s);
             }
-            seminarResultsApp.updateXML(results, resultsPath);
+
+            resultSeminars = results;
+            seminarResultsApp.updateXML(resultSeminars, resultsPath);
         %>
 
         <div class="content">
@@ -79,7 +90,9 @@
             </x:transform>
 
 
-            <%}%>
+
         </div>
+
+        <%}%>
     </body>
 </html>

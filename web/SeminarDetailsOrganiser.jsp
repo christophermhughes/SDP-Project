@@ -15,13 +15,31 @@
         <title>Seminar Details</title>
     </head>
     <body>
+        <%
+           if (session.getAttribute("organiser") == null) {%>
+        You do not have access to this page.
+        <%} else {%>
+
+
+        <div class="header">
+            <div class="title">
+                <h1>Seminar Details</h1>
+            </div>
+            <ul class="nav">
+                <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
+                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
+                <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
+                <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
+            </ul>
+        </div>
+
         <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-        
-        <% 
-     /*   
+
+        <%
+            /*   
         String semName = request.getParameter("semName");
         Seminars seminars = seminarApp.getSeminars();
         Seminar seminar = seminars.getSeminar(semName);
@@ -30,7 +48,7 @@
         String loc = seminar.getRoom();
         String desc = seminar.getAbstract();
         int orgID = seminar.getUserID();
-*/
+             */
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminar(seminarName);
@@ -42,9 +60,9 @@
             String venue = seminar.getVenue();
             String email = seminar.getOrganiserEmail();
         %>
-        
-        
-        
+
+
+
         <form class="form" action="CreateSeminarAction.jsp" method="post">
             Seminar Name<br>
             <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
@@ -62,13 +80,13 @@
             <input type="text" name="loc" value="<%=venue%>"><br>
             Staff Organizer Email<br>
             <input type="text" name="orgID" value="<%=email%>"><br>
-            
+
             <input type="submit" value="Update Seminar">
-     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
+            <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
         </form> 
         <br>
-        
-        
+
+
         <h1>Attendees</h1>
         <c:import url="WEB-INF\Attendees.xml"
                   var="inputDoc" />
@@ -79,5 +97,7 @@
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
         </x:transform>
+
+        <%}%>
     </body>
 </html>
