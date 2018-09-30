@@ -19,6 +19,7 @@
             </div>
             
             <%
+                // Have a login option if not logged in. Have several options for a logged in organiser.
                 if(session.getAttribute("organiser")==null){
             %>
 
