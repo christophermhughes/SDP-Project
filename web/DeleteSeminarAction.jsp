@@ -25,7 +25,7 @@
     seminars.removeExistingSeminar(name);
     seminarApp.updateXML(seminars, filePath);
     session.setAttribute("deleteSeminar", "You have succesfully deleted the Seminar: " + name);
-    response.sendRedirect("MainOrganiser.jsp");
+    response.sendRedirect("SeminarAction.jsp");
 %>
 
 

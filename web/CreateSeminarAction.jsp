@@ -58,7 +58,7 @@
                 seminarApp.updateXML(seminars, filePath);
                 seminarResultApp.updateXML(seminars, resultPath);
                 session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
-                response.sendRedirect("MainOrganiser.jsp");
+                response.sendRedirect("SeminarAction.jsp");
             }
 
         %>
