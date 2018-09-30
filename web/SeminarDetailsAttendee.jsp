@@ -28,10 +28,8 @@
         <%
           
             Attendees attendees = attendeeApp.getAttendees();
-            
-            
            
-
+/*
             String semName = request.getParameter("semName");
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminar(semName);
@@ -41,6 +39,22 @@
             String desc = seminar.getAbstract();
             int orgID = seminar.getUserID();
             String seminarID = seminar.getSemID();
+
+*/
+
+            String seminarName = request.getParameter("name");
+            Seminars seminars = seminarApp.getSeminars();
+            Seminar seminar = seminars.getSeminar(seminarName);
+            String desc = seminar.getDescription();
+            String speakers = seminar.getSpeakers();
+            String date = seminar.getDate();
+            String time = seminar.getTime();
+            String duration = seminar.getDuration();
+            String venue = seminar.getVenue();
+            String email = seminar.getOrganiserEmail();
+
+
+        
             
             Attendees AttendingAttendees;
            
@@ -48,23 +62,29 @@
          //and update the xml with it.
            
            attendeeApp.updateXML(attendees, filePathTwo);
-            } 
+             
         %>
 
+        
         <form class="form" method="post">
             Seminar Name<br>
-            <input type="text" name="semName" value="<%=semName%>" ><br>
-            Time<br>
-            <input type="text" name="Time" value="<%=time%>"><br>
+            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
+            Seminar Description<br>
+            <input type="text" name ="seminarName" value="<%=desc%>" ><br>
+            Seminar Speakers<br>
+            <input type="text" name ="seminarName" value="<%=speakers%>" ><br>
             Date<br>
-            <input type="text" name="Date" value="<%=date%>"><br>
-            Location<br>
-            <input type="text" name="Location" value="<%=loc%>"><br>
-            Description<br>
-            <input type="text" name="Descp" value="<%=desc%>"><br>
-            Staff Organizer<br>
-            <input type="text" name="StaffName" value="<%=orgID%>"><br>
+            <input type="text" name="date" value="<%=date%>"><br>
+            Time<br>
+            <input type="text" name="time" value="<%=time%>"><br>
+            Duration<br>
+            <input type="text" name="desc" value="<%=duration%>"><br>
+            Venue<br>
+            <input type="text" name="loc" value="<%=venue%>"><br>
+            Staff Organizer Email<br>
+            <input type="text" name="orgID" value="<%=email%>"><br>
         </form> 
+        
         <br>
         <h1>Attendees</h1>
         <c:import url="WEB-INF\Attendees.xml"
@@ -85,7 +105,7 @@
                 <label for="psw"><b>First Name</b></label>
                 <input type="text" placeholder="Enter First Name" name="attFirstName" required>
 
-                <input type="text" name="semName" value="<%=semName%>"/><br>
+                <input type="text" name="semName" value="<%=seminarName%>"/><br>
 
                 <label for="psw"><b>Last Name</b></label>
                 <input type="text" placeholder="Enter Last Name" name="attLastName" required>
