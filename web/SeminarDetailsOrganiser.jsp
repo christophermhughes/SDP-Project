@@ -49,9 +49,9 @@
             Seminar Name<br>
             <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
             Seminar Description<br>
-            <input type="text" name ="seminarName" value="<%=desc%>" ><br>
+            <input type="text" name ="description" value="<%=desc%>" ><br>
             Seminar Speakers<br>
-            <input type="text" name ="seminarName" value="<%=speakers%>" ><br>
+            <input type="text" name ="speakers" value="<%=speakers%>" ><br>
             Date<br>
             <input type="text" name="date" value="<%=date%>"><br>
             Time<br>

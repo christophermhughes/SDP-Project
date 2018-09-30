@@ -52,8 +52,6 @@
             String duration = seminar.getDuration();
             String venue = seminar.getVenue();
             String email = seminar.getOrganiserEmail();
-
-
         
             
             Attendees AttendingAttendees;
@@ -68,21 +66,21 @@
         
         <form class="form" method="post">
             Seminar Name<br>
-            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
+            <input type="text" name ="name" value="<%=seminarName%>" ><br>
             Seminar Description<br>
-            <input type="text" name ="seminarName" value="<%=desc%>" ><br>
+            <input type="text" name ="description" value="<%=desc%>" ><br>
             Seminar Speakers<br>
-            <input type="text" name ="seminarName" value="<%=speakers%>" ><br>
+            <input type="text" name ="speakers" value="<%=speakers%>" ><br>
             Date<br>
             <input type="text" name="date" value="<%=date%>"><br>
             Time<br>
             <input type="text" name="time" value="<%=time%>"><br>
             Duration<br>
-            <input type="text" name="desc" value="<%=duration%>"><br>
+            <input type="text" name="duration" value="<%=duration%>"><br>
             Venue<br>
-            <input type="text" name="loc" value="<%=venue%>"><br>
+            <input type="text" name="venue" value="<%=venue%>"><br>
             Staff Organizer Email<br>
-            <input type="text" name="orgID" value="<%=email%>"><br>
+            <input type="text" name="email" value="<%=email%>"><br>
         </form> 
         
         <br>
@@ -105,7 +103,7 @@
                 <label for="psw"><b>First Name</b></label>
                 <input type="text" placeholder="Enter First Name" name="attFirstName" required>
 
-                <input type="text" name="semName" value="<%=seminarName%>"/><br>
+                <input type="text" name="seminarName" value="<%=seminarName%>"/><br>
 
                 <label for="psw"><b>Last Name</b></label>
                 <input type="text" placeholder="Enter Last Name" name="attLastName" required>
