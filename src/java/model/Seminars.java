@@ -47,4 +47,15 @@ public class Seminars implements Serializable{
         }
         return null;
     }
+    
+    
+    public ArrayList<Seminar> getOrganiserSeminars(String email) {
+        ArrayList<Seminar> seminars = new ArrayList<Seminar>();
+        for (Seminar seminar : list) {
+            if (seminar.getOrganiserEmail().equals(email)) {
+                seminars.add(seminar);
+            }  
+        }
+        return seminars;
+    }
 }

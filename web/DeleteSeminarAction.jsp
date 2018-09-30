@@ -18,13 +18,18 @@
 <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
     <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
 </jsp:useBean>
+
 <%
     String name = request.getParameter("seminarName");
     Seminars seminars = seminarApp.getSeminars();
     seminars.removeExistingSeminar(name);
     seminarApp.updateXML(seminars, filePath);
+    session.setAttribute("deleteSeminar", "You have succesfully deleted the Seminar: " + name);
     response.sendRedirect("MainOrganiser.jsp");
 %>
+
+
 <body>
+
 </body>
 </html>

@@ -18,12 +18,16 @@
         <table class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
-                    <th>Time</th>
+                    <th>Description</th>
+                    <th>Speakers</th>
                     <th>Date</th>
-                    <th>Location</th>
-                    <th>Desc</th>
-                    <th>Speaker</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                    <th>Venue</th>
+                    
+                    
                 </tr>
             </thead>
             <tbody>
@@ -35,28 +39,36 @@
     <xsl:template match="Seminar">
         <tr>
             <td>
+                <xsl:value-of select="id" hidden = "true"/>
+            </td>
+            <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="text" name="semName" value="{Name}" hidden="true"/>           
-                    <input type="submit" value="{Name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
+                    <input type="text" name="name" value="{name}" hidden="true"/>           
+                    <input type="submit" value="{name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
                 </form>
             </td>
             <td>
-                <xsl:value-of select="Time" />
+                <xsl:value-of select="description" />
             </td>
             <td>
-                <xsl:value-of select="Date" />
+                <xsl:value-of select="speakers" />
             </td>
             <td>
-                <xsl:value-of select="Location" />
+                <xsl:value-of select="date" />
             </td>
             <td>
-                <xsl:value-of select="Desc"/>
+                <xsl:value-of select="time"/>
             </td>
             <td>
-                <xsl:template match="Speakers">
-                    <xsl:value-of select="Speaker"/>
-                </xsl:template>
+                <xsl:value-of select="duration"/>
             </td>
+            <td>
+                <xsl:value-of select="venue"/>
+            </td>
+            <td>
+                <xsl:value-of select="organiserEmail"/>
+            </td>
+            
         </tr>
     </xsl:template>
     

@@ -3,23 +3,25 @@
 
 <Seminars>
     <Seminar>
-        <ID>1</ID>
-        <Name>Robotics</Name>
-        <Time>2:10</Time>
-        <Date>12/12/12</Date>
-        <Location>CB11.00.401</Location>
-        <Desc>blah 77</Desc>
-        <OrgID>102</OrgID> 
-        <Speakers>Divraj - THE ONE AND ONLY GOD</Speakers>
+        <id>1</id>
+        <name>Robotics</name>
+        <description>blah 77</description>
+        <speakers>Divraj - THE ONE AND ONLY GOD</speakers>
+        <date>12/12/12</date>
+        <time>2:10</time>
+        <duration>1 Hour</duration>
+        <venue>CB11.00.401</venue>
+        <organiserEmail>102</organiserEmail> 
     </Seminar>
      <Seminar>
-        <ID>2</ID>
-        <Name>Sci</Name>
-        <Time>2:10</Time>
-        <Date>12/12/12</Date>
-        <Location>CB11.00.401</Location>
-        <Desc>blah blah</Desc>
-        <OrgID>102</OrgID> 
-        <Speakers>PATRICK - THE STAR!</Speakers>
+        <id>2</id>
+        <name>Sci</name>
+        <description>blah blah</description>
+        <speakers>PATRICK - THE STAR!</speakers>
+        <date>12/12/12</date>
+        <time>2:10</time>
+        <duration>1 Hour</duration>
+        <venue>CB11.00.401</venue>
+        <organiserEmail>102</organiserEmail> 
     </Seminar>
 </Seminars>

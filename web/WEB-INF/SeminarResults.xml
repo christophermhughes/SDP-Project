@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Seminars>
+    <Seminar>
+        <id>1</id>
+        <name>Robotics</name>
+        <description>blah 77</description>
+        <speakers>Divraj - THE ONE AND ONLY GOD</speakers>
+        <date>12/12/12</date>
+        <time>2:10</time>
+        <duration>1 Hour</duration>
+        <venue>CB11.00.401</venue>
+        <organiserEmail>102</organiserEmail> 
+    </Seminar>
+</Seminars>

@@ -19,55 +19,70 @@ import java.io.Serializable;
 @XmlRootElement(name="Seminar")
 public class Seminar implements java.io.Serializable {
     
-    @XmlElement(name = "ID")
-    private String SemID;
-    @XmlElement(name = "Name")
+    @XmlElement(name = "id")
+    private String id;
+    @XmlElement(name = "name")
     private String name;
-    @XmlElement(name = "Time")
-    private String time;
-    @XmlElement(name = "Date")
+    @XmlElement(name = "description")
+    private String description;
+    @XmlElement(name="speakers")
+    private String speakers;
+    @XmlElement(name = "date")
     private String date;
-    @XmlElement(name = "Desc")
-    private String Abstract;
-    @XmlElement(name = "Location")
-    private String room;
-    @XmlElement(name = "OrgID")
-    private int UserID;
-    
-    
-    public Seminar(String SemID, String name, String time, String date, String Abstract, String room, int UserID) {
-        this.SemID = SemID;
-        this.name = name;
-        this.time = time;
-        this.date = date;
-        this.Abstract = Abstract;
-        this.room = room;
-        this.UserID = UserID;
+    @XmlElement(name = "time")
+    private String time;
+    @XmlElement(name = "duration")
+    private String duration;
+    @XmlElement(name = "venue")
+    private String venue;
+    @XmlElement(name = "organiserEmail")
+    private String organiserEmail;
+
+    public Seminar() {
     }
-     public Seminar(){}
+
+    public Seminar(String id, String name, String description, String speakers, String date, String time, String duration, String venue, String organiserEmail) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.speakers = speakers;
+        this.date = date;
+        this.time = time;
+        this.duration = duration;
+        this.venue = venue;
+        this.organiserEmail = organiserEmail;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
-    }
-
-    public String getSemID() {
-        return SemID;
-    }
-
-    public int getUserID() {
-        return UserID;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getTime() {
-        return time;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getSpeakers() {
+        return speakers;
+    }
+
+    public void setSpeakers(String speakers) {
+        this.speakers = speakers;
     }
 
     public String getDate() {
@@ -78,22 +93,40 @@ public class Seminar implements java.io.Serializable {
         this.date = date;
     }
 
-    public String getAbstract() {
-        return Abstract;
+    public String getTime() {
+        return time;
     }
 
-    public void setAbstract(String Abstract) {
-        this.Abstract = Abstract;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public String getRoom() {
-        return room;
+    public String getDuration() {
+        return duration;
     }
 
-    public void setRoom(String room) {
-        this.room = room;
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getVenue() {
+        return venue;
+    }
+
+    public void setVenue(String venue) {
+        this.venue = venue;
+    }
+
+    public String getOrganiserEmail() {
+        return organiserEmail;
+    }
+
+    public void setOrganiserEmail(String organiserEmail) {
+        this.organiserEmail = organiserEmail;
     }
 
     
+    
+
 
 }

@@ -21,6 +21,7 @@
         </jsp:useBean>
         
         <% 
+     /*   
         String semName = request.getParameter("semName");
         Seminars seminars = seminarApp.getSeminars();
         Seminar seminar = seminars.getSeminar(semName);
@@ -29,25 +30,45 @@
         String loc = seminar.getRoom();
         String desc = seminar.getAbstract();
         int orgID = seminar.getUserID();
+*/
+            String seminarName = request.getParameter("name");
+            Seminars seminars = seminarApp.getSeminars();
+            Seminar seminar = seminars.getSeminar(seminarName);
+            String desc = seminar.getDescription();
+            String speakers = seminar.getSpeakers();
+            String date = seminar.getDate();
+            String time = seminar.getTime();
+            String duration = seminar.getDuration();
+            String venue = seminar.getVenue();
+            String email = seminar.getOrganiserEmail();
         %>
+        
+        
         
         <form class="form" action="CreateSeminarAction.jsp" method="post">
             Seminar Name<br>
-            <input type="text" name ="seminarName" value="<%=semName%>" ><br>
-            Time<br>
-            <input type="text" name="time" value="<%=time%>"><br>
+            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
+            Seminar Description<br>
+            <input type="text" name ="seminarName" value="<%=desc%>" ><br>
+            Seminar Speakers<br>
+            <input type="text" name ="seminarName" value="<%=speakers%>" ><br>
             Date<br>
             <input type="text" name="date" value="<%=date%>"><br>
-            Location<br>
-            <input type="text" name="loc" value="<%=loc%>"><br>
-            Description<br>
-            <input type="text" name="desc" value="<%=desc%>"><br>
-            Staff Organizer ID<br>
-            <input type="text" name="orgID" value="<%=orgID%>"><br>
+            Time<br>
+            <input type="text" name="time" value="<%=time%>"><br>
+            Duration<br>
+            <input type="text" name="desc" value="<%=duration%>"><br>
+            Venue<br>
+            <input type="text" name="loc" value="<%=venue%>"><br>
+            Staff Organizer Email<br>
+            <input type="text" name="orgID" value="<%=email%>"><br>
+            
             <input type="submit" value="Update Seminar">
-     <input type="submit" value="Delete Seminar" formaction="DeleteSeminarAction.jsp"/>
+     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
         </form> 
         <br>
+        
+        
         <h1>Attendees</h1>
         <c:import url="WEB-INF\Attendees.xml"
                   var="inputDoc" />
