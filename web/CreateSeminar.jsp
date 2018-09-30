@@ -10,10 +10,10 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 
@@ -70,17 +70,23 @@
                 <input type="submit" value="Add Seminar">
 
                 <br>
-                <c:if test="${existErr!=null}">
-                    <font color="red"><c:out value="${existErr}"/></c:if></font>
+                    <font color="red"><c:out value="${existErr}"/></font>
 
             </form> 
+        
+                <%
+        if(session.getAttribute("existErr") != null){
+            session.removeAttribute("existErr");
+        }
 
-            
-              <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+        %>
+
+
+            <script>
+                $(function () {
+                    $("#datepicker").datepicker();
+                });
+            </script>
 
 
 
