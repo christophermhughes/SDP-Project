@@ -22,22 +22,23 @@
     </head>
     <body>
         <%
+            // Checking to see if an organiser is logged in
             if (session.getAttribute("organiser") == null) {%>
         You do not have access to this page.
-
-
         <%} else {%>
 
+        <!-- Creating the bean to allow us to retrieve and update the information in XML -->
         <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-        
+
         <% String resultsPath = application.getRealPath("WEB-INF/SeminarResults.xml");%>
         <jsp:useBean id="seminarResultsApp" class="model.SeminarApplication" scope="application">
-            <jsp:setProperty name="seminarApp" property="filePath" value="<%=resultsPath%>"/>
+            <jsp:setProperty name="seminarResultsApp" property="filePath" value="<%=resultsPath%>"/>
         </jsp:useBean>
-        
+
+
         <div class="header">
 
             <div class="title">
@@ -45,7 +46,8 @@
             </div>
 
             <ul class="nav">
-                <li class= "nav"><a href="ViewSeminarsOrganiser.jsp"> View Seminars </a> </li>
+                <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
+                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
                 <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
@@ -53,32 +55,41 @@
 
         </div>
         <%
+            // Get the logged in organisers in information
             Organiser organiser = (Organiser) session.getAttribute("organiser");
             String email = organiser.getEmail();
+
+            // Retrieve all the seminars in the XML
             Seminars seminars = seminarApp.getSeminars();
+
+            // Create a variable to store the results
             Seminars results = new Seminars();
-            ArrayList<Seminar> organiserSeminars;
-            organiserSeminars = seminars.getOrganiserSeminars(email);
-            for(Seminar s : organiserSeminars){
+
+            // Create an array list to store the seminars of the organiser
+            ArrayList<Seminar> organiserSeminars = seminars.getOrganiserSeminars(email);
+
+            // Go through the list and add it to the results
+            for (Seminar s : organiserSeminars) {
                 results.addSeminar(s);
             }
+
+            // Update the XML
             seminarResultsApp.updateXML(results, resultsPath);
         %>
 
-        <div class="content">
+        <!-- XSLT transformation-->
+        <c:import url="WEB-INF\SeminarResults.xml"
+                  var="inputDoc" />
 
-            <c:import url="WEB-INF\SeminarResults.xml"
-                      var="inputDoc" />
+        <c:import url="WEB-INF\SeminarsOrganiser.xsl"
+                  var="stylesheet" />
 
-            <c:import url="WEB-INF\SeminarsOrganiser.xsl"
-                      var="stylesheet" />
-
-            <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-                <x:param name="bgColor"  value="lightgreen" />
-            </x:transform>
+        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+            <x:param name="bgColor"  value="lightgreen" />
+        </x:transform>
 
 
-            <%}%>
-        </div>
+
+        <%}%>
     </body>
 </html>

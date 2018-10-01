@@ -21,10 +21,6 @@
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
 
-        <% String resultPath = application.getRealPath("WEB-INF/SeminarResults.xml");%>
-        <jsp:useBean id="seminarResultApp" class="model.SeminarApplication" scope="application">
-            <jsp:setProperty name="seminarResultApp" property="filePath" value="<%=resultPath%>"/>
-        </jsp:useBean>
 
         <% Seminars seminars = seminarApp.getSeminars();%>
 
@@ -40,7 +36,6 @@
             String duration = request.getParameter("duration");
             String venue = request.getParameter("venue");
             String email = organiser.getEmail();
-            Seminar tempSeminar = new Seminar();
 
             if (seminars.getSeminar(seminarName) != null) {
                 session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
@@ -56,7 +51,6 @@
                 //session.setAttribute("seminar", seminar);
                 seminars.addSeminar(seminar);
                 seminarApp.updateXML(seminars, filePath);
-                seminarResultApp.updateXML(seminars, resultPath);
                 session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
                 response.sendRedirect("SeminarAction.jsp");
             }

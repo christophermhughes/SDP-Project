@@ -18,7 +18,6 @@
         <table class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Speakers</th>
@@ -38,9 +37,6 @@
     
     <xsl:template match="Seminar">
         <tr>
-            <td>
-                <xsl:value-of select="id" hidden = "true"/>
-            </td>
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="text" name="name" value="{name}" hidden="true"/>           

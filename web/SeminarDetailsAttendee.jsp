@@ -24,11 +24,23 @@
         <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
             <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
         </jsp:useBean>
+        
+        <div class="header">
+
+            <div class="title">
+                <h1>Seminar Details</h1>
+            </div>
+
+            <ul class="nav">
+                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
+            </ul>
+
+
+        </div>
 
         <%
           
-            Attendees attendees = attendeeApp.getAttendees();
-           
+            //Attendees attendees = attendeeApp.getAttendees();         
 /*
             String semName = request.getParameter("semName");
             Seminars seminars = seminarApp.getSeminars();
@@ -42,6 +54,7 @@
 
 */
 
+
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminar(seminarName);
@@ -52,39 +65,58 @@
             String duration = seminar.getDuration();
             String venue = seminar.getVenue();
             String email = seminar.getOrganiserEmail();
-
-
         
             
-            Attendees AttendingAttendees;
+            //Attendees AttendingAttendees;
            
          //Try to get the list of attendees, put all the ones with the right seminarID in another list
          //and update the xml with it.
            
-           attendeeApp.updateXML(attendees, filePathTwo);
+           //attendeeApp.updateXML(attendees, filePathTwo);
              
         %>
 
         
-        <form class="form" method="post">
-            Seminar Name<br>
-            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
-            Seminar Description<br>
-            <input type="text" name ="seminarName" value="<%=desc%>" ><br>
-            Seminar Speakers<br>
-            <input type="text" name ="seminarName" value="<%=speakers%>" ><br>
-            Date<br>
-            <input type="text" name="date" value="<%=date%>"><br>
-            Time<br>
-            <input type="text" name="time" value="<%=time%>"><br>
-            Duration<br>
-            <input type="text" name="desc" value="<%=duration%>"><br>
-            Venue<br>
-            <input type="text" name="loc" value="<%=venue%>"><br>
-            Staff Organizer Email<br>
-            <input type="text" name="orgID" value="<%=email%>"><br>
-        </form> 
         
+                <table>
+            <tr>
+                <th>Seminar Name: </th>
+                <th><%=seminarName%></th>
+            </tr>
+            <tr>
+                <th>Seminar Description: </th>
+                <th><%=desc%></th>
+            </tr>
+            <tr>
+                <th>Seminar Speakers: </th>
+                <th><%=speakers%></th>
+            </tr>
+            <tr>
+                <th>Date: </th>
+                <th><%=date%></th>
+            </tr>
+            <tr>
+                <th>Time: </th>
+                <th><%=time%></th>
+            </tr>
+            <tr>
+                <th>Duration: </th>
+                <th><%=duration%></th>
+            </tr>
+            <tr>
+                <th>Venue: </th>
+                <th><%=venue%></th>
+            </tr>
+            <tr>
+                <th>Email: </th>
+                <th><%=email%></th>
+            </tr>
+            
+        </table>
+        
+
+                
+
         <br>
         <h1>Attendees</h1>
         <c:import url="WEB-INF\Attendees.xml"
@@ -105,7 +137,7 @@
                 <label for="psw"><b>First Name</b></label>
                 <input type="text" placeholder="Enter First Name" name="attFirstName" required>
 
-                <input type="text" name="semName" value="<%=seminarName%>"/><br>
+                <input type="text" name="seminarName" value="<%=seminarName%>"/><br>
 
                 <label for="psw"><b>Last Name</b></label>
                 <input type="text" placeholder="Enter Last Name" name="attLastName" required>

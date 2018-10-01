@@ -12,12 +12,13 @@
     <link rel="stylesheet" type="text/css" href="style.css">
    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Organiser Details</title>
     </head>
       <% String filePath = application.getRealPath("WEB-INF/Organisers.xml");%>
         <jsp:useBean id="organiserApp" class="model.OrganiserApplication" scope="application">
             <jsp:setProperty name="organiserApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
+        
     <% 
         String orgEmail = request.getParameter("orgEmail");
         Organisers organisers = organiserApp.getOrganisers();

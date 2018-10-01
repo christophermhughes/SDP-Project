@@ -16,8 +16,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Seminar Page</title>
@@ -31,7 +29,9 @@
             </div>
 
             <ul class="nav">
-                <li class= "nav"><a href="MainOrganiser.jsp"> Seminars </a> </li>
+                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
+                <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
+                <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
 
@@ -79,7 +79,10 @@
                 if (session.getAttribute("existErr") != null) {
                     session.removeAttribute("existErr");
                 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
             %>
 
 
