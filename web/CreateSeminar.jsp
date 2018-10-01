@@ -79,10 +79,7 @@
                 if (session.getAttribute("existErr") != null) {
                     session.removeAttribute("existErr");
                 }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
             %>
 
 
