@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css?v=1">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -41,45 +41,46 @@
 
         <div class ="content" >
             <form class="form" action="CreateSeminarAction.jsp" method="post">
-                Seminar Name<br>
-                <input type="text" name="name"/><br>
-                Description<br>
-                <input type="text" name="description"><br>
-                Speakers<br>
-                <input type="text" name="speakers"><br>
-                Date<br>
-                <input type="date" name="date" id="datepicker"/><br>
-                Time<br>
-                <input type="time" name="time"><br>
-                Duration<br>
+                <label> Seminar Name </label>
+                <input type="text" name="name"/><br><br>
+                <label> Description </label>
+                <input type="text" name="description"><br><br>
+                <label> Speakers </label>
+                <input type="text" name="speakers"><br><br>
+                <label> Date </label>
+                <input type="date" name="date" id="datepicker"/><br><br>
+                <label> Time </label>
+                <input type="time" name="time"><br><br>
+                <label> Duration </label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour">1 Hour</option>
                     <option value="2 Hours">2 Hours</option>
-                </select><br>
-                Venue<br>
+                </select><br><br>
+                <label> Venue </label>
                 <select id ="venue" name="venue">
                     <option value="CB01.04.006">CB01.04.006</option>
                     <option value="CB01.04.09">CB01.04.09</option>
                 </select>
                 <br>
+                <br>
 
 
                 <!--                Organiser ID<br>
                                 <input type="text" name="orgID"><br>-->
-
+                <div class="buttonHolder">
                 <input type="submit" value="Add Seminar">
-
+                </div>
                 <br>
-                    <font color="red"><c:out value="${existErr}"/></font>
+                <font color="red"><c:out value="${existErr}"/></font>
 
             </form> 
-        
-                <%
-        if(session.getAttribute("existErr") != null){
-            session.removeAttribute("existErr");
-        }
 
-        %>
+            <%
+                if (session.getAttribute("existErr") != null) {
+                    session.removeAttribute("existErr");
+                }
+
+            %>
 
 
             <script>
@@ -89,7 +90,7 @@
             </script>
 
 
-
+       
             <!--   <form class="form" action="MainOrganiser.jsp" method="post">
    
                    <label for="semName">Seminar Name: </label>

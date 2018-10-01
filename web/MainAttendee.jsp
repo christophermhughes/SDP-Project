@@ -23,9 +23,6 @@
             </ul>
 
         </div>
-        <table width="100%" >
-            <tr><td align="right"><u><a href="login.jsp">Login</a></u></td></tr>
-        </table>
 
         <c:import url="WEB-INF\Seminars.xml"
                   var="inputDoc" />

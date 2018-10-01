@@ -109,6 +109,10 @@ li.nav a {
 	background-color: #d4d4d4;
 }
 
+.active {
+	background-color: white;
+}
+
 
 /*Trying something with a pop up sign up thing, ignore it*/
 /* Button used to open the contact form - fixed at the bottom of the page */
