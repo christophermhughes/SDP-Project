@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,36 +34,32 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div>
-
-        <table id="t01">
-
+      
+        <input type="text" id="search" placeholder="Type to search">
+        <table id="table">
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th> 
-                <th>Age</th>
+                <td>Apple</td>
+                <td>Green</td>
             </tr>
             <tr>
-                <td>
-                    <form action="SeminarDetailsAttendee.jsp" method="post">   
-                        <input type="text" name="name" value="{name}" hidden="true"/>           
-                        <button onclick="form.submit()" value="{name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
-                    </form>
-                </td>
-                        
-                <td><a href="https://www.w3schools.com"> Smith</a></td>
-                <td><a href="https://www.w3schools.com"> 50</a></td>
+                <td>Grapes</td>
+                <td>Green</td>
             </tr>
             <tr>
-                <td>Eve</td>
-                <td>Jackson</td>
-                <td>94</td>
+                <td>Orange</td>
+                <td>Orange</td>
             </tr>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>80</td>
-            </tr>
-
         </table>
     </body>
+      <script>
+            var $rows = $('#table tr');
+            $('#search').keyup(function () {
+                var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+                $rows.show().filter(function () {
+                    var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                    return !~text.indexOf(val);
+                }).hide();
+            });
+        </script>
 </html>
