@@ -5,6 +5,7 @@
     <xsl:template match="/">
         <html>
             <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <link rel="stylesheet" type="text/css" href="..\style.css"/>
             </head>
             <body>
@@ -15,6 +16,9 @@
     </xsl:template>
     
     <xsl:template match="Seminars">
+        <div class="filters">
+            <input type="text" id="search" placeholder="Refine by location"/>
+        </div>
         <table class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
                 <tr>
@@ -33,6 +37,19 @@
                 <xsl:apply-templates />
             </tbody>
         </table>
+        <script>
+            <![CDATA[
+            var $rows = $('#table tbody tr');
+            $('#search').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+            $rows.show().filter(function() {
+            var text = $(this.cells[6]).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+            }).hide();
+            });
+            ]]>
+        </script>
     </xsl:template>
     
     <xsl:template match="Seminar">
