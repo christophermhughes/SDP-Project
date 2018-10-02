@@ -17,7 +17,8 @@
     
     <xsl:template match="Seminars">
         <div class="filters">
-            <input type="text" id="search" placeholder="Refine by location"/>
+            <input type="text" id="searchLoc" placeholder="Refine location"/>
+            <input type="text" id="searchDat" placeholder="Refine date"/> 
         </div>
         <table class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
@@ -45,6 +46,18 @@
     
             $rows.show().filter(function() {
             var text = $(this.cells[6]).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+            }).hide();
+            });
+            ]]>
+            
+             <![CDATA[
+            var $rows = $('#table tbody tr');
+            $('#searchDat').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+            $rows.show().filter(function() {
+            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
             }).hide();
             });

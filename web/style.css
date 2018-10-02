@@ -122,10 +122,12 @@ button {
      text-align: left;
 }
 
+
 .filters {
-    text-align: center;
-    padding-bottom: 10px; 
+    padding: 20px 15px;
+    text-align: center; 
 }
+
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;
