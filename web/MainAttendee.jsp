@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css?v=1">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Main Page</title>

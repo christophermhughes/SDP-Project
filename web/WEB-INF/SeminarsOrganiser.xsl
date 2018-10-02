@@ -25,8 +25,8 @@
                     <th>Time</th>
                     <th>Duration</th>
                     <th>Venue</th>
-                    
-                    
+                    <th>Contact</th>
+                  
                 </tr>
             </thead>
             <tbody>
@@ -39,30 +39,67 @@
         <tr>
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="text" name="name" value="{name}" hidden="true"/>           
-                    <input type="submit" value="{name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="name" /> 
+                    </button>                           
                 </form>
             </td>
             <td>
-                <xsl:value-of select="description" />
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="description" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="speakers" />
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="speakers" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="date" />
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="date" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="time"/>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="time" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="duration"/>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="duration" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="venue"/>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="venue" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="organiserEmail"/>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="organiserEmail" /> 
+                    </button>                           
+                </form>
             </td>
             
         </tr>

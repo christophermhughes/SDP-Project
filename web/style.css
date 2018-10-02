@@ -109,12 +109,17 @@ li.nav a {
 	background-color: #d4d4d4;
 }
 
-.active {
-	background-color: white;
+.semTable tr:hover { background: #00b5b5; }
+
+button {
+     background:none!important;
+     color:inherit;
+     border:none; 
+     padding:0!important;
+     font: inherit; 
+     cursor: pointer;
 }
 
-
-/*Trying something with a pop up sign up thing, ignore it*/
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
   background-color: #555;

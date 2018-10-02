@@ -5,7 +5,7 @@
     <xsl:template match="/">
         <html>
             <head>
-                <link rel="stylesheet" type="text/css" href="..\style.css"/>
+                <link rel="stylesheet" type="text/css" href="..\style.css?v=1"/>
             </head>
             <body>
                 <h2>Seminars </h2>
@@ -26,7 +26,7 @@
                     <th>Time</th>
                     <th>Duration</th>
                     <th>Venue</th>
-                    
+                    <th>Contact</th>
                     
                 </tr>
             </thead>
@@ -37,36 +37,79 @@
     </xsl:template>
     
     <xsl:template match="Seminar">
+        
         <tr>
             <td>
+                
                 <form action="SeminarDetailsAttendee.jsp" method="post">   
-                    <input type="text" name="name" value="{name}" hidden="true"/>           
-                    <input type="submit" value="{name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="name" /> 
+                    </button>  <!--  <xsl:value-of select="Name" /> -->                          
                 </form>
             </td>
             <td>
-                <xsl:value-of select="description" />
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="description" /> 
+                    </button>  <!--  <xsl:value-of select="Name" /> -->                          
+                </form>
+                    
             </td>
             <td>
-                <xsl:value-of select="speakers" />
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="speakers" /> 
+                    </button>  <!--  <xsl:value-of select="Name" /> -->                          
+                </form>
+                    
             </td>
             <td>
-                <xsl:value-of select="date" />
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="date" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="time"/>
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="time" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
-                <xsl:value-of select="duration"/>
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="duration" /> 
+                    </button>                            
+                </form>
             </td>
             <td>
-                <xsl:value-of select="venue"/>
+                <form class="semForm" action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="venue" /> 
+                    </button>                          
+                </form>
             </td>
             <td>
-                <xsl:value-of select="organiserEmail"/>
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="organiserEmail" /> 
+                    </button>                          
+                </form>
+                    
             </td>
             
         </tr>
+        
     </xsl:template>
     
 </xsl:stylesheet>

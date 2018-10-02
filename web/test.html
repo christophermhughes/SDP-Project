@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 15px;
+                text-align: left;
+            }
+            table#t01 {
+                width: 100%;    
+                background-color: #f1f1c1;
+            }
+
+            tr:hover { 
+                background: yellow; 
+            }
+            td a { 
+                display: block; 
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <table id="t01">
+
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th> 
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>
+                    <form action="SeminarDetailsAttendee.jsp" method="post">   
+                        <input type="text" name="name" value="{name}" hidden="true"/>           
+                        <button onclick="form.submit()" value="{name}"/>   <!--  <xsl:value-of select="Name" /> -->                          
+                    </form>
+                </td>
+                        
+                <td><a href="https://www.w3schools.com"> Smith</a></td>
+                <td><a href="https://www.w3schools.com"> 50</a></td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+
+        </table>
+    </body>
+</html>
