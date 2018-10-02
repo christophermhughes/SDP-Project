@@ -17,10 +17,6 @@ and open the template in the editor.
     padding-top: 20px;
 }
 
-h2 {
-    text-align: center; 
-}
-
 body {
     background-color: #E4D9FF; 
     margin: 0; /*ensures there is no gap between body and the whole page*/
@@ -107,6 +103,10 @@ li.nav a {
  
 .header li a:hover:not(.active) {
 	background-color: #d4d4d4;
+}
+
+.active {
+	background-color: #4a4c4c;
 }
 
 .semTable tr:hover { background: #00b5b5; }

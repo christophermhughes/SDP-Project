@@ -9,7 +9,6 @@
                 <link rel="stylesheet" type="text/css" href="..\style.css"/>
             </head>
             <body>
-                <h2>Seminars </h2>
                 <xsl:apply-templates select="Seminars"/>
             </body>
         </html>

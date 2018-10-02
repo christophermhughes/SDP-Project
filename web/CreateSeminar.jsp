@@ -29,9 +29,9 @@
             </div>
 
             <ul class="nav">
-                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
-                <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
+                <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
+                <li class= "nav"><a href="CreateSeminar.jsp" class="active"> Create Seminar </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
 
@@ -48,7 +48,7 @@
                 <label> Speakers </label>
                 <input type="text" name="speakers"><br><br>
                 <label> Date </label>
-                <input type="date" name="date" id="datepicker"/><br><br>
+                <input type="date" name="date"/><br><br>
                 <label> Time </label>
                 <input type="time" name="time"><br><br>
                 <label> Duration </label>
