@@ -16,7 +16,7 @@
     </head>
     <body>
         <%
-           if (session.getAttribute("organiser") == null) {%>
+            if (session.getAttribute("organiser") == null) {%>
         You do not have access to this page.
         <%} else {%>
 
@@ -64,25 +64,26 @@
 
 
         <form class="form" action="CreateSeminarAction.jsp" method="post">
-            Seminar Name<br>
-            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br>
-            Seminar Description<br>
-            <input type="text" name ="description" value="<%=desc%>" ><br>
-            Seminar Speakers<br>
-            <input type="text" name ="speakers" value="<%=speakers%>" ><br>
-            Date<br>
-            <input type="text" name="date" value="<%=date%>"><br>
-            Time<br>
-            <input type="text" name="time" value="<%=time%>"><br>
-            Duration<br>
-            <input type="text" name="desc" value="<%=duration%>"><br>
-            Venue<br>
-            <input type="text" name="loc" value="<%=venue%>"><br>
-            Staff Organizer Email<br>
-            <input type="text" name="orgID" value="<%=email%>"><br>
-
-            <input type="submit" value="Update Seminar">
-            <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
+            <label>Seminar Name</label>
+            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
+            <label>Seminar Description</label>
+            <input type="text" name ="description" value="<%=desc%>" ><br><br>
+            <label>Seminar Speakers</label>
+            <input type="text" name ="speakers" value="<%=speakers%>" ><br><br>
+            <label>Date</label>
+            <input type="text" name="date" value="<%=date%>"><br><br>
+            <label>Time</label>
+            <input type="text" name="time" value="<%=time%>"><br><br>
+            <label>Duration</label>
+            <input type="text" name="desc" value="<%=duration%>"><br><br>
+            <label>Venue</label>
+            <input type="text" name="loc" value="<%=venue%>"><br><br>
+            <label>Staff Organizer Email</label>
+            <input type="text" name="orgID" value="<%=email%>"><br><br>
+            <div class="buttonHolder">
+                <input type="submit" value="Update Seminar">
+                <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
+            </div>
         </form> 
         <br>
 
