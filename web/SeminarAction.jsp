@@ -26,6 +26,6 @@
 
         %>
         
-        <p>Redirecting you to the main page...</p>
+        <p>Click <a href="MainOrganiser.jsp">here</a> if you are not automatically redirected in 3 seconds </p>
     </body>
 </html>
