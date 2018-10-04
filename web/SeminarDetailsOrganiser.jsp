@@ -89,9 +89,9 @@
                 <select id ="venue" name="venue">
                     <option value="CB01.04.006" <%if(venue.equals("CB01.04.006")){%> selected <%}%> >CB01.04.006</option>
                     <option value="CB01.04.09" <%if(venue.equals("CB01.04.09")){%> selected <%}%>>CB01.04.09</option>
-                </select>
+                </select><br><br>
             
-
+                
 
 
 
@@ -104,6 +104,7 @@
 
 
         <h1>Attendees</h1>
+        <a href="printTags.html"> Print Tags </a>
         <c:import url="WEB-INF\Attendees.xml"
                   var="inputDoc" />
 
@@ -114,7 +115,7 @@
             <x:param name="bgColor"  value="lightgreen" />
         </x:transform>
 
-
+        
         <script>
             $(function () {
                 $("#datepicker").datepicker({
