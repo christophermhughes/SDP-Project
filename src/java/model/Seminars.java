@@ -67,4 +67,6 @@ public class Seminars implements Serializable{
         }
         return seminars;
     }
+    
+   
 }

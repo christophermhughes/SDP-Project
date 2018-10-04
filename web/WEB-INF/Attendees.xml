@@ -7,4 +7,40 @@
         <SemID>1</SemID>
         <Status>Going</Status>
     </Attendee>
+    <Attendee>
+        <Firstname>Patrick</Firstname>
+        <Lastname>Daher</Lastname>
+        <Phone>9000122112</Phone>  
+        <SemID>1</SemID>
+        <Status>Going</Status>
+    </Attendee>
+    <Attendee>
+        <Firstname>Christopher</Firstname>
+        <Lastname>Hughes</Lastname>
+        <Phone>9000122112</Phone>  
+        <SemID>1</SemID>
+        <Status>Going</Status>
+    </Attendee>
+        <Attendee>
+        <Firstname>Brandi</Firstname>
+        <Lastname>Nguyen</Lastname>
+        <Phone>9000122112</Phone>  
+        <SemID>2</SemID>
+        <Status>Going</Status>
+    </Attendee>
+    <Attendee>
+        <Firstname>Divraj</Firstname>
+        <Lastname>Singh</Lastname>
+        <Phone>9000122112</Phone>  
+        <SemID>2</SemID>
+        <Status>Going</Status>
+    </Attendee>
+    <Attendee>
+        <Firstname>Ankush</Firstname>
+        <Lastname>Yamarti</Lastname>
+        <Phone>9000122112</Phone>  
+        <SemID>2</SemID>
+        <Status>Going</Status>
+    </Attendee>
 </Attendees>
+
