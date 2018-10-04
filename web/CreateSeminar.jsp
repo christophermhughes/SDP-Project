@@ -48,7 +48,7 @@
                 <label> Speakers </label>
                 <input type="text" name="speakers"><br><br>
                 <label> Date </label>
-                <input type="date" name="date" id="datepicker"/><br><br>
+                <input type="text" name="date" id="datepicker"><br><br>
                 <label> Time </label>
                 <input type="time" name="time"><br><br>
                 <label> Duration </label>
