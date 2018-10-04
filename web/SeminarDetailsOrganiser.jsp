@@ -9,7 +9,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css?v=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Seminar Details</title>
@@ -51,7 +55,8 @@
              */
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
-            Seminar seminar = seminars.getSeminar(seminarName);
+            Seminar seminar = seminars.getSeminarName(seminarName);
+            String id = seminar.getId();
             String desc = seminar.getDescription();
             String speakers = seminar.getSpeakers();
             String date = seminar.getDate();
@@ -64,6 +69,7 @@
 
 
         <form class="form" action="CreateSeminarAction.jsp" method="post">
+            <input type="hidden" name="id" value="<%=id%>">
             <label>Seminar Name</label>
             <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
             <label>Seminar Description</label>
@@ -71,17 +77,26 @@
             <label>Seminar Speakers</label>
             <input type="text" name ="speakers" value="<%=speakers%>" ><br><br>
             <label>Date</label>
-            <input type="text" name="date" value="<%=date%>"><br><br>
+            <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
             <label>Time</label>
             <input type="text" name="time" value="<%=time%>"><br><br>
             <label>Duration</label>
-            <input type="text" name="desc" value="<%=duration%>"><br><br>
+            <select id ="duration" name="duration">
+                <option value="1 Hour" <%if(duration.equals("1 Hour")){%> selected <%}%> >1 Hour</option>
+                <option value="2 Hours" <%if(duration.equals("2 Hours")){%> selected <%}%> >2 Hours</option>
+            </select><br><br>
             <label>Venue</label>
-            <input type="text" name="loc" value="<%=venue%>"><br><br>
-            <label>Staff Organizer Email</label>
-            <input type="text" name="orgID" value="<%=email%>"><br><br>
+                <select id ="venue" name="venue">
+                    <option value="CB01.04.006" <%if(venue.equals("CB01.04.006")){%> selected <%}%> >CB01.04.006</option>
+                    <option value="CB01.04.09" <%if(venue.equals("CB01.04.09")){%> selected <%}%>>CB01.04.09</option>
+                </select>
+            
+
+
+
+
             <div class="buttonHolder">
-                <input type="submit" value="Update Seminar">
+                <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
                 <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
             </div>
         </form> 
@@ -98,6 +113,15 @@
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
         </x:transform>
+
+
+        <script>
+            $(function () {
+                $("#datepicker").datepicker({
+                    dateFormat: "yy-mm-dd"
+                });
+            });
+        </script>
 
         <%}%>
     </body>

@@ -16,16 +16,20 @@
     <body>
         <c:out value ="${createSeminar}"/>
         <c:out value ="${deleteSeminar}"/>
+        <c:out value ="${updateSeminar}"/>
         <%
-        if(session.getAttribute("createSeminar") != null){
-            session.removeAttribute("createSeminar");
-        }
-        if(session.getAttribute("deleteSeminar") != null){
-            session.removeAttribute("deleteSeminar");
-        }
+            if (session.getAttribute("createSeminar") != null) {
+                session.removeAttribute("createSeminar");
+            }
+            if (session.getAttribute("deleteSeminar") != null) {
+                session.removeAttribute("deleteSeminar");
+            }
+            if (session.getAttribute("updateSeminar") != null) {
+                session.removeAttribute("updateSeminar");
+            }
 
         %>
-        
+
         <p>Click <a href="MainOrganiser.jsp">here</a> if you are not automatically redirected in 3 seconds </p>
     </body>
 </html>

@@ -37,7 +37,7 @@
             String venue = request.getParameter("venue");
             String email = organiser.getEmail();
 
-            if (seminars.getSeminar(seminarName) != null) {
+            if (seminars.getSeminarName(seminarName) != null) {
                 session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
                 response.sendRedirect("CreateSeminar.jsp");
 
@@ -53,6 +53,7 @@
                 seminarApp.updateXML(seminars, filePath);
                 session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
                 response.sendRedirect("SeminarAction.jsp");
+                
             }
 
         %>

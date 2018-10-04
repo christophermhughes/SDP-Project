@@ -39,9 +39,18 @@ public class Seminars implements Serializable{
         }
     }
 
-    public Seminar getSeminar(String name) {
+    public Seminar getSeminarName(String name) {
         for (Seminar seminar : list) {
             if (seminar.getName().equals(name)) {
+                return seminar;
+            }
+        }
+        return null;
+    }
+    
+    public Seminar getSeminar(String id) {
+        for (Seminar seminar : list) {
+            if (seminar.getId().equals(id)) {
                 return seminar;
             }
         }
