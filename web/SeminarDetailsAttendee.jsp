@@ -57,7 +57,7 @@
 
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
-            Seminar seminar = seminars.getSeminar(seminarName);
+            Seminar seminar = seminars.getSeminarName(seminarName);
             String desc = seminar.getDescription();
             String speakers = seminar.getSpeakers();
             String date = seminar.getDate();
