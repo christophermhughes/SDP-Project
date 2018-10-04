@@ -26,12 +26,15 @@ public class Attendee implements java.io.Serializable {
     private String phoneNumber;
     @XmlElement(name = "SemID")
     private String seminarID;
+    @XmlElement(name = "Status")
+    private String status;
 
-    public Attendee(String firstName, String lastName, String phoneNumber, String seminarID) {
+    public Attendee(String firstName, String lastName, String phoneNumber, String seminarID, String status) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.seminarID = seminarID;
+        this.status = status;
     }
 
     public Attendee() {
@@ -67,6 +70,14 @@ public class Attendee implements java.io.Serializable {
 
     public void setSeminarID(String seminarID) {
         this.seminarID = seminarID;
+    }
+    
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String seminarID) {
+        this.status = status;
     }
 
 }

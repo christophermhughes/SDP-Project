@@ -5,5 +5,6 @@
         <Lastname>Heise</Lastname>
         <Phone>9000122112</Phone>  
         <SemID>1</SemID>
+        <Status>Going</Status>
     </Attendee>
 </Attendees>
