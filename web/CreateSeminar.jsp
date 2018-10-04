@@ -48,7 +48,7 @@
                 <label> Speakers </label>
                 <input type="text" name="speakers"><br><br>
                 <label> Date </label>
-                <input type="date" name="date"/><br><br>
+                <input type="date" name="date" id="datepicker"/><br><br>
                 <label> Time </label>
                 <input type="time" name="time"><br><br>
                 <label> Duration </label>
@@ -85,7 +85,9 @@
 
             <script>
                 $(function () {
-                    $("#datepicker").datepicker();
+                    $("#datepicker").datepicker({
+                    dateFormat: "yy-mm-dd"
+                    });
                 });
             </script>
 
