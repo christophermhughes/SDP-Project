@@ -19,42 +19,42 @@
             <div class="title">
                 <h1>Login</h1>
             </div>
-            
+
             <ul class="nav">
                 <li class= "nav"><a href="MainAttendee.jsp"> Seminars </a> </li>
             </ul>
 
-            
+
         </div>
         <div class="content">
             <form class="loginForm" action="loginAction.jsp" >
-                <div class=buttonHolder>
-                    <input type="text" name="email" placeholder="Username"><br>
-                    <br>   
-                    <input type="password" name="password" placeholder="Password"><br>
-                    <br>
-                    
-                    <c:if test="${emailErr!=null}">
+
+                <input type="text" name="email" placeholder="Username"><br>
+                <br>   
+                <input type="password" name="password" placeholder="Password"><br>
+                <br>
+
+                <c:if test="${emailErr!=null}">
                     <font color="red"><c:out value ="${emailErr}"/></c:if></font>
-                    <c:if test="${passwordErr!=null}"> 
+                <c:if test="${passwordErr!=null}"> 
                     <font color="red"><c:out value ="${passwordErr}"/></c:if></font>
-                    <c:if test="${emptyErr!=null}">
+                <c:if test="${emptyErr!=null}">
                     <font color="red"><c:out value="${emptyErr}"/></c:if></font>
-                    <c:if test="${existErr!=null}">
+                <c:if test="${existErr!=null}">
                     <font color="red"><c:out value="${existErr}"/></c:if></font>
-                    <c:if test="${wrongPassword!=null}">
+                <c:if test="${wrongPassword!=null}">
                     <font color="red"><c:out value="${wrongPassword}"/></c:if></font>
-                    
-                    
-                    <br>
-                    <input type="submit" value="Login">
-                </div>
-            </form>
-        </div>
-        
+
+                    <div class=buttonHolder>
+                        <br>
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+
         <%
             session.invalidate();
         %>
-        
+
     </body>
 </html>

@@ -66,64 +66,73 @@
             String email = seminar.getOrganiserEmail();
         %>
 
+        <div class="content">
 
-
-        <form class="form" action="CreateSeminarAction.jsp" method="post">
-            <input type="hidden" name="id" value="<%=id%>">
-            <label>Seminar Name</label>
-            <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
-            <label>Seminar Description</label>
-            <input type="text" name ="description" value="<%=desc%>" ><br><br>
-            <label>Seminar Speakers</label>
-            <input type="text" name ="speakers" value="<%=speakers%>" ><br><br>
-            <label>Date</label>
-            <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
-            <label>Time</label>
-            <input type="text" name="time" value="<%=time%>"><br><br>
-            <label>Duration</label>
-            <select id ="duration" name="duration">
-                <option value="1 Hour" <%if(duration.equals("1 Hour")){%> selected <%}%> >1 Hour</option>
-                <option value="2 Hours" <%if(duration.equals("2 Hours")){%> selected <%}%> >2 Hours</option>
-            </select><br><br>
-            <label>Venue</label>
-                <select id ="venue" name="venue">
-                    <option value="CB01.04.006" <%if(venue.equals("CB01.04.006")){%> selected <%}%> >CB01.04.006</option>
-                    <option value="CB01.04.09" <%if(venue.equals("CB01.04.09")){%> selected <%}%>>CB01.04.09</option>
+            <form class="form" action="CreateSeminarAction.jsp" method="post">
+                <input type="hidden" name="id" value="<%=id%>">
+                <label>Seminar Name</label>
+                <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
+                <label>Seminar Description</label>
+                <input type="text" name ="description" value="<%=desc%>" ><br><br>
+                <label>Seminar Speakers</label>
+                <input type="text" name ="speakers" value="<%=speakers%>" ><br><br>
+                <label>Date</label>
+                <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
+                <label>Time</label>
+                <input type="text" name="time" value="<%=time%>"><br><br>
+                <label>Duration</label>
+                <select id ="duration" name="duration">
+                    <option value="1 Hour" <%if (duration.equals("1 Hour")) {%> selected <%}%> >1 Hour</option>
+                    <option value="2 Hours" <%if (duration.equals("2 Hours")) {%> selected <%}%> >2 Hours</option>
                 </select><br><br>
+                <label>Venue</label>
+                <select id ="venue" name="venue">
+                    <option value="CB01.04.006" <%if (venue.equals("CB01.04.006")) {%> selected <%}%> >CB01.04.006</option>
+                    <option value="CB01.04.09" <%if (venue.equals("CB01.04.09")) {%> selected <%}%>>CB01.04.09</option>
+                </select><br><br>
+                <div class="buttonHolder">
+                    <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
+                    <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
+                </div>
+               
+            </form><br>
             
-                
+             <div class="buttonHolder">
+                    <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
+                    <form id="printForm" action="printTags.html"><input type="submit" value="Print Tags"/></form>
+             </div>
+            
+            <div id="AttendeesBlock">
+                <h1>Attendees</h1>
 
+                <c:import url="WEB-INF\Attendees.xml"
+                          var="inputDoc" />
 
+                <c:import url="WEB-INF\Attendees.xsl"
+                          var="stylesheet" />
 
-            <div class="buttonHolder">
-                <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
-                <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
+                <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+                    <x:param name="bgColor"  value="lightgreen" />
+                </x:transform>
             </div>
-        </form> 
-        <br>
 
-
-        <h1>Attendees</h1>
-        <a href="printTags.html"> Print Tags </a>
-        <c:import url="WEB-INF\Attendees.xml"
-                  var="inputDoc" />
-
-        <c:import url="WEB-INF\Attendees.xsl"
-                  var="stylesheet" />
-
-        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-            <x:param name="bgColor"  value="lightgreen" />
-        </x:transform>
-
-        
-        <script>
-            $(function () {
-                $("#datepicker").datepicker({
-                    dateFormat: "yy-mm-dd"
+            <script>
+                $(function () {
+                    $("#datepicker").datepicker({
+                        dateFormat: "yy-mm-dd"
+                    });
                 });
-            });
-        </script>
 
+                function toggleAttendees() {
+                    var x = document.getElementById("AttendeesBlock");
+                    if (x.style.display === "block") {
+                        x.style.display = "none";
+                    } else {
+                        x.style.display = "block";
+                    }
+                }
+            </script>
+        </div>
         <%}%>
     </body>
 </html>

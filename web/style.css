@@ -33,22 +33,28 @@ input[type=submit] {
     background-color: #273469; 
     color: white; 
     padding: 14px 20px; 
+    width: 150px; 
+    text-align: center;
 }
 
 input[type=submit]:hover {
     background-color: #444;
 }
 
+#printForm {
+    display: inline; 
+}
 .form {
     display: table;
     text-align: left;
-    width: 300px; 
+    width: 420px; 
     margin: 0 auto; /*centers form on the condition that the form is assigned a width*/
 }
 
 .buttonHolder {
-    width: 300px; 
+    width: 420px; 
     text-align: center;
+    margin: 0 auto; 
 }
 
 label {
@@ -56,19 +62,17 @@ label {
     width: 140px;
 }
 
-input {
-    padding-right: 10px; 
-}
 
 .semTable th, td {
     padding: 10px;
 }
 
 .loginForm {
-    width: 300px; 
+    width: 420px; 
     margin: 0 auto; 
     background-color: #273469;
     padding: 20px; 
+    text-align: center; 
 }
 
 .loginForm input[type=submit] {
@@ -126,6 +130,10 @@ button {
 .filters {
     padding: 20px 15px;
     text-align: center; 
+}
+
+#AttendeesBlock {
+  display: none;
 }
 
 /* Button used to open the contact form - fixed at the bottom of the page */
