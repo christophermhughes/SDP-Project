@@ -69,7 +69,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="name" /> 
                     </button>                           
                 </form>
@@ -77,7 +77,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="description" /> 
                     </button>                           
                 </form>
@@ -85,7 +85,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="speakers" /> 
                     </button>                           
                 </form>
@@ -93,7 +93,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="date" /> 
                     </button>                           
                 </form>
@@ -101,7 +101,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="time" /> 
                     </button>                           
                 </form>
@@ -109,7 +109,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="duration" /> 
                     </button>                           
                 </form>
@@ -117,7 +117,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="venue" /> 
                     </button>                           
                 </form>
@@ -125,7 +125,7 @@
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
-                    <button onclick="form.submit()" value="{name}" > 
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="organiserEmail" /> 
                     </button>                           
                 </form>
