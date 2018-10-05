@@ -51,7 +51,7 @@
         <tr>
             <td>
                 <form action="OrganiserDetails.jsp" method="post">   
-                    <input type="text" name="orgEmail" value="{email}" hidden="true"/>           
+                    <input type="text" name="orgID" value="{id}" hidden="true"/>           
                     <input type="submit" value="{firstName}"/>   <!--  <xsl:value-of select="Name" /> -->                          
                 </form>
             </td>

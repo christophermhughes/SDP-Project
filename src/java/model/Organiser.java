@@ -15,6 +15,8 @@ import java.io.Serializable;
 @XmlRootElement(name="Organiser")
 public class Organiser implements Serializable{
    
+    @XmlElement(name = "id")
+    private String id;
     @XmlElement(name = "firstName")
     private String firstName;
     @XmlElement(name = "lastName")
@@ -29,7 +31,8 @@ public class Organiser implements Serializable{
     private String faculty;
 
 
-    public Organiser(String firstName, String lastName, String phoneNumber, String email, String password, String faculty) {
+    public Organiser(String id, String firstName, String lastName, String phoneNumber, String email, String password, String faculty) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -40,6 +43,14 @@ public class Organiser implements Serializable{
     
     public Organiser(){}
 
+    public String getid() {
+        return id;
+    }
+
+    public void setid(String id) {
+        this.id = id;
+    }
+    
     public String getfirstName() {
         return firstName;
     }

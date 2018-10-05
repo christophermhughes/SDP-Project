@@ -30,18 +30,18 @@ public class Organisers implements Serializable{
         list.remove(organiser);
     }
     
-    public void removeExistingOrganiser(String email){
+    public void removeExistingOrganiser(String id){
         for(Organiser organiser: list){
-            if(organiser.getEmail().equals(email)){
+            if(organiser.getid().equals(id)){
                 list.remove(organiser);
                 break;
             }
         }
     }
 
-    public Organiser getOrganiser(String email) {
+    public Organiser getOrganiser(String id) {
         for (Organiser organiser : list) {
-            if (organiser.getEmail().equals(email)) {
+            if (organiser.getid().equals(id)) {
                 return organiser;
             }
         }

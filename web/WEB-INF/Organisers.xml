@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Organisers>
     <Organiser>
+        <id>1</id>
         <firstName>Joe</firstName>
         <lastName>yeee</lastName>
         <phoneNumber>9032422112</phoneNumber>

@@ -20,9 +20,10 @@
         </jsp:useBean>
         
     <% 
-        String orgEmail = request.getParameter("orgEmail");
+        String orgId = request.getParameter("orgID");
         Organisers organisers = organiserApp.getOrganisers();
-        Organiser organiser = organisers.getOrganiser(orgEmail);
+        Organiser organiser = organisers.getOrganiser(orgId);
+        String id = organiser.getid();
         String fname = organiser.getfirstName();
         String lastname = organiser.getlastName();
         String phone = organiser.getPhoneNumber();
@@ -38,6 +39,7 @@
 
             <div class ="content">
                 <form class="form" action="CreateOrganiserAction.jsp" method="post">
+                    <input type="hidden" name="id" value="<%=id%>">
                     First Name<br>
                     <input type="text" name="firstName" value="<%=fname%>"><br>
                     Last Name<br>
@@ -51,7 +53,7 @@
                     Faculty<br>
                     <input type="text" name="faculty" value="<%=fac%>"><br>
                     
-                    <input type="submit" value="Update Organiser">
+                    <input type="submit" value="Update Organiser" formaction="UpdateOrganiserAction.jsp">
                     <input type="submit" value="Delete Organiser" formaction="DeleteOrganiserAction.jsp"/>
                 </form> 
             </div>
