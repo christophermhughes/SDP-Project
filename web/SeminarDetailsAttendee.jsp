@@ -75,7 +75,8 @@
             String duration = seminar.getDuration();
             String venue = seminar.getVenue();
             String email = seminar.getOrganiserEmail();
-
+            String seminarID = seminar.getId();
+            
             Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
             attendeeResults.getList().clear();
@@ -156,7 +157,7 @@
                 <label for="psw"><b>First Name</b></label>
                 <input type="text" placeholder="Enter First Name" name="attFirstName" required>
 
-                <input type="text" name="seminarName" value="<%=seminarName%>"/><br>
+                <input type="hidden" name="semID" value="<%=seminarID%>"/><br>
 
                 <label for="psw"><b>Last Name</b></label>
                 <input type="text" placeholder="Enter Last Name" name="attLastName" required>

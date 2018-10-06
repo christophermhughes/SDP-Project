@@ -28,10 +28,7 @@
 
         <%
             //Getting the Seminar ID    
-            String semName = request.getParameter("semName");
-            Seminars seminars = seminarApp.getSeminars();
-            Seminar seminar = seminars.getSeminar(semName);
-            String seminarID = seminar.getSemID();
+            String semID = request.getParameter("semID");
 
             //Getting Attendee Form information
             String attFirstName = request.getParameter("attFirstName");
@@ -41,12 +38,12 @@
             //Creating a new Attendee
             Attendees attendees = attendeeApp.getAttendees();
 
-            Attendee attendee = new Attendee(attFirstName, attLastName, attPhoneNumber, seminarID);
+            Attendee attendee = new Attendee(attFirstName, attLastName, attPhoneNumber, semID, "Going");
             session.setAttribute("attendee", attendee);
             attendees.addAttendee(attendee);
 
             attendeeApp.updateXML(attendees, filePathTwo);
-            response.sendRedirect("MainOrganiser.jsp");
+            response.sendRedirect("MainAttendee.jsp");
 
 
         %>
