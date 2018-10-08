@@ -81,33 +81,50 @@
                     <font color="red"><c:out value="${emptyErr}"/></c:if></font>
                 <c:if test="${existErr!=null}">
                     <font color="red"><c:out value="${existErr}"/></c:if></font>
-
+                <c:if test="${dateErr!=null}">
+                    <font color="red"><c:out value="${dateErr}"/></c:if></font>
+                <c:if test="${timeErr!=null}">
+                    <font color="red"><c:out value="${timeErr}"/></c:if></font>
 
                 </form> 
 
+            <%
+                if (session.getAttribute("emptyErr") != null) {
+                    session.removeAttribute("emptyErr");
+                }
+                if (session.getAttribute("existErr") != null) {
+                    session.removeAttribute("existErr");
+                }
+                if (session.getAttribute("dateErr") != null) {
+                    session.removeAttribute("dateErr");
+                }
+                if (session.getAttribute("timeErr") != null) {
+                    session.removeAttribute("timeErr");
+                }
+            %>
 
-                <script>
+            <script>
 
-                    $("#datepicker").datepicker({
-                        dateFormat: "dd/mm/yy"
-                    });
-
-
-                    $("#timepicker").timepicker({
-                        timeFormat: 'HH:mm:ss',
-                        interval: 30,
-                        minTime: '09:00',
-                        maxTime: '21:00',
-                        startTime: '9:00',
-                        dynamic: false,
-                        dropdown: true,
-                        scrollbar: true
-                    });
+                $("#datepicker").datepicker({
+                    dateFormat: "dd/mm/yy"
+                });
 
 
-                </script>
+                $("#timepicker").timepicker({
+                    timeFormat: 'HH:mm:ss',
+                    interval: 30,
+                    minTime: '09:00',
+                    maxTime: '21:00',
+                    startTime: '9:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
+                });
 
-            </div>
+
+            </script>
+
+        </div>
         <%}%>
     </body>
 </html>

@@ -44,8 +44,15 @@
                 session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("CreateSeminar.jsp");
             } else {
-
-                if (seminars.getSeminarName(seminarName) != null) {
+                if(!validator.validateDate(date)){
+                    session.setAttribute("dateErr", "Date format is incorrect, please use the date picker to select a date");
+                    response.sendRedirect("CreateSeminar.jsp");
+                }
+                else if(!validator.validateTime(time)){
+                    session.setAttribute("timeErr", "Time format is incorrect, please use the time picker to select a time");
+                    response.sendRedirect("CreateSeminar.jsp");
+                }
+                else if (seminars.getSeminarName(seminarName) != null) {
                     session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
                     response.sendRedirect("CreateSeminar.jsp");
 
