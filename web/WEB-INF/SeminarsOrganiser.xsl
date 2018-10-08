@@ -23,7 +23,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Abstract</th>
+                    <th>Speaker Description</th>
                     <th>Speaker</th>
                     <th>Speaker Biography</th>
                     <th>Date</th>
