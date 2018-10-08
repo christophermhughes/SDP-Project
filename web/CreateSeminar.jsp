@@ -71,16 +71,13 @@
                 <input type="submit" value="Add Seminar">
                 </div>
                 <br>
-                <font color="red"><c:out value="${existErr}"/></font>
+                <c:if test="${emptyErr!=null}">
+                    <font color="red"><c:out value="${emptyErr}"/></c:if></font>
+                <c:if test="${existErr!=null}">
+                    <font color="red"><c:out value="${existErr}"/></c:if></font>
+                
 
             </form> 
-
-            <%
-                if (session.getAttribute("existErr") != null) {
-                    session.removeAttribute("existErr");
-                }
-
-            %>
 
 
             <script>

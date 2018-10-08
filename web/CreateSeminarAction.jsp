@@ -4,6 +4,7 @@
     Author     : brand
 --%>
 
+<%@page import="LogReg.SeminarValidator"%>
 <%@page import="java.util.UUID"%>
 <%@page import="model.*"%>
 
@@ -37,23 +38,31 @@
             String venue = request.getParameter("venue");
             String email = organiser.getEmail();
 
-            if (seminars.getSeminarName(seminarName) != null) {
-                session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
+            SeminarValidator validator = new SeminarValidator();
+
+            if (validator.checkEmpty(seminarName, desc, speakers, date, time, duration, venue)) {
+                session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("CreateSeminar.jsp");
+            } else {
+
+                if (seminars.getSeminarName(seminarName) != null) {
+                    session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
+                    response.sendRedirect("CreateSeminar.jsp");
 
 //                Seminar seminar = seminars.getSeminar(seminarName);
 //                seminar.setTime(time);
 //                seminar.setDate(date);
-                // seminar.setRoom(loc);
-                // seminar.setAbstract(desc);
-            } else {
-                Seminar seminar = new Seminar(seminarID, seminarName, desc, speakers, date, time, duration, venue, email);
-                //session.setAttribute("seminar", seminar);
-                seminars.addSeminar(seminar);
-                seminarApp.updateXML(seminars, filePath);
-                session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
-                response.sendRedirect("SeminarAction.jsp");
-                
+                    // seminar.setRoom(loc);
+                    // seminar.setAbstract(desc);
+                } else {
+                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speakers, date, time, duration, venue, email);
+                    //session.setAttribute("seminar", seminar);
+                    seminars.addSeminar(seminar);
+                    seminarApp.updateXML(seminars, filePath);
+                    session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
+                    response.sendRedirect("SeminarAction.jsp");
+
+                }
             }
 
         %>
