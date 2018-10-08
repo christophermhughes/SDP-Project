@@ -25,6 +25,7 @@
             String desc = request.getParameter("description");
             String speaker = request.getParameter("speaker");
             String speakerBio = request.getParameter("speakerBio");
+            String host = request.getParameter("host");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
             String duration = request.getParameter("duration");
@@ -37,6 +38,7 @@
             updateSeminar.setDescription(desc);
             updateSeminar.setSpeaker(speaker);
             updateSeminar.setSpeakerBio(speakerBio);
+            updateSeminar.setHost(host);
             updateSeminar.setDate(date);
             updateSeminar.setTime(time);
             updateSeminar.setDuration(duration);

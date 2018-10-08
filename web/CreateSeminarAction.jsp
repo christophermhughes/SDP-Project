@@ -33,6 +33,7 @@
             String desc = request.getParameter("description");
             String speaker = request.getParameter("speaker");
             String speakerBio = request.getParameter("speakerBio");
+            String host = request.getParameter("host");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
             String duration = request.getParameter("duration");
@@ -63,7 +64,7 @@
                     // seminar.setRoom(loc);
                     // seminar.setAbstract(desc);
                 } else {
-                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, date, time, duration, venue, email);
+                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, host, date, time, duration, venue, email);
                     //session.setAttribute("seminar", seminar);
                     seminars.addSeminar(seminar);
                     seminarApp.updateXML(seminars, filePath);

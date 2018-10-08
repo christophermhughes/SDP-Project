@@ -33,6 +33,7 @@
                     <th>Seminar Description</th>
                     <th>Speaker</th>
                     <th>Speaker Biography</th>
+                    <th>Host</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Duration</th>
@@ -88,6 +89,14 @@
                     </button>                           
                 </form>
             </td>
+            <td>
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="host" /> 
+                    </button>                           
+                </form>
+            </td>            
             <td>
                 <form action="SeminarDetailsAttendee.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  

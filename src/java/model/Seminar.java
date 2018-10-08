@@ -29,6 +29,8 @@ public class Seminar implements java.io.Serializable {
     private String speaker;
     @XmlElement(name="speakerBio")
     private String speakerBio;
+    @XmlElement(name="host")
+    private String host;
     @XmlElement(name = "date")
     private String date;
     @XmlElement(name = "time")
@@ -43,12 +45,13 @@ public class Seminar implements java.io.Serializable {
     public Seminar() {
     }
 
-    public Seminar(String id, String name, String description, String speaker, String speakerBio, String date, String time, String duration, String venue, String organiserEmail) {
+    public Seminar(String id, String name, String description, String speaker, String speakerBio, String host, String date, String time, String duration, String venue, String organiserEmail) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.speaker = speaker;
         this.speakerBio = speakerBio;
+        this.host = host;
         this.date = date;
         this.time = time;
         this.duration = duration;
@@ -96,6 +99,14 @@ public class Seminar implements java.io.Serializable {
         this.speakerBio = speakerBio;
     }
 
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
     public String getDate() {
         return date;
     }
@@ -137,9 +148,6 @@ public class Seminar implements java.io.Serializable {
     }
 
 
-
-    
-    
 
 
 }

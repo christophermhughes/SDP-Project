@@ -8,6 +8,7 @@
         <description>blah 77</description>
         <speaker>Divraj</speaker>
         <speakerBio>SDP Student</speakerBio>
+        <host>host</host>
         <date>11/12/2013</date>
         <time>12:00:00</time>
         <duration>1 Hour</duration>
@@ -20,6 +21,7 @@
         <description>blah blah</description>
         <speaker>PATRICK</speaker>
         <speakerBio>THE STAR</speakerBio>
+        <host>Spongebob</host>
         <date>12/12/2012</date>
         <time>10:30:00</time>
         <duration>1 Hour</duration>

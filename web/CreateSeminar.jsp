@@ -55,6 +55,8 @@
                 <input type="text" name="speaker"><br><br>
                 <label> Speaker Biography </label>
                 <input type="text" name="speakerBio"><br><br>
+                <label> Host </label>
+                <input type="text" name="host"><br><br>
                 <label> Date </label>
                 <input type="text" name="date" id="datepicker"><br><br>
                 <label> Time </label>
