@@ -22,6 +22,11 @@
         <title>Create Seminar Page</title>
     </head>
     <body>
+        <%
+            // Checking to see if an organiser is logged in
+            if (session.getAttribute("organiser") == null) {%>
+        You do not have access to this page.
+        <%} else {%>
 
         <div class ="header">
 
@@ -52,16 +57,6 @@
                 <input type="text" name="date" id="datepicker"><br><br>
                 <label> Time </label>
                 <input type="text" name ="time" id="timepicker"><br><br>
-
-                <!--    <select id ="time" name="time">
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        
-                    </select>
-                -->
-
-
                 <label> Duration </label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour">1 Hour</option>
@@ -88,67 +83,31 @@
                     <font color="red"><c:out value="${existErr}"/></c:if></font>
 
 
-            </form> 
+                </form> 
 
 
-            <script>
+                <script>
 
-                $("#datepicker").datepicker({
-                    dateFormat: "dd/mm/yy"
-                });
-
-
-                $("#timepicker").timepicker({
-                    timeFormat: 'HH:mm:ss',
-                    interval: 30,
-                    minTime: '09:00',
-                    maxTime: '21:00',
-                    startTime: '9:00',
-                    dynamic: false,
-                    dropdown: true,
-                    scrollbar: true
-                });
+                    $("#datepicker").datepicker({
+                        dateFormat: "dd/mm/yy"
+                    });
 
 
-            </script>
+                    $("#timepicker").timepicker({
+                        timeFormat: 'HH:mm:ss',
+                        interval: 30,
+                        minTime: '09:00',
+                        maxTime: '21:00',
+                        startTime: '9:00',
+                        dynamic: false,
+                        dropdown: true,
+                        scrollbar: true
+                    });
 
 
+                </script>
 
-
-
-            <!--   <form class="form" action="MainOrganiser.jsp" method="post">
-   
-                   <label for="semName">Seminar Name: </label>
-                   <input type="text" name="semName">
-                   <br>
-                   <br>
-                   <label for="time">Time: </label>
-                   <input type="time" name="Time">
-                   <br>
-                   <br>
-                   <label for="date">Date: </label>
-                   <input type="date" name="Date">
-                   <br>
-                   <br>
-                   <label for="loc">Location: </label>
-                   <input type="text" name="Location">
-                   <br>
-                   <br>
-                   <label for="descp">Description: </label>
-                   <input type="text" name="descp">
-                   <br>
-                   <br>
-                   <label for="staffName">Staff Organiser: </label>
-                   <input type="text" name="staffName">
-                   <br>
-                   <br>
-                   <div class="buttonHolder">
-                       <input type="submit" value="Create Seminar">
-                   </div>
-   
-               </form> 
-            -->
-        </div>
-
+            </div>
+        <%}%>
     </body>
 </html>
