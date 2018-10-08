@@ -16,8 +16,7 @@ import java.util.regex.Pattern;
 public class Validator {
 
     private String emailPattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}";
-    private String namePattern = "[A-Z][a-zA-Z]+(\\s?([A-Z][a-zA-Z]+)?)*";
-    private String passwordPattern = "[a-zA-Z0-9\\p{P}$\\^\\+=~`|]+";
+    private String passwordPattern = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).*";
     private HashMap<String, String> errors = new HashMap();
 
     public Validator() {
@@ -33,10 +32,6 @@ public class Validator {
         return match.matches();
     }
 
-    public boolean checkEmpty(String email, String name, String password, String dob) {
-        return name == null || email == null || password == null || dob == null || name.isEmpty() || email.isEmpty() || password.isEmpty() || dob.isEmpty();
-    }
-
     public boolean checkEmptyLogin(String email, String password) {
         return password == null || email == null || email.isEmpty() || password.isEmpty();
     }
@@ -44,10 +39,6 @@ public class Validator {
     public boolean validateEmail(String email) {
         return validate(emailPattern, email);
 
-    }
-
-    public boolean validateName(String name) {
-        return validate(namePattern, name);
     }
 
     public boolean validatePassword(String password) {
