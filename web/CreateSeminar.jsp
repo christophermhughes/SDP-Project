@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -50,7 +51,17 @@
                 <label> Date </label>
                 <input type="text" name="date" id="datepicker"><br><br>
                 <label> Time </label>
-                <input type="time" name="time"><br><br>
+                <input type="text" name ="time" id="timepicker"><br><br>
+
+                <!--    <select id ="time" name="time">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        
+                    </select>
+                -->
+
+
                 <label> Duration </label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour">1 Hour</option>
@@ -68,28 +79,43 @@
                 <!--                Organiser ID<br>
                                 <input type="text" name="orgID"><br>-->
                 <div class="buttonHolder">
-                <input type="submit" value="Add Seminar">
+                    <input type="submit" value="Add Seminar">
                 </div>
                 <br>
                 <c:if test="${emptyErr!=null}">
                     <font color="red"><c:out value="${emptyErr}"/></c:if></font>
                 <c:if test="${existErr!=null}">
                     <font color="red"><c:out value="${existErr}"/></c:if></font>
-                
+
 
             </form> 
 
 
             <script>
-                $(function () {
-                    $("#datepicker").datepicker({
+
+                $("#datepicker").datepicker({
                     dateFormat: "dd/mm/yy"
-                    });
                 });
+
+
+                $("#timepicker").timepicker({
+                    timeFormat: 'HH:mm:ss',
+                    interval: 30,
+                    minTime: '09:00',
+                    maxTime: '21:00',
+                    startTime: '9:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
+                });
+
+
             </script>
 
 
-       
+
+
+
             <!--   <form class="form" action="MainOrganiser.jsp" method="post">
    
                    <label for="semName">Seminar Name: </label>
