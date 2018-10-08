@@ -60,7 +60,8 @@
             Seminar seminar = seminars.getSeminarName(seminarName);
             String id = seminar.getId();
             String desc = seminar.getDescription();
-            String speakers = seminar.getSpeakers();
+            String speaker = seminar.getSpeaker();
+            String speakerBio = seminar.getSpeakerBio();
             String date = seminar.getDate();
             String time = seminar.getTime();
             String duration = seminar.getDuration();
@@ -76,8 +77,10 @@
                 <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
                 <label>Seminar Description</label>
                 <input type="text" name ="description" value="<%=desc%>" ><br><br>
-                <label>Seminar Speakers</label>
-                <input type="text" name ="speakers" value="<%=speakers%>" ><br><br>
+                <label>Speaker</label>
+                <input type="text" name ="speaker" value="<%=speaker%>" ><br><br>
+                <label>Speaker Biography</label>
+                <input type="text" name ="speakerBio" value="<%=speakerBio%>" ><br><br>
                 <label>Date</label>
                 <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
                 <label>Time</label>

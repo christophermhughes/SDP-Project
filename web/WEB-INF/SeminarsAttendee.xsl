@@ -22,16 +22,17 @@
     <xsl:template match="Seminars">
         
         <div class="filters">
-                <input type="text" id="searchLoc" placeholder="Refine location"/>
-                <input type="text" id="searchDat" placeholder="Refine date"/>
+            <input type="text" id="searchLoc" placeholder="Refine location"/>
+            <input type="text" id="searchDat" placeholder="Refine date"/>
         </div>
        
         <table id="table" class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Description</th>
-                    <th>Speakers</th>
+                    <th>Abstract</th>
+                    <th>Speaker</th>
+                    <th>Speaker Biography</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Duration</th>
@@ -74,10 +75,18 @@
                 <form action="SeminarDetailsAttendee.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
                     <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="speakers" /> 
+                        <xsl:value-of select="speaker" /> 
                     </button>                           
                 </form>
                     
+            </td>
+            <td>
+                <form action="SeminarDetailsAttendee.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="speakerBio" /> 
+                    </button>                           
+                </form>
             </td>
             <td>
                 <form action="SeminarDetailsAttendee.jsp" method="post">   

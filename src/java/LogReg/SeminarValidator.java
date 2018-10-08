@@ -35,8 +35,8 @@ public class SeminarValidator {
         return match.matches();
     }
     
-    public boolean checkEmpty(String name, String description, String speakers, String date, String time, String duration, String venue){
-        return name.isEmpty() || description.isEmpty() || speakers.isEmpty() || date.isEmpty() || time.isEmpty() || duration.isEmpty() || venue.isEmpty() ;
+    public boolean checkEmpty(String name, String description, String speaker, String speakerBio, String date, String time, String duration, String venue){
+        return name.isEmpty() || description.isEmpty() || speaker.isEmpty() || speakerBio.isEmpty() || date.isEmpty() || time.isEmpty() || duration.isEmpty() || venue.isEmpty() ;
     }
     
     public boolean validateDate(String date){

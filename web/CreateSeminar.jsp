@@ -51,8 +51,10 @@
                 <input type="text" name="name"/><br><br>
                 <label> Description </label>
                 <input type="text" name="description"><br><br>
-                <label> Speakers </label>
-                <input type="text" name="speakers"><br><br>
+                <label> Speaker </label>
+                <input type="text" name="speaker"><br><br>
+                <label> Speaker Biography </label>
+                <input type="text" name="speakerBio"><br><br>
                 <label> Date </label>
                 <input type="text" name="date" id="datepicker"><br><br>
                 <label> Time </label>

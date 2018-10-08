@@ -31,7 +31,8 @@
             String seminarID = UUID.randomUUID().toString();
             String seminarName = request.getParameter("name");
             String desc = request.getParameter("description");
-            String speakers = request.getParameter("speakers");
+            String speaker = request.getParameter("speaker");
+            String speakerBio = request.getParameter("speakerBio");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
             String duration = request.getParameter("duration");
@@ -40,7 +41,7 @@
 
             SeminarValidator validator = new SeminarValidator();
 
-            if (validator.checkEmpty(seminarName, desc, speakers, date, time, duration, venue)) {
+            if (validator.checkEmpty(seminarName, desc, speaker, speakerBio, date, time, duration, venue)) {
                 session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("CreateSeminar.jsp");
             } else {
@@ -62,7 +63,7 @@
                     // seminar.setRoom(loc);
                     // seminar.setAbstract(desc);
                 } else {
-                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speakers, date, time, duration, venue, email);
+                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, date, time, duration, venue, email);
                     //session.setAttribute("seminar", seminar);
                     seminars.addSeminar(seminar);
                     seminarApp.updateXML(seminars, filePath);

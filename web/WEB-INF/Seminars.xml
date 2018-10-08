@@ -6,7 +6,8 @@
         <id>1</id>
         <name>Robotics</name>
         <description>blah 77</description>
-        <speakers>Divraj</speakers>
+        <speaker>Divraj</speaker>
+        <speakerBio>SDP Student</speakerBio>
         <date>11/12/2013</date>
         <time>12:00:00</time>
         <duration>1 Hour</duration>
@@ -17,7 +18,8 @@
     <id>2</id>
         <name>Sci</name>
         <description>blah blah</description>
-        <speakers>PATRICK - THE STAR</speakers>
+        <speaker>PATRICK</speaker>
+        <speakerBio>THE STAR</speakerBio>
         <date>12/12/2012</date>
         <time>10:30:00</time>
         <duration>1 Hour</duration>

@@ -69,7 +69,8 @@
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminarName(seminarName);
             String desc = seminar.getDescription();
-            String speakers = seminar.getSpeakers();
+            String speaker = seminar.getSpeaker();
+            String speakerBio = seminar.getSpeakerBio();
             String date = seminar.getDate();
             String time = seminar.getTime();
             String duration = seminar.getDuration();
@@ -110,7 +111,11 @@
             </tr>
             <tr>
                 <th>Seminar Speakers: </th>
-                <th><%=speakers%></th>
+                <th><%=speaker%></th>
+            </tr>
+            <tr>
+                <th>Seminar Speakers: </th>
+                <th><%=speakerBio%></th>
             </tr>
             <tr>
                 <th>Date: </th>

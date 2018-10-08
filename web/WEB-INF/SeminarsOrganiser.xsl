@@ -23,8 +23,9 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Description</th>
-                    <th>Speakers</th>
+                    <th>Abstract</th>
+                    <th>Speaker</th>
+                    <th>Speaker Biography</th>
                     <th>Date</th>
                     <th>Time</th>
                     <th>Duration</th>
@@ -86,7 +87,15 @@
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
                     <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="speakers" /> 
+                        <xsl:value-of select="speaker" /> 
+                    </button>                           
+                </form>
+            </td>
+            <td>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="speakerBio" /> 
                     </button>                           
                 </form>
             </td>
