@@ -48,7 +48,7 @@
         <div class ="content" >
             <form class="form" action="CreateSeminarAction.jsp" method="post">
                 <label> Seminar Name </label>
-                <input type="text" name="name"/><br><br>
+                <input type="text" name="name" maxlength="40"/><br><br>
                 <label> Description </label>
                 <input type="text" name="description"><br><br>
                 <label> Speaker </label>

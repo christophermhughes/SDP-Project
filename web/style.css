@@ -120,6 +120,7 @@ li.nav a {
 
 .semTable th, td { 
     width:20%; 
+    word-break: break-all;
 }
 .semTable tr:hover { background: #00b5b5; }
 
