@@ -5,7 +5,10 @@
     <Seminar>
         <id>1</id>
         <name>Robotics</name>
-        <description>blah 77</description>
+        <description>
+            The Shadow robot hand system
+            Robotics is an interdisciplinary branch of engineering and science that includes mechanical engineering, electronics engineering, information engineering, computer science, and others.
+        </description>
         <speaker>Divraj</speaker>
         <speakerBio>SDP Student</speakerBio>
         <host>host</host>
@@ -16,7 +19,7 @@
         <organiserEmail>Joey@gmail.com</organiserEmail> 
     </Seminar>
     <Seminar>
-    <id>2</id>
+        <id>2</id>
         <name>Sci</name>
         <description>blah blah</description>
         <speaker>PATRICK</speaker>
