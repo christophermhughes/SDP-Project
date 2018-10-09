@@ -50,11 +50,11 @@
                 <label> Seminar Name </label>
                 <input type="text" name="name" maxlength="40"/><br><br>
                 <label> Description </label>
-                <input type="text" name="description"><br><br>
+                <textarea rows="4" cols="50" name="description"></textarea><br><br>
                 <label> Speaker </label>
                 <input type="text" name="speaker"><br><br>
                 <label> Speaker Biography </label>
-                <input type="text" name="speakerBio"><br><br>
+                <textarea rows="4" cols="50" name="speakerBio"></textarea><br><br>
                 <label> Host </label>
                 <input type="text" name="host"><br><br>
                 <label> Date </label>

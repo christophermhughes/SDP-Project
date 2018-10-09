@@ -77,11 +77,11 @@
                 <label>Seminar Name</label>
                 <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
                 <label>Seminar Description</label>
-                <input type="text" name ="description" value="<%=desc%>" ><br><br>
+                <textarea rows="4" cols="50" name="description"><%=desc%></textarea><br><br>
                 <label>Speaker</label>
                 <input type="text" name ="speaker" value="<%=speaker%>" ><br><br>
                 <label>Speaker Biography</label>
-                <input type="text" name ="speakerBio" value="<%=speakerBio%>" ><br><br>
+                <textarea rows="4" cols="50" name="speakerBio"><%=speakerBio%></textarea><br><br>
                 <label>Host</label>
                 <input type="text" name ="host" value="<%=host%>" ><br><br>
                 <label>Date</label>
