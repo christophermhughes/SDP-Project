@@ -6,7 +6,11 @@
         <html>
             <head>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                <link rel="stylesheet" type="text/css" href="..\style.css"/>
+                <link rel="stylesheet" type="text/css" href="..\style.css?v=1"/>
+                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+                <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
             </head>
             <body>
                 <xsl:apply-templates select="Seminars"/>
@@ -19,19 +23,13 @@
             <input type="text" id="searchLoc" placeholder="Refine location"/>
             <input type="text" id="searchDat" placeholder="Refine date"/> 
         </div>
-        <table class="semTable" border="1" frame="void" rules="all" align="center">
+        <table id="table" class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Speaker Description</th>
-                    <th>Speaker</th>
-                    <th>Speaker Biography</th>
-                    <th>Host</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Duration</th>
-                    <th>Venue</th>
-                    <th>Contact</th>
+                    <th>Venue</th>     
                   
                 </tr>
             </thead>
@@ -39,31 +37,7 @@
                 <xsl:apply-templates />
             </tbody>
         </table>
-        <script>
-            <![CDATA[
-            var $rows = $('#table tbody tr');
-            $('#search').keyup(function() {
-            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-    
-            $rows.show().filter(function() {
-            var text = $(this.cells[6]).text().replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(val);
-            }).hide();
-            });
-            ]]>
-            
-             <![CDATA[
-            var $rows = $('#table tbody tr');
-            $('#searchDat').keyup(function() {
-            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-    
-            $rows.show().filter(function() {
-            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
-            return !~text.indexOf(val);
-            }).hide();
-            });
-            ]]>
-        </script>
+        
     </xsl:template>
     
     <xsl:template match="Seminar">
@@ -76,38 +50,7 @@
                     </button>                           
                 </form>
             </td>
-            <td>
-                <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="description" /> 
-                    </button>                           
-                </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="speaker" /> 
-                    </button>                           
-                </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="speakerBio" /> 
-                    </button>                           
-                </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsAttendee.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="host" /> 
-                    </button>                           
-                </form>
-            </td>            
+                     
             <td>
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
@@ -128,28 +71,37 @@
                 <form action="SeminarDetailsOrganiser.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
                     <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="duration" /> 
-                    </button>                           
-                </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="venue" /> 
-                    </button>                           
-                </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsOrganiser.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="organiserEmail" /> 
                     </button>                           
                 </form>
             </td>
             
         </tr>
+         <script>
+            <![CDATA[
+            var $rows = $('#table tbody tr');
+            $('#searchLoc').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+            $rows.show().filter(function() {
+            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+            }).hide();
+            });
+            ]]>
+            
+            <![CDATA[
+            var $rows = $('#table tbody tr');
+            $('#searchDat').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+            $rows.show().filter(function() {
+            var text = $(this.cells[1]).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+            }).hide();
+            });
+            ]]>
+        </script>
     </xsl:template>
     
 </xsl:stylesheet>

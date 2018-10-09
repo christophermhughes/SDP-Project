@@ -113,6 +113,14 @@ li.nav a {
 	background-color: #4a4c4c;
 }
 
+.semTable { 
+    table-layout: fixed;
+    width: 80%; 
+}
+
+.semTable th, td { 
+    width:20%; 
+}
 .semTable tr:hover { background: #00b5b5; }
 
 .semTBtn {
@@ -149,6 +157,11 @@ li.nav a {
   right: 28px;
   width: 280px;
 }
+
+
+
+
+
 
 /* The popup form - hidden by default */
 .form-popup {

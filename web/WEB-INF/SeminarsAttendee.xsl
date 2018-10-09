@@ -47,7 +47,7 @@
     <xsl:template match="Seminar">
         
         <tr>
-            <p id="demo"></p>
+            
             <td>
                 
                 <form action="SeminarDetailsAttendee.jsp" method="post">   
@@ -94,7 +94,7 @@
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
     
             $rows.show().filter(function() {
-            var text = $(this.cells[6]).text().replace(/\s+/g, ' ').toLowerCase();
+            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
             }).hide();
             });
@@ -106,7 +106,7 @@
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
     
             $rows.show().filter(function() {
-            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
+            var text = $(this.cells[1]).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
             }).hide();
             });
