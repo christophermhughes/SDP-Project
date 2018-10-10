@@ -20,15 +20,21 @@
     </Seminar>
     <Seminar>
         <id>2</id>
-        <name>Sci</name>
-        <description>blah blah</description>
-        <speaker>PATRICK</speaker>
-        <speakerBio>THE STAR</speakerBio>
-        <host>Spongebob</host>
-        <date>12/12/2012</date>
-        <time>10:30:00</time>
-        <duration>1 Hour</duration>
+        <name>Engineering and IT Work Experience Program</name>
+        <description>Gain an insight into a career in engineering or information technology!
+
+            Get hands-on experience with this 5-day program designed to give you an insight into what it’s like to choose a career in engineering or IT.
+            
+            You’ll get to take part in a range of workshops (including computer science, cyber security, IT, biomedical engineering, electronics engineering and more) as well as spend time with current UTS students and academics from within the UTS Engineering and IT faculty.
+            
+            For more information contact feit@uts.edu.au or telephone 02 9514 2666.</description>
+        <speaker>Chris Wing</speaker>
+        <speakerBio>Web Systems Lecturer and Academic Liason Officer</speakerBio>
+        <host>UTS Engineering and IT faculty</host>
+        <date>26/11/2012</date>
+        <time>08:30:00</time>
+        <duration>2 Hour</duration>
         <venue>CB11.00.401</venue>
-        <organiserEmail>organiser@gmail.com</organiserEmail> 
+        <organiserEmail>feit@uts.edu.au</organiserEmail> 
     </Seminar>
 </Seminars>

@@ -99,48 +99,48 @@
 
         %>
 
+        <div class="content">
 
-
-        <table>
+            <table class="attendeeInfoTable">
             <tr>
                 <th>Seminar Name: </th>
-                <th><%=seminarName%></th>
+                <td><%=seminarName%></td>
             </tr>
             <tr>
                 <th>Seminar Description: </th>
-                <th><%=desc%></th>
+                <td><%=desc%></td>
             </tr>
             <tr>
                 <th>Speaker: </th>
-                <th><%=speaker%></th>
+                <td><%=speaker%></td>
             </tr>
             <tr>
-                <th>Seminar Biography: </th>
-                <th><%=speakerBio%></th>
+                <th>Speaker Biography: </th>
+                <td><%=speakerBio%></td>
             </tr>
             <tr>
                 <th>Host:</th>
-                <th><%=host%></th>
+                <td><%=host%></td>
             </tr>
             <tr>
                 <th>Date: </th>
-                <th><%=date%></th>
+                <td><%=date%></td>
             </tr>
             <tr>
                 <th>Time: </th>
-                <th><%=time%></th>
+                <td><%=time%></td>
             </tr>
             <tr>
                 <th>Duration: </th>
-                <th><%=duration%></th>
+                <td><%=duration%></td>
             </tr>
             <tr>
                 <th>Venue: </th>
-                <th><%=venue%></th>
+                <td><%=venue%></td>
             </tr>
             <tr>
                 <th>Email: </th>
-                <th><%=email%></th>
+                <td><%=email%></td>
             </tr>
 
         </table>
@@ -149,6 +149,7 @@
 
         <br>
         <h1>Attendees</h1>
+        
         <c:import url="WEB-INF\AttendeeResults.xml"
                   var="inputDoc" />
 
@@ -189,6 +190,7 @@
                 document.getElementById("myForm").style.display = "none";
             }
         </script>
+        </div>
 
     </body>
 </html>

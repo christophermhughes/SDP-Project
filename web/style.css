@@ -63,8 +63,6 @@ label {
 }
 
 
-
-
 .semTable th, td {
     padding: 10px;
 }
@@ -126,6 +124,27 @@ li.nav a {
 }
 .semTable tr:not(.headerRow):hover { background: #00b5b5; }
 
+.attendeeInfoTable tr {
+    text-align: left; 
+    
+    
+}
+
+.attendeeInfoTable{
+    width: 50%;
+    margin: 0 auto; 
+    table-layout: fixed;
+}
+
+.attendeeInfoTable th {
+    width: 20%; 
+}
+
+.attendeeInfoTable td {
+    width: 60%; 
+    word-break: break-all;
+}
+
 .semTBtn {
      background:none!important;
      color:inherit;
@@ -160,8 +179,6 @@ li.nav a {
   right: 28px;
   width: 280px;
 }
-
-
 
 
 
