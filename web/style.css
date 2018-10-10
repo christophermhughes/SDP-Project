@@ -124,7 +124,7 @@ li.nav a {
     width:20%; 
     word-break: break-all;
 }
-.semTable tr:hover { background: #00b5b5; }
+.semTable tr:not(.headerRow):hover { background: #00b5b5; }
 
 .semTBtn {
      background:none!important;

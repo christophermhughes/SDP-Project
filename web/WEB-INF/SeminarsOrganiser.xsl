@@ -25,7 +25,7 @@
         </div>
         <table id="table" class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
-                <tr>
+                <tr class="headerRow">
                     <th>Name</th>
                     <th>Date</th>
                     <th>Time</th>
