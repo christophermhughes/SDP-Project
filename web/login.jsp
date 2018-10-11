@@ -29,9 +29,9 @@
         <div class="content">
             <form class="loginForm" action="loginAction.jsp" >
 
-                <input type="text" name="email" id="email" placeholder="Username"><br>
+                <input type="text" name="email" placeholder="Username"><br>
                 <br>   
-                <input type="password" name="password" id="password" placeholder="Password"><br>
+                <input type="password" name="password" placeholder="Password"><br>
                 <br>
 
                 <c:if test="${emailErr!=null}">
@@ -47,7 +47,7 @@
 
                     <div class=buttonHolder>
                         <br>
-                        <input type="submit" value="Login" id="login">
+                        <input type="submit" value="Login">
                     </div>
                 </form>
             </div>
