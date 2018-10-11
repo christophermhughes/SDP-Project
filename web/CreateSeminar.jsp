@@ -38,6 +38,7 @@
                 <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
                 <li class= "nav"><a href="CreateSeminar.jsp" class="active"> Create Seminar </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
+                <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfgPitQ9eFTF5hKzj1TdrNM7" target="_blank"> Help </a>
             </ul>
 
 
