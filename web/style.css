@@ -118,9 +118,8 @@ li.nav a {
     width: 80%; 
 }
 
-.semTable th, td { 
+.semTable th { 
     width:20%; 
-    word-break: break-all;
 }
 
 .semTable tr:not(.headerRow):hover { background: #00b5b5; }
