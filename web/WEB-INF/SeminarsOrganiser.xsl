@@ -29,7 +29,9 @@
                     <th>Name</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Venue</th>     
+                    <th>Venue</th> 
+                    <th>Speaker</th>
+                    <th>Organiser</th>    
                   
                 </tr>
             </thead>
@@ -75,9 +77,25 @@
                     </button>                           
                 </form>
             </td>
+            <td>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="speaker" /> 
+                    </button>                           
+                </form>
+            </td>
+            <td>
+                <form action="SeminarDetailsOrganiser.jsp" method="post">   
+                    <input type="hidden" name="name" value="{name}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
+                        <xsl:value-of select="organiserEmail" /> 
+                    </button>                           
+                </form>
+            </td>
             
         </tr>
-         <script>
+        <script>
             <![CDATA[
             var $rows = $('#table tbody tr');
             $('#searchLoc').keyup(function() {

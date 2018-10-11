@@ -5,8 +5,8 @@
         <firstName>Joe</firstName>
         <lastName>yeee</lastName>
         <phoneNumber>9032422112</phoneNumber>
-        <email>Joey@gmail.com</email>
-        <password>p</password>
+        <email>user</email>
+        <password>pass</password>
         <faculty>FEIT</faculty>  
     </Organiser>
     <Organiser>
