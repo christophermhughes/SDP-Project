@@ -47,7 +47,7 @@ input[type=submit]:hover {
 .form {
     display: table;
     text-align: left;
-    width: 520px; 
+    width: 550px; 
     margin: 0 auto; /*centers form on the condition that the form is assigned a width*/
 }
 
@@ -122,12 +122,11 @@ li.nav a {
     width:20%; 
     word-break: break-all;
 }
+
 .semTable tr:not(.headerRow):hover { background: #00b5b5; }
 
 .attendeeInfoTable tr {
     text-align: left; 
-    
-    
 }
 
 .attendeeInfoTable{
@@ -179,8 +178,6 @@ li.nav a {
   right: 28px;
   width: 280px;
 }
-
-
 
 
 /* The popup form - hidden by default */
