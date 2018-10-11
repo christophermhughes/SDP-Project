@@ -6,7 +6,16 @@
         <lastName>yeee</lastName>
         <phoneNumber>9032422112</phoneNumber>
         <email>Joey@gmail.com</email>
-        <password>password</password>
+        <password>p</password>
+        <faculty>FEIT</faculty>  
+    </Organiser>
+    <Organiser>
+        <id>1</id>
+        <firstName>t</firstName>
+        <lastName>yeee</lastName>
+        <phoneNumber>9032422112</phoneNumber>
+        <email>t@t.com</email>
+        <password>t</password>
         <faculty>FEIT</faculty>  
     </Organiser>
 </Organisers>

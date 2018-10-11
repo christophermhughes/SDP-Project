@@ -99,7 +99,7 @@
             
              <div class="buttonHolder">
                     <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
-                    <form id="printForm" action="printTags.html"><input type="submit" value="Print Tags"/></form>
+                    <form id="printForm" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
              </div>
             
             <div id="AttendeesBlock">
