@@ -4,6 +4,7 @@
     Author     : Ankush Yamarti
 --%>
 
+<%@page import="java.util.UUID"%>
 <%@page import="model.*"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -31,14 +32,16 @@
             String semID = request.getParameter("semID");
 
             //Getting Attendee Form information
+            String attId = UUID.randomUUID().toString();
             String attFirstName = request.getParameter("attFirstName");
             String attLastName = request.getParameter("attLastName");
             String attPhoneNumber = request.getParameter("attPhoneNumber");
+            String attEmail = request.getParameter("attEmail");
 
             //Creating a new Attendee
             Attendees attendees = attendeeApp.getAttendees();
 
-            Attendee attendee = new Attendee(attFirstName, attLastName, attPhoneNumber, semID, "Going");
+            Attendee attendee = new Attendee(attId, attFirstName, attLastName, attPhoneNumber, attEmail, semID, "Going");
             session.setAttribute("attendee", attendee);
             attendees.addAttendee(attendee);
 

@@ -175,6 +175,9 @@
 
                 <label for="psw"><b>Phone no</b></label>
                 <input type="text" placeholder="Enter Phone no" name="attPhoneNumber" required>
+                
+                <label for="psw"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="attEmail" required>
 
                 <button type="submit" class="btn">Attend</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
