@@ -37,6 +37,7 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Phone Number</th>
+                    <th>Email</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -55,6 +56,9 @@
             </td>
             <td>
                 <xsl:value-of select="Phone" />
+            </td>
+            <td>
+                <xsl:value-of select="Email" />
             </td>
             <td>
                 <xsl:value-of select="Status" />

@@ -104,21 +104,14 @@
                 </div>
 
             </form><br>
-<<<<<<< HEAD
+
             
              <div class="buttonHolder">
                     <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
                     <form id="printForm" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
              </div>
             
-=======
 
-            <div class="buttonHolder">
-                <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
-                <form id="printForm" action="printTags.html"><input type="submit" value="Print Tags"/></form>
-            </div>
-
->>>>>>> 3b4858cf24405b460ab93313276e96d2224627e1
             <div id="AttendeesBlock">
                 <h1>Attendees</h1>
 

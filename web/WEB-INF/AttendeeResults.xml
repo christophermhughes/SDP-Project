@@ -8,9 +8,11 @@ and open the template in the editor.
 
 <Attendees>
     <Attendee>
+        <ID>Temp</ID>
         <Firstname>Temp </Firstname>
         <Lastname>Temp</Lastname>
-        <Phone>Temp</Phone>  
+        <Phone>Temp</Phone>
+        <Email>Temp</Email>  
         <SemID>Temp</SemID>
         <Status>Temp</Status>
     </Attendee>
