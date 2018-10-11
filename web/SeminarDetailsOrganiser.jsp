@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Seminar Details</title>
@@ -58,7 +60,9 @@
             Seminar seminar = seminars.getSeminarName(seminarName);
             String id = seminar.getId();
             String desc = seminar.getDescription();
-            String speakers = seminar.getSpeakers();
+            String speaker = seminar.getSpeaker();
+            String speakerBio = seminar.getSpeakerBio();
+            String host = seminar.getHost();
             String date = seminar.getDate();
             String time = seminar.getTime();
             String duration = seminar.getDuration();
@@ -73,13 +77,17 @@
                 <label>Seminar Name</label>
                 <input type="text" name ="seminarName" value="<%=seminarName%>" ><br><br>
                 <label>Seminar Description</label>
-                <input type="text" name ="description" value="<%=desc%>" ><br><br>
-                <label>Seminar Speakers</label>
-                <input type="text" name ="speakers" value="<%=speakers%>" ><br><br>
+                <textarea rows="4" cols="50" name="description"><%=desc%></textarea><br><br>
+                <label>Speaker</label>
+                <input type="text" name ="speaker" value="<%=speaker%>" ><br><br>
+                <label>Speaker Biography</label>
+                <textarea rows="4" cols="50" name="speakerBio"><%=speakerBio%></textarea><br><br>
+                <label>Host</label>
+                <input type="text" name ="host" value="<%=host%>" ><br><br>
                 <label>Date</label>
                 <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
                 <label>Time</label>
-                <input type="text" name="time" value="<%=time%>"><br><br>
+                <input type="text" name="time" value="<%=time%>" id="timepicker"><br><br>
                 <label>Duration</label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour" <%if (duration.equals("1 Hour")) {%> selected <%}%> >1 Hour</option>
@@ -94,14 +102,23 @@
                     <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
                     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
                 </div>
-               
+
             </form><br>
+<<<<<<< HEAD
             
              <div class="buttonHolder">
                     <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
                     <form id="printForm" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
              </div>
             
+=======
+
+            <div class="buttonHolder">
+                <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
+                <form id="printForm" action="printTags.html"><input type="submit" value="Print Tags"/></form>
+            </div>
+
+>>>>>>> 3b4858cf24405b460ab93313276e96d2224627e1
             <div id="AttendeesBlock">
                 <h1>Attendees</h1>
 
@@ -117,10 +134,22 @@
             </div>
 
             <script>
-                $(function () {
-                    $("#datepicker").datepicker({
-                        dateFormat: "yy-mm-dd"
-                    });
+
+                $("#datepicker").datepicker({
+                    dateFormat: "yy-mm-dd"
+                });
+
+
+                $("#timepicker").timepicker({
+                    timeFormat: 'HH:mm:ss',
+                    interval: 30,
+                    minTime: '09:00',
+                    maxTime: '21:00',
+                    defaultTime: '<%=time%>',
+                    startTime: '9:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
                 });
 
                 function toggleAttendees() {

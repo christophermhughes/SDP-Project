@@ -9,9 +9,11 @@ and open the template in the editor.
 <Seminars>
     <Seminar>
         <id>1</id>
-        <name>Wtong</name>
-        <description>blah 77</description>
-        <speakers>Divraj</speakers>
+        <name>temp</name>
+        <description>temp</description>
+        <speaker>Divraj</speaker>
+        <speakerBio>temp</speakerBio>
+        <host>temp</host>
         <date>11/12/2013</date>
         <time>2:10</time>
         <duration>1 Hour</duration>

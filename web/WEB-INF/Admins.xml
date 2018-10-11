@@ -7,6 +7,6 @@ and open the template in the editor.
 <Admins>
     <Admin>
         <email>admin@email.com</email>
-        <password>admin</password>
+        <password>Admin1</password>
     </Admin>
 </Admins>

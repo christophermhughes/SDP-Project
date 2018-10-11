@@ -18,7 +18,7 @@
 
 
             <div class="title">
-                <h1>Seminar Details</h1>
+                <h1>Summary of Seminars</h1>
             </div>
 
             <%

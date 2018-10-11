@@ -58,7 +58,7 @@
                 session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("login.jsp");
             } else {
-                if (!validator.validateEmail(email)) {
+                /*if (!validator.validateEmail(email)) {
                     session.setAttribute("emailErr", "Incorrect email format");
                 }
                 if (!validator.validatePassword(password)) {
@@ -67,7 +67,7 @@
 
                 if (!validator.validatePassword(password) || !validator.validateEmail(email)) {  //If any are invalid, send to register page
                     response.sendRedirect("login.jsp");
-                } else if (organiser != null) {
+                } else */if (organiser != null) {
                     session.setAttribute("organiser", organiser);
                     {
                         response.sendRedirect("MainOrganiser.jsp");

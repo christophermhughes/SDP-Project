@@ -4,6 +4,7 @@
     Author     : brand
 --%>
 
+<%@page import="LogReg.SeminarValidator"%>
 <%@page import="java.util.UUID"%>
 <%@page import="model.*"%>
 
@@ -30,30 +31,47 @@
             String seminarID = UUID.randomUUID().toString();
             String seminarName = request.getParameter("name");
             String desc = request.getParameter("description");
-            String speakers = request.getParameter("speakers");
+            String speaker = request.getParameter("speaker");
+            String speakerBio = request.getParameter("speakerBio");
+            String host = request.getParameter("host");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
             String duration = request.getParameter("duration");
             String venue = request.getParameter("venue");
             String email = organiser.getEmail();
 
-            if (seminars.getSeminarName(seminarName) != null) {
-                session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
+            SeminarValidator validator = new SeminarValidator();
+
+            if (validator.checkEmpty(seminarName, desc, speaker, speakerBio, date, time, duration, venue)) {
+                session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("CreateSeminar.jsp");
+            } else {
+                if(!validator.validateDate(date)){
+                    session.setAttribute("dateErr", "Date format is incorrect, please use the date picker to select a date");
+                    response.sendRedirect("CreateSeminar.jsp");
+                }
+                else if(!validator.validateTime(time)){
+                    session.setAttribute("timeErr", "Time format is incorrect, please use the time picker to select a time");
+                    response.sendRedirect("CreateSeminar.jsp");
+                }
+                else if (seminars.getSeminarName(seminarName) != null) {
+                    session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
+                    response.sendRedirect("CreateSeminar.jsp");
 
 //                Seminar seminar = seminars.getSeminar(seminarName);
 //                seminar.setTime(time);
 //                seminar.setDate(date);
-                // seminar.setRoom(loc);
-                // seminar.setAbstract(desc);
-            } else {
-                Seminar seminar = new Seminar(seminarID, seminarName, desc, speakers, date, time, duration, venue, email);
-                //session.setAttribute("seminar", seminar);
-                seminars.addSeminar(seminar);
-                seminarApp.updateXML(seminars, filePath);
-                session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
-                response.sendRedirect("SeminarAction.jsp");
-                
+                    // seminar.setRoom(loc);
+                    // seminar.setAbstract(desc);
+                } else {
+                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, host, date, time, duration, venue, email);
+                    //session.setAttribute("seminar", seminar);
+                    seminars.addSeminar(seminar);
+                    seminarApp.updateXML(seminars, filePath);
+                    session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
+                    response.sendRedirect("SeminarAction.jsp");
+
+                }
             }
 
         %>

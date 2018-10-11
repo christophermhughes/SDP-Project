@@ -22,21 +22,17 @@
     <xsl:template match="Seminars">
         
         <div class="filters">
-                <input type="text" id="searchLoc" placeholder="Refine location"/>
-                <input type="text" id="searchDat" placeholder="Refine date"/>
+            <input type="text" id="searchLoc" placeholder="Refine location"/>
+            <input type="text" id="searchDat" placeholder="Refine date"/>
         </div>
        
         <table id="table" class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>
-                <tr>
+                <tr class="headerRow">
                     <th>Name</th>
-                    <th>Description</th>
-                    <th>Speakers</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Duration</th>
                     <th>Venue</th>
-                    <th>Contact</th>
                     
                 </tr>
                
@@ -51,7 +47,7 @@
     <xsl:template match="Seminar">
         
         <tr>
-            <p id="demo"></p>
+            
             <td>
                 
                 <form action="SeminarDetailsAttendee.jsp" method="post">   
@@ -60,25 +56,9 @@
                         <xsl:value-of select="name" /> 
                     </button>                          
                 </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsAttendee.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="description" /> 
-                    </button>                         
-                </form>
-                    
-            </td>
-            <td>
-                <form action="SeminarDetailsAttendee.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="speakers" /> 
-                    </button>                           
-                </form>
-                    
-            </td>
+            </td>     
+            
+                        
             <td>
                 <form action="SeminarDetailsAttendee.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
@@ -96,29 +76,12 @@
                 </form>
             </td>
             <td>
-                <form action="SeminarDetailsAttendee.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="duration" /> 
-                    </button>                            
-                </form>
-            </td>
-            <td>
                 <form class="semForm" action="SeminarDetailsAttendee.jsp" method="post">   
                     <input type="hidden" name="name" value="{name}"/>  
                     <button class="semTBtn" onclick="form.submit()" value="{name}" > 
                         <xsl:value-of select="venue" /> 
                     </button>                          
                 </form>
-            </td>
-            <td>
-                <form action="SeminarDetailsAttendee.jsp" method="post">   
-                    <input type="hidden" name="name" value="{name}"/>  
-                    <button class="semTBtn" onclick="form.submit()" value="{name}" > 
-                        <xsl:value-of select="organiserEmail" /> 
-                    </button>                          
-                </form>
-                    
             </td>
             
         </tr>
@@ -131,7 +94,7 @@
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
     
             $rows.show().filter(function() {
-            var text = $(this.cells[6]).text().replace(/\s+/g, ' ').toLowerCase();
+            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
             }).hide();
             });
@@ -143,7 +106,7 @@
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
     
             $rows.show().filter(function() {
-            var text = $(this.cells[3]).text().replace(/\s+/g, ' ').toLowerCase();
+            var text = $(this.cells[1]).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
             }).hide();
             });

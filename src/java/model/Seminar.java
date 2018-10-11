@@ -25,8 +25,12 @@ public class Seminar implements java.io.Serializable {
     private String name;
     @XmlElement(name = "description")
     private String description;
-    @XmlElement(name="speakers")
-    private String speakers;
+    @XmlElement(name="speaker")
+    private String speaker;
+    @XmlElement(name="speakerBio")
+    private String speakerBio;
+    @XmlElement(name="host")
+    private String host;
     @XmlElement(name = "date")
     private String date;
     @XmlElement(name = "time")
@@ -41,11 +45,13 @@ public class Seminar implements java.io.Serializable {
     public Seminar() {
     }
 
-    public Seminar(String id, String name, String description, String speakers, String date, String time, String duration, String venue, String organiserEmail) {
+    public Seminar(String id, String name, String description, String speaker, String speakerBio, String host, String date, String time, String duration, String venue, String organiserEmail) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.speakers = speakers;
+        this.speaker = speaker;
+        this.speakerBio = speakerBio;
+        this.host = host;
         this.date = date;
         this.time = time;
         this.duration = duration;
@@ -77,12 +83,28 @@ public class Seminar implements java.io.Serializable {
         this.description = description;
     }
 
-    public String getSpeakers() {
-        return speakers;
+    public String getSpeaker() {
+        return speaker;
     }
 
-    public void setSpeakers(String speakers) {
-        this.speakers = speakers;
+    public void setSpeaker(String speaker) {
+        this.speaker = speaker;
+    }
+
+    public String getSpeakerBio() {
+        return speakerBio;
+    }
+
+    public void setSpeakerBio(String speakerBio) {
+        this.speakerBio = speakerBio;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
     }
 
     public String getDate() {
@@ -125,8 +147,7 @@ public class Seminar implements java.io.Serializable {
         this.organiserEmail = organiserEmail;
     }
 
-    
-    
+
 
 
 }

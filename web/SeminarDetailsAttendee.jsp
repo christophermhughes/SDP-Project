@@ -20,8 +20,8 @@
     </head>
     <body>
 
-        
-        
+
+
         <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
@@ -69,14 +69,16 @@
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminarName(seminarName);
             String desc = seminar.getDescription();
-            String speakers = seminar.getSpeakers();
+            String speaker = seminar.getSpeaker();
+            String speakerBio = seminar.getSpeakerBio();
+            String host = seminar.getHost();
             String date = seminar.getDate();
             String time = seminar.getTime();
             String duration = seminar.getDuration();
             String venue = seminar.getVenue();
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
-            
+
             Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
             attendeeResults.getList().clear();
@@ -97,40 +99,48 @@
 
         %>
 
+        <div class="content">
 
-
-        <table>
+            <table class="attendeeInfoTable">
             <tr>
                 <th>Seminar Name: </th>
-                <th><%=seminarName%></th>
+                <td><%=seminarName%></td>
             </tr>
             <tr>
                 <th>Seminar Description: </th>
-                <th><%=desc%></th>
+                <td><%=desc%></td>
             </tr>
             <tr>
-                <th>Seminar Speakers: </th>
-                <th><%=speakers%></th>
+                <th>Speaker: </th>
+                <td><%=speaker%></td>
+            </tr>
+            <tr>
+                <th>Speaker Biography: </th>
+                <td><%=speakerBio%></td>
+            </tr>
+            <tr>
+                <th>Host:</th>
+                <td><%=host%></td>
             </tr>
             <tr>
                 <th>Date: </th>
-                <th><%=date%></th>
+                <td><%=date%></td>
             </tr>
             <tr>
                 <th>Time: </th>
-                <th><%=time%></th>
+                <td><%=time%></td>
             </tr>
             <tr>
                 <th>Duration: </th>
-                <th><%=duration%></th>
+                <td><%=duration%></td>
             </tr>
             <tr>
                 <th>Venue: </th>
-                <th><%=venue%></th>
+                <td><%=venue%></td>
             </tr>
             <tr>
                 <th>Email: </th>
-                <th><%=email%></th>
+                <td><%=email%></td>
             </tr>
 
         </table>
@@ -139,6 +149,7 @@
 
         <br>
         <h1>Attendees</h1>
+        
         <c:import url="WEB-INF\AttendeeResults.xml"
                   var="inputDoc" />
 
@@ -179,6 +190,7 @@
                 document.getElementById("myForm").style.display = "none";
             }
         </script>
+        </div>
 
     </body>
 </html>

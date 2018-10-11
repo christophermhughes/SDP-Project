@@ -14,13 +14,19 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Create Seminar Page</title>
     </head>
     <body>
+        <%
+            // Checking to see if an organiser is logged in
+            if (session.getAttribute("organiser") == null) {%>
+        You do not have access to this page.
+        <%} else {%>
 
         <div class ="header">
 
@@ -42,15 +48,19 @@
         <div class ="content" >
             <form class="form" action="CreateSeminarAction.jsp" method="post">
                 <label> Seminar Name </label>
-                <input type="text" name="name"/><br><br>
+                <input type="text" name="name" maxlength="40"/><br><br>
                 <label> Description </label>
-                <input type="text" name="description"><br><br>
-                <label> Speakers </label>
-                <input type="text" name="speakers"><br><br>
+                <textarea rows="4" cols="50" name="description"></textarea><br><br>
+                <label> Speaker </label>
+                <input type="text" name="speaker"><br><br>
+                <label> Speaker Biography </label>
+                <textarea rows="4" cols="50" name="speakerBio"></textarea><br><br>
+                <label> Host </label>
+                <input type="text" name="host"><br><br>
                 <label> Date </label>
                 <input type="text" name="date" id="datepicker"><br><br>
                 <label> Time </label>
-                <input type="time" name="time"><br><br>
+                <input type="text" name ="time" id="timepicker"><br><br>
                 <label> Duration </label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour">1 Hour</option>
@@ -68,64 +78,57 @@
                 <!--                Organiser ID<br>
                                 <input type="text" name="orgID"><br>-->
                 <div class="buttonHolder">
-                <input type="submit" value="Add Seminar">
+                    <input type="submit" value="Add Seminar">
                 </div>
                 <br>
-                <font color="red"><c:out value="${existErr}"/></font>
+                <c:if test="${emptyErr!=null}">
+                    <font color="red"><c:out value="${emptyErr}"/></c:if></font>
+                <c:if test="${existErr!=null}">
+                    <font color="red"><c:out value="${existErr}"/></c:if></font>
+                <c:if test="${dateErr!=null}">
+                    <font color="red"><c:out value="${dateErr}"/></c:if></font>
+                <c:if test="${timeErr!=null}">
+                    <font color="red"><c:out value="${timeErr}"/></c:if></font>
 
-            </form> 
+                </form> 
 
             <%
+                if (session.getAttribute("emptyErr") != null) {
+                    session.removeAttribute("emptyErr");
+                }
                 if (session.getAttribute("existErr") != null) {
                     session.removeAttribute("existErr");
                 }
-
+                if (session.getAttribute("dateErr") != null) {
+                    session.removeAttribute("dateErr");
+                }
+                if (session.getAttribute("timeErr") != null) {
+                    session.removeAttribute("timeErr");
+                }
             %>
 
-
             <script>
-                $(function () {
-                    $("#datepicker").datepicker({
+
+                $("#datepicker").datepicker({
                     dateFormat: "dd/mm/yy"
-                    });
                 });
+
+
+                $("#timepicker").timepicker({
+                    timeFormat: 'HH:mm:ss',
+                    interval: 30,
+                    minTime: '09:00',
+                    maxTime: '21:00',
+                    startTime: '9:00',
+                    dynamic: false,
+                    dropdown: true,
+                    scrollbar: true
+                });
+
+
             </script>
 
-
-       
-            <!--   <form class="form" action="MainOrganiser.jsp" method="post">
-   
-                   <label for="semName">Seminar Name: </label>
-                   <input type="text" name="semName">
-                   <br>
-                   <br>
-                   <label for="time">Time: </label>
-                   <input type="time" name="Time">
-                   <br>
-                   <br>
-                   <label for="date">Date: </label>
-                   <input type="date" name="Date">
-                   <br>
-                   <br>
-                   <label for="loc">Location: </label>
-                   <input type="text" name="Location">
-                   <br>
-                   <br>
-                   <label for="descp">Description: </label>
-                   <input type="text" name="descp">
-                   <br>
-                   <br>
-                   <label for="staffName">Staff Organiser: </label>
-                   <input type="text" name="staffName">
-                   <br>
-                   <br>
-                   <div class="buttonHolder">
-                       <input type="submit" value="Create Seminar">
-                   </div>
-   
-               </form> 
-            -->
         </div>
-
+        <%}%>
     </body>
 </html>
