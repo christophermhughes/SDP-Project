@@ -8,8 +8,15 @@ and open the template in the editor.
 
 <Attendees>
     <Attendee>
-        <Firstname>Temp </Firstname>
-        <Lastname>Temp</Lastname>
+        <Firstname>Joe </Firstname>
+        <Lastname>Rogan</Lastname>
+        <Phone>Temp</Phone>  
+        <SemID>Temp</SemID>
+        <Status>Temp</Status>
+    </Attendee>
+    <Attendee>
+        <Firstname>John </Firstname>
+        <Lastname>Wickly</Lastname>
         <Phone>Temp</Phone>  
         <SemID>Temp</SemID>
         <Status>Temp</Status>

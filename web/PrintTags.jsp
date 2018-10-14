@@ -3,13 +3,19 @@
     Created on : Oct 8, 2018, 1:27:19 PM
     Author     : Ankush Yamarti
 --%>
-
+<%@page import="java.util.ArrayList"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@page import="model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+    <% String filePathTwo = application.getRealPath("WEB-INF/AttendeeResults.xml");%>
+        <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
+            <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
+        </jsp:useBean>
+<html>  
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
+        <style>
 .body{
   padding-top: 100px;
   padding-right: 250px;
@@ -19,40 +25,28 @@
   font-family: monaco, monospace;
   background: grey;
   background-size: cover;
-}
-.grid-container {
-  display: grid;
-  grid-template-rows: auto auto;
+  .span {
   background-color: white;
   padding-top: 30px;
   padding-right: 150px;
   padding-bottom: 80px;
   padding-left: 150px;
-  grid-gap: 50px;
-}
-.grid-item {
-  background-color:white;
-  border: 3px solid grey;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
 }
 </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body class="body">
-<div class="grid-container">
-    <div class="grid-item">1</div><br>
-  <div class="grid-item">2</div><br>
-  <div class="grid-item">3</div>  <br>
-  <div class="grid-item">4</div><br>
-  <div class="grid-item">5</div><br>
-  <div class="grid-item">6</div>  <br>
-  <div class="grid-item">7</div><br>
-  <div class="grid-item">8</div><br>
-  <div class="grid-item">9</div>  <br>
-  <div class="grid-item">10</div>  
-</div>
+        <span class="span">
+        <c:import url="WEB-INF\AttendeeResults.xml"
+                  var="inputDoc" />
+
+        <c:import url="WEB-INF\AttendeeTags.xsl"
+                  var="stylesheet" />
+
+        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+            <x:param name="bgColor"  value="lightgreen" />
+        </x:transform>
+        </span>
 
 </body>
 

@@ -63,8 +63,8 @@
             String desc = seminar.getAbstract();
             int orgID = seminar.getUserID();
             String seminarID = seminar.getSemID();
-
              */
+
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminarName(seminarName);
