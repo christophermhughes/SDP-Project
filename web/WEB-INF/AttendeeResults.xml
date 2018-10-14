@@ -17,7 +17,7 @@ and open the template in the editor.
     <Attendee>
         <Firstname>John </Firstname>
         <Lastname>Wickly</Lastname>
-        <Phone>Temp</Phone>  
+       <Phone>Temp</Phone>  
         <SemID>Temp</SemID>
         <Status>Temp</Status>
     </Attendee>

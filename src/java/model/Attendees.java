@@ -25,9 +25,9 @@ public class Attendees implements Serializable{
     public void addAttendee(Attendee attendee) {
         list.add(attendee);
     }
-    public void removeExistingAttendee(String phoneNumber){
+    public void removeExistingAttendee(String id){
         for(Attendee attendee: list){
-            if(attendee.getPhoneNumber().equals(phoneNumber)){
+            if(attendee.getId().equals(id)){
                 list.remove(attendee);
                 break;
             }
@@ -45,9 +45,9 @@ public class Attendees implements Serializable{
         return AttendingAttendees;
     }
     
-    public Attendee getAttendee(String phoneNumber) {
+    public Attendee getAttendee(String id) {
         for (Attendee attendee : list) {
-            if (attendee.getPhoneNumber().equals(phoneNumber)) {
+            if (attendee.getId().equals(id)) {
                 return attendee;
             }
         }

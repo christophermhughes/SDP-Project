@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Attendees>
     <Attendee>
+        <ID>12345</ID>
         <Firstname>Ryan</Firstname>
         <Lastname>Heise</Lastname>
         <Phone>9000122112</Phone>  
+        <Email>Ryan.Heise@coolemails.net</Email>
         <SemID>1</SemID>
         <Status>Going</Status>
     </Attendee>
     <Attendee>
+        <ID>54321</ID>
         <Firstname>Patrick</Firstname>
         <Lastname>Daher</Lastname>
-        <Phone>9000122112</Phone>  
+        <Phone>9000122112</Phone> 
+        <Email>patthebat@gmail.com</Email> 
         <SemID>1</SemID>
         <Status>Going</Status>
     </Attendee>
     <Attendee>
+        <ID>98765</ID>
         <Firstname>Christopher</Firstname>
         <Lastname>Hughes</Lastname>
         <Phone>9000122112</Phone>  
+        <Email>chris@chrismail.com</Email>
         <SemID>1</SemID>
         <Status>Going</Status>
     </Attendee>
         <Attendee>
+        <ID>15243</ID>
         <Firstname>Brandi</Firstname>
         <Lastname>Nguyen</Lastname>
         <Phone>9000122112</Phone>  
+        <Email>bambi@gmail.com</Email>
         <SemID>2</SemID>
         <Status>Going</Status>
     </Attendee>
     <Attendee>
+        <ID>93957</ID>
         <Firstname>Divraj</Firstname>
         <Lastname>Singh</Lastname>
-        <Phone>9000122112</Phone>  
+        <Phone>9000122112</Phone>
+        <Email>xXxDivrajxXx@hotmail.com</Email>  
         <SemID>2</SemID>
         <Status>Going</Status>
     </Attendee>
     <Attendee>
+        <ID>11111</ID>
         <Firstname>Ankush</Firstname>
         <Lastname>Yamarti</Lastname>
         <Phone>9000122112</Phone>  
+        <Email>lilankush@mail.com</Email>
         <SemID>2</SemID>
         <Status>Going</Status>
     </Attendee>
