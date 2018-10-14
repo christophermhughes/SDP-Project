@@ -3,6 +3,7 @@
     Created on : 10/09/2018, 3:23:20 PM
     Author     : brand
 --%>
+<%@page import="java.util.ArrayList"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@page import="model.*"%>
@@ -43,7 +44,16 @@
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
+         
+          <% String filePathTwo = application.getRealPath("WEB-INF/Attendees.xml");%>
+        <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
+            <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
+        </jsp:useBean>
 
+        <% String filePathThree = application.getRealPath("WEB-INF/AttendeeResults.xml");%>
+        <jsp:useBean id="attendeeResultApp" class="model.AttendeeApplication" scope="application">
+            <jsp:setProperty name="attendeeResultApp" property="filePath" value="<%=filePathThree%>"/>
+        </jsp:useBean>
         <%
             /*   
         String semName = request.getParameter("semName");
@@ -115,8 +125,19 @@
 
             <div id="AttendeesBlock">
                 <h1>Attendees</h1>
+<%          Attendees attendees = attendeeApp.getAttendees();
+            Attendees attendeeResults = attendeeResultApp.getAttendees();
+            attendeeResults.getList().clear();
+            ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 
-                <c:import url="WEB-INF\Attendees.xml"
+            Attendees results = new Attendees();
+
+            for (Attendee a : seminarAttendees) {
+                results.addAttendee(a);
+            }
+
+            attendeeResultApp.updateXML(results, filePathThree);%>
+                <c:import url="WEB-INF\AttendeeResults.xml"
                           var="inputDoc" />
 
                 <c:import url="WEB-INF\Attendees.xsl"

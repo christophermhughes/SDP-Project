@@ -52,19 +52,6 @@
 
         <%
 
-            //Attendees attendees = attendeeApp.getAttendees();         
-/*
-            String semName = request.getParameter("semName");
-            Seminars seminars = seminarApp.getSeminars();
-            Seminar seminar = seminars.getSeminar(semName);
-            String time = seminar.getTime();
-            String date = seminar.getDate();
-            String loc = seminar.getRoom();
-            String desc = seminar.getAbstract();
-            int orgID = seminar.getUserID();
-            String seminarID = seminar.getSemID();
-             */
-
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminarName(seminarName);
