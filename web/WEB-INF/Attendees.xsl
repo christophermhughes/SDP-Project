@@ -49,19 +49,45 @@
     <xsl:template match="Attendee">
         <tr>
             <td>
-                <xsl:value-of select="Firstname" />
+                <form action="AttendeeDetails.jsp" method="post">   
+                    <input type="hidden" name="id" value="{ID}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{ID}" > 
+                        <xsl:value-of select="Firstname" /> 
+                    </button>                          
+                </form>
+                
             </td>
              <td>
-                <xsl:value-of select="Lastname" />
+                 <form action="AttendeeDetails.jsp" method="post">   
+                    <input type="hidden" name="id" value="{ID}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{ID}" > 
+                        <xsl:value-of select="Lastname" /> 
+                    </button>                          
+                </form>
             </td>
             <td>
-                <xsl:value-of select="Phone" />
+                <form action="AttendeeDetails.jsp" method="post">   
+                    <input type="hidden" name="id" value="{ID}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{ID}" > 
+                        <xsl:value-of select="Phone" /> 
+                    </button>                          
+                </form>
             </td>
             <td>
-                <xsl:value-of select="Email" />
+                <form action="AttendeeDetails.jsp" method="post">   
+                    <input type="hidden" name="id" value="{ID}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{ID}" > 
+                        <xsl:value-of select="Email" /> 
+                    </button>                          
+                </form>
             </td>
             <td>
-                <xsl:value-of select="Status" />
+                <form action="AttendeeDetails.jsp" method="post">   
+                    <input type="hidden" name="id" value="{ID}"/>  
+                    <button class="semTBtn" onclick="form.submit()" value="{ID}" > 
+                        <xsl:value-of select="Status" /> 
+                    </button>                          
+                </form>
             </td>
         </tr>
     </xsl:template>

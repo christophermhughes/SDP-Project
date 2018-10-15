@@ -42,4 +42,5 @@
             response.sendRedirect("AdminPage.jsp");
         
         %>
+    </body>
 </html>
