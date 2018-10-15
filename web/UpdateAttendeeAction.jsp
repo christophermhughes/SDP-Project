@@ -20,11 +20,11 @@
 
         <% 
             String id = request.getParameter("id");
-            String firstName = request.getParameter("FirstName");
-            String lastName = request.getParameter("LastName");
-            String phoneNumber = request.getParameter("Phone");
-            String email = request.getParameter("Email");
-            String status = request.getParameter("Status");
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String phoneNumber = request.getParameter("phoneNumber");
+            String email = request.getParameter("email");
+            String status = request.getParameter("status");
             
             Attendees attendees = attendeeApp.getAttendees();
             Attendee updateAttendee = attendees.getAttendee(id);
