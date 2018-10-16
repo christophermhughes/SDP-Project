@@ -34,6 +34,14 @@
             
             Seminars seminars = seminarApp.getSeminars();
             Seminar updateSeminar = seminars.getSeminar(id);
+            
+            if(seminars.checkMatchingSeminar(name)){
+                %> 
+                <!-- Please format this <3 -->
+                <h1> Sorry this seminar name already exists :(</h1>
+        
+        <%
+            }else{
             updateSeminar.setName(name);
             updateSeminar.setDescription(desc);
             updateSeminar.setSpeaker(speaker);
@@ -48,6 +56,6 @@
             seminarApp.updateXML(seminars, filePath);
             session.setAttribute("updateSeminar", "You have succesfully updated the Seminar: " + name);
             response.sendRedirect("SeminarAction.jsp");
-        %>
+}%>
     </body>
 </html>

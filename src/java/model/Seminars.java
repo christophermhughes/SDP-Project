@@ -57,6 +57,14 @@ public class Seminars implements Serializable{
         return null;
     }
     
+      public boolean checkMatchingSeminar(String seminarName){
+        for(Seminar seminar: list){
+            if(seminar.getName().equals(seminarName)){
+                return true;            
+            }
+        }
+        return false;
+    }
     
     public ArrayList<Seminar> getOrganiserSeminars(String email) {
         ArrayList<Seminar> seminars = new ArrayList<Seminar>();
