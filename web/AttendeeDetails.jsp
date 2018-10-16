@@ -16,7 +16,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Seminar Management System</title>
     </head>
     <body>
         <div class="header">
@@ -34,6 +34,7 @@
             <ul class="nav">
                 <li class= "nav"><a href="login.jsp"> Login </a> </li>
                 <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" target="_blank"> Help </a> </li>
+                <li class= "nav"><a href="Faq.jsp"> FAQ </a> </li>
             </ul>
 
 
@@ -44,6 +45,7 @@
                 <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
                 <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfgPitQ9eFTF5hKzj1TdrNM7" target="_blank"> Help </a> </li>
+                <li class= "nav"><a href="Faq.jsp"> FAQ </a> </li>
             </ul>
 
             <%}%>

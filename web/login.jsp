@@ -23,6 +23,7 @@
             <ul class="nav">
                 <li class= "nav"><a href="MainAttendee.jsp"> Seminars </a> </li>
                 <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" target="_blank"> Help </a> </li>
+                <li class= "nav"><a href="Faq.jsp"> FAQ </a> </li>
             </ul>
 
 

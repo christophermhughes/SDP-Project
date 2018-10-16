@@ -36,6 +36,7 @@
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
                 <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
                 <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
+                <li class= "nav"><a href="Faq.jsp"> FAQ </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
         </div>
