@@ -4,59 +4,44 @@
     <xsl:template match="Attendees">
         <html>
             <head>
-              <style>
-                    .table{
-                    width:50%;
-                    background-color: white;
-                    }
-                    th, td {
-                    text-align:left;
-                    padding: 8px;
-                   background-color: white;
-                  border-style: solid;
-                     border-color: black;
-                    }
-                    th {
-                    background-color: #4CAF50;
-                    color: white;
-                    font-weight:bold;
-                    }
-                    h2,p{
-                    background-color: #4CAF50;
-                    width:50%;
-                    font-weight:bold;
-                    }					
-                </style>
+                <link rel="stylesheet" type="text/css" href="..\NameTags.css"/>
             </head>
             <body>
-                <xsl:apply-templates />
+                <xsl:apply-templates select="Attendees"/>
             </body>
         </html>
     </xsl:template>
     <xsl:template match="Attendees">
-        <table>
-                <xsl:apply-templates />      
-        </table>
+        
+        <xsl:apply-templates />      
+        
     </xsl:template>
     <xsl:template match="Attendee" >
-        <table style=" background-color: white;
-                    padding-top: 30px;
-                    padding-right: 200px;
-                    padding-bottom: 80px;
-                    padding-left: 200px;
-                    text-align:center;
-             ">
-        <tr style="outline: solid;
-                   outline-color: grey;">
-            <td style="padding:50px 25px 50px 100px;
-                       font-size: 30px;">
+        <body style="width: 8.268in;
+    margin: 0in .1875in;" >
+
+            <div class="label" style= "  /* Avery 5160 labels -- CSS and HTML by MM at Boulder Information Services */
+    width: 3.302in; /* plus .6 inches from padding */
+    height: 1.375in; /* plus .125 inches from padding */
+    padding: .125in .3in 0;
+    margin-right: .125in; /* the gutter */
+
+    float: left;
+
+    text-align: center;
+    overflow: hidden;
+
+    outline: 1px dotted; /* outline doesn't occupy space like border does */"
+            >
+    
+                <br/> 
                 <xsl:value-of select="Firstname" />
-            </td >
-             <td style="padding:50px 100px 50px 25px;
-                        font-size: 30px;">
                 <xsl:value-of select="Lastname" />
-            </td>
-        </tr>
-        </table>
+
+            </div>
+            <div class="page-break"></div>
+
+        </body>
+        
     </xsl:template>
 </xsl:stylesheet>
