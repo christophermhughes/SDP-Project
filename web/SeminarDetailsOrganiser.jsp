@@ -77,8 +77,10 @@
             String time = seminar.getTime();
             String duration = seminar.getDuration();
             String venue = seminar.getVenue();
+            String venueCapacity = seminar.getVenueCapacity();
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
+          
         %>
 
         <div class="content">
@@ -110,6 +112,8 @@
                     <option value="CB01.04.006" <%if (venue.equals("CB01.04.006")) {%> selected <%}%> >CB01.04.006</option>
                     <option value="CB01.04.09" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB01.04.09</option>
                 </select><br><br>
+                <label> Venue Capacity </label>
+                <input type="text" name="venueCapacity" value="<%=venueCapacity%>"><br><br>
                 <div class="buttonHolder">
                     <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
                     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>

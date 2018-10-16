@@ -71,6 +71,8 @@
                     <option value="CB01.04.006">CB01.04.006</option>
                     <option value="CB01.04.09">CB01.04.09</option>
                 </select>
+                <label> Venue Capacity </label>
+                <input type="text" name ="venueCapacity"><br><br>
                 <br>
                 <br>
 

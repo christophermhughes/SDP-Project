@@ -38,6 +38,7 @@
             String time = request.getParameter("time");
             String duration = request.getParameter("duration");
             String venue = request.getParameter("venue");
+            String venueCapacity = request.getParameter("venueCapacity");
             String email = organiser.getEmail();
 
             SeminarValidator validator = new SeminarValidator();
@@ -64,7 +65,7 @@
                     // seminar.setRoom(loc);
                     // seminar.setAbstract(desc);
                 } else {
-                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, host, date, time, duration, venue, email);
+                    Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, host, date, time, duration, venue, venueCapacity, email);
                     //session.setAttribute("seminar", seminar);
                     seminars.addSeminar(seminar);
                     seminarApp.updateXML(seminars, filePath);

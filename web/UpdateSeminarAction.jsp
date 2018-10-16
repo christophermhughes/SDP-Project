@@ -30,7 +30,7 @@
             String time = request.getParameter("time");
             String duration = request.getParameter("duration");
             String venue = request.getParameter("venue");
-            
+            String venueCapacity = request.getParameter("venueCapacity");
             
             Seminars seminars = seminarApp.getSeminars();
             Seminar updateSeminar = seminars.getSeminar(id);
@@ -43,6 +43,7 @@
             updateSeminar.setTime(time);
             updateSeminar.setDuration(duration);
             updateSeminar.setVenue(venue);
+            updateSeminar.setVenueCapacity(venueCapacity);
            
             seminarApp.updateXML(seminars, filePath);
             session.setAttribute("updateSeminar", "You have succesfully updated the Seminar: " + name);
