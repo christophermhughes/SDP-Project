@@ -146,7 +146,10 @@
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
         </x:transform>
-
+<%
+                // Have a login option if not logged in. Have several options for a logged in organiser.
+                if (session.getAttribute("organiser") == null) {
+            %>
         <%-- Trying something with a pop up --%>       
         <button class="open-button" onclick="openForm()">Attend Seminar</button>
 
@@ -182,6 +185,6 @@
             }
         </script>
         </div>
-
+<%} %>
     </body>
 </html>
