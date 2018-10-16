@@ -80,8 +80,7 @@
                     <label>Email</label>
                     <input type="text" name ="email" value="<%=email%>" ><br><br>
                     <label>Status</label>
-                    
-                    <select name="status">
+                    <select id="status" name="status">
                         <option value="Going" <%if (status.equals("Going")) {%> selected <%}%>>Going</option>
                         <option value="Interested" <%if (status.equals("Interested")) {%> selected <%}%>>Interested</option>
                     </select>

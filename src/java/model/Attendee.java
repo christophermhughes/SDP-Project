@@ -98,7 +98,7 @@ public class Attendee implements java.io.Serializable {
         return status;
     }
 
-    public void setStatus(String seminarID) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

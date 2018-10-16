@@ -108,7 +108,7 @@
                 <label>Venue</label>
                 <select id ="venue" name="venue">
                     <option value="CB01.04.006" <%if (venue.equals("CB01.04.006")) {%> selected <%}%> >CB01.04.006</option>
-                    <option value="CB01.04.09" <%if (venue.equals("CB01.04.09")) {%> selected <%}%>>CB01.04.09</option>
+                    <option value="CB01.04.09" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB01.04.09</option>
                 </select><br><br>
                 <div class="buttonHolder">
                     <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
