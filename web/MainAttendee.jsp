@@ -26,6 +26,7 @@
                 if (session.getAttribute("organiser") == null) {
             %>
 
+
             <ul class="nav">
                 <li class= "nav"><a href="login.jsp"> Login </a> </li>
                 <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" target="_blank"> Help </a> </li>
@@ -33,6 +34,7 @@
 
 
             <%} else {%>
+
             <ul class="nav">
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
                 <li class= "nav"><a href="MainAttendee.jsp" class="active"> All Seminars </a> </li>
@@ -46,7 +48,18 @@
             <%}%>
 
         </div>
-        
+            
+                           <% if (session.getAttribute("existErr") != null) {%>
+                <script>
+                alert("Sorry, an organiser can't be an attendee");
+            </script>
+            <%
+
+                    session.removeAttribute("existErr");
+                }
+
+            %>
+
         <c:import url="WEB-INF\Seminars.xml"
                   var="inputDoc" />
 
