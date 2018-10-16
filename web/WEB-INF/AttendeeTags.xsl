@@ -18,7 +18,7 @@
     </xsl:template>
     <xsl:template match="Attendee" >
         <body style="width: 8.268in;
-    margin: 0in .05in;" >
+    margin: 0in .1875in;" >
 
             <div class="label" style= "  /* Avery 5160 labels -- CSS and HTML by MM at Boulder Information Services */
     width: 3.302in; /* plus .6 inches from padding */
