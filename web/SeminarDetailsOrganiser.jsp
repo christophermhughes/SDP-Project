@@ -81,6 +81,8 @@
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
           
+             Attendees attendees = attendeeApp.getAttendees();
+            Attendees attendeeResults = attendeeResultApp.getAttendees();
         %>
 
         <div class="content">
@@ -114,6 +116,7 @@
                 </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name="venueCapacity" value="<%=venueCapacity%>"><br><br>
+                <label> Number of Attendees: <%=attendeeResults.countAttendees()%></label>
                 <div class="buttonHolder">
                     <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
                     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
@@ -129,8 +132,8 @@
 
             <div id="AttendeesBlock">
                 <h1>Attendees</h1>
-<%          Attendees attendees = attendeeApp.getAttendees();
-            Attendees attendeeResults = attendeeResultApp.getAttendees();
+<%         
+           
             attendeeResults.getList().clear();
             ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 

@@ -54,6 +54,14 @@ public class Attendees implements Serializable{
         return AttendingAttendees;
     }
     
+     public int countAttendees() {
+         int count=1;
+        for (Attendee attendee : list) {
+            count++;
+        }
+        return count;
+    }
+    
     public Attendee getAttendee(String id) {
         for (Attendee attendee : list) {
             if (attendee.getId().equals(id)) {
