@@ -37,11 +37,21 @@
             String attLastName = request.getParameter("attLastName");
             String attPhoneNumber = request.getParameter("attPhoneNumber");
             String attEmail = request.getParameter("attEmail");
-
+            String attendBtn = request.getParameter("attendBtn");
+            String intererstedBtn = request.getParameter("interestedBtn");
+            String status;
+            if(attendBtn!=null){
+                status = "Going";
+            }
+            else{
+                status = "Interested";
+            }
+                    
+            
             //Creating a new Attendee
             Attendees attendees = attendeeApp.getAttendees();
 
-            Attendee attendee = new Attendee(attId, attFirstName, attLastName, attPhoneNumber, attEmail, semID, "Going");
+            Attendee attendee = new Attendee(attId, attFirstName, attLastName, attPhoneNumber, attEmail, semID, status);
             session.setAttribute("attendee", attendee);
             attendees.addAttendee(attendee);
 

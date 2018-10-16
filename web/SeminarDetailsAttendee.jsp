@@ -166,7 +166,8 @@
                 <label for="psw"><b>Email</b></label>
                 <input type="text" placeholder="Enter Email" name="attEmail" required>
 
-                <button type="submit" class="btn">Attend</button>
+                <button type="submit" name="attendBtn" class="btn">Attend</button>
+                <button type="submit" name="interestedBtn" class="btn"> Interested</button>
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
