@@ -38,7 +38,16 @@ public class Organisers implements Serializable{
             }
         }
     }
-
+    
+    public boolean checkMatchingOrganiser(String email, String phoneNumber){
+        for(Organiser organiser: list){
+            if(organiser.getEmail().equals(email) || organiser.getPhoneNumber().equals(phoneNumber) ){
+                return true;            
+            }
+        }
+        return false;
+    }
+    
     public Organiser getOrganiser(String id) {
         for (Organiser organiser : list) {
             if (organiser.getid().equals(id)) {

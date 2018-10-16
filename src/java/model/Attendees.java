@@ -33,6 +33,15 @@ public class Attendees implements Serializable{
             }
         }
     }
+    
+    public boolean checkMatchingAttendee(String email, String phoneNumber){
+        for(Attendee attendee: list){
+            if(attendee.getEmail().equals(email) || attendee.getPhoneNumber().equals(phoneNumber) ){
+                return true;            
+            }
+        }
+        return false;
+    }
 
     public ArrayList<Attendee> getAttendingAttendees(String seminarID) {
         ArrayList<Attendee> AttendingAttendees = new ArrayList();

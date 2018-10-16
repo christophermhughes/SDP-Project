@@ -26,6 +26,16 @@
         <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
             <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
         </jsp:useBean>
+        
+        <% String filePathThree = application.getRealPath("WEB-INF/Organisers.xml");%>
+        <jsp:useBean id="organiserApp" class="model.OrganiserApplication" scope="application">
+            <jsp:setProperty name="organiserApp" property="filePath" value="<%=filePathThree%>"/>
+        </jsp:useBean>
+        
+        <% String filePathFour = application.getRealPath("WEB-INF/AttendeeResults.xml");%>
+        <jsp:useBean id="attendeeResultApp" class="model.AttendeeApplication" scope="application">
+            <jsp:setProperty name="attendeeResultApp" property="filePath" value="<%=filePathFour%>"/>
+        </jsp:useBean>
 
         <%
             //Getting the Seminar ID    
@@ -46,17 +56,40 @@
             else{
                 status = "Interested";
             }
-                    
-            
-            //Creating a new Attendee
+            //Getting the current list of organisers and attendees
+            Organisers organisers = organiserApp.getOrganisers();
             Attendees attendees = attendeeApp.getAttendees();
+            Attendees attendeeResults = attendeeResultApp.getAttendees();
+            
+            if(organisers.checkMatchingOrganiser(attEmail, attPhoneNumber)){
+             %> 
+             
+             
+             <!-- Format this area to to make the error page look nice -->
+             <h1> Sorry Organizers cannot attend events </h1>
+                 
+        <%   
+            }else if(attendeeResults.checkMatchingAttendee(attEmail, attPhoneNumber)){
+               %> 
+             
+             
+             <!-- Format this area to to make the error page look nice -->
+             <h1> Sorry an email or phone number matching yours is already attending this seminar </h1>
+                 
+               <%  
+            }else{
+            //Creating a new Attendee
+            
 
             Attendee attendee = new Attendee(attId, attFirstName, attLastName, attPhoneNumber, attEmail, semID, status);
             session.setAttribute("attendee", attendee);
             attendees.addAttendee(attendee);
 
             attendeeApp.updateXML(attendees, filePathTwo);
-            response.sendRedirect("MainAttendee.jsp");
+            response.sendRedirect("MainAttendee.jsp"); 
+            }
+            
+            
 
 
         %>
