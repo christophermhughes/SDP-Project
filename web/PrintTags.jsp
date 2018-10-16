@@ -15,24 +15,7 @@
         </jsp:useBean>
 <html>  
     <head>
-        <style>
-.body{
-  padding-top: 100px;
-  padding-right: 250px;
-  padding-bottom: 80px;
-  padding-left: 250px;
-  text-align: left;
-  font-family: monaco, monospace;
-  background: grey;
-  background-size: cover;
-  .span {
-  background-color: white;
-  padding-top: 30px;
-  padding-right: 150px;
-  padding-bottom: 80px;
-  padding-left: 150px;
-}
-</style>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body class="body">
