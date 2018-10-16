@@ -20,7 +20,7 @@
         <body style="width: 8.268in;
     margin: 0in .1875in;" >
 
-            <div class="label" style= "  /* Avery 5160 labels -- CSS and HTML by MM at Boulder Information Services */
+            <div class="label" style= "  /* Avery L7163 labels */
     width: 3.302in; /* plus .6 inches from padding */
     height: 1.375in; /* plus .125 inches from padding */
     padding: .125in .3in 0;

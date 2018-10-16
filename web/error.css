@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/10/2018, 10:25:48 PM
+    Author     : divrajsingh
+*/
+
+@import "lesshat";
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+html { 
+    background:  url(https://gph.to/2AeXuiV) no-repeat center center fixed; 
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+
+}
+h1{
+    font-size: 14em;
+    margin: .2em .5em;
+    color: rgba(255,255,255, 0.7);
+    margin-bottom:0px;
+}
+h2{
+    font-size: 1.7em;
+    margin: .2em .5em;
+    color: aliceblue;
+    .material-icons {
+        font-size: 1.5em;
+        position: relative;
+        top: 10px;
+    }
+}
+div.error{
+    position:absolute;
+    top:30%;
+    margin-top:-8em;
+    width:100%;
+    text-align:center;
+}
+div.error > a {
+    color:aliceblue;
+}
