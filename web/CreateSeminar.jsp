@@ -66,11 +66,27 @@
                 <select id ="duration" name="duration">
                     <option value="1 Hour">1 Hour</option>
                     <option value="2 Hours">2 Hours</option>
+                    <option value="3 Hours">3 Hours</option>
+                    <option value="4 Hours">4 Hours</option>
+                    <option value="5 Hours">5 Hours</option>                    
                 </select><br><br>
                 <label> Venue </label>
                 <select id ="venue" name="venue">
                     <option value="CB01.04.006">CB01.04.006</option>
                     <option value="CB01.04.09">CB01.04.09</option>
+                    <option value="CB01.04.29">CB01.04.29</option>
+                    <option value="CB01.04.49">CB01.04.49</option>
+                    <option value="CB01.04.52">CB01.04.52</option>
+                    <option value="CB01.04.67">CB01.04.67</option>
+                    <option value="CB01.04.EXTC01">CB01.04.EXTC01</option>
+                    <option value="CB01.05.009">CB01.05.009</option>
+                    <option value="CB01.05.09D">CB01.05.09D</option>
+                    <option value="CB01.05.10A">CB01.05.10A</option>
+                    <option value="CB01.05.52">CB01.05.52</option>
+                    <option value="CB01.06.13E">CB01.06.13E</option>
+                    <option value="CB03.01.005">CB03.01.005</option>
+                    <option value="CB03.05.010">CB03.05.010</option>
+                    <option value="CB04.02.CR.01">CB04.02.CR.01</option>
                 </select>
                 <label> Venue Capacity </label>
                 <input type="text" name ="venueCapacity"><br><br>

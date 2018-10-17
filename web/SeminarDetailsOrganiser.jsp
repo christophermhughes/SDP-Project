@@ -110,11 +110,27 @@
                 <select id ="duration" name="duration">
                     <option value="1 Hour" <%if (duration.equals("1 Hour")) {%> selected <%}%> >1 Hour</option>
                     <option value="2 Hours" <%if (duration.equals("2 Hours")) {%> selected <%}%> >2 Hours</option>
+                    <option value="3 Hour" <%if (duration.equals("3 Hour")) {%> selected <%}%> >3 Hour</option>
+                    <option value="4 Hour" <%if (duration.equals("4 Hour")) {%> selected <%}%> >4 Hour</option>
+                    <option value="5 Hour" <%if (duration.equals("5 Hour")) {%> selected <%}%> >5 Hour</option>
                 </select><br><br>
                 <label>Venue</label>
                 <select id ="venue" name="venue">
                     <option value="CB01.04.006" <%if (venue.equals("CB01.04.006")) {%> selected <%}%> >CB01.04.006</option>
                     <option value="CB01.04.09" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB01.04.09</option>
+                    <option value="CB01.04.29" <%if (venue.equals("CB01.04.29")) {%> selected <%}%> >CB01.04.29</option>
+                    <option value="CB01.04.49" <%if (venue.equals("CB01.04.49")) {%> selected <%}%> >CB01.04.49</option>
+                    <option value="CB01.04.52" <%if (venue.equals("CB01.04.52")) {%> selected <%}%> >CB01.04.52</option>
+                    <option value="CB01.04.67" <%if (venue.equals("CB01.04.67")) {%> selected <%}%> >CB01.04.67</option>
+                    <option value="CB01.04.EXTC01" <%if (venue.equals("CB01.04.EXTC01")) {%> selected <%}%> >CB01.04.EXTC01</option>
+                    <option value="CB01.05.009" <%if (venue.equals("CB01.05.009")) {%> selected <%}%> >CB01.05.009</option>
+                    <option value="CB01.05.09D" <%if (venue.equals("CB01.05.09D")) {%> selected <%}%> >CB01.05.09D</option>
+                    <option value="CB01.05.10A" <%if (venue.equals("CB01.05.10A")) {%> selected <%}%> >CB01.05.10A</option>
+                    <option value="CB01.05.52" <%if (venue.equals("CB01.05.52")) {%> selected <%}%> >CB01.05.52</option>
+                    <option value="CB01.06.13E" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB01.06.13E</option>
+                    <option value="CB03.01.005" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB03.01.005</option>
+                    <option value="CB03.05.010" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CCB03.05.010</option>
+                    <option value="CB04.02.CR.01" <%if (venue.equals("CB04.02.CR.01")) {%> selected <%}%> >CB04.02.CR.01/option>
                 </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name="venueCapacity" value="<%=venueCapacity%>"><br><br>
