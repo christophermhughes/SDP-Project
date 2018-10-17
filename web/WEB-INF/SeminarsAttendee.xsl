@@ -22,8 +22,10 @@
     <xsl:template match="Seminars">
         
         <div class="filters">
-            <input type="text" id="searchLoc" placeholder="Refine location"/>
-            <input type="text" id="searchDat" placeholder="Refine date"/>
+            <input type="text" id="searchDat" placeholder="DD/MM/YYYY"/>
+            <input type="text" id="searchLoc" placeholder="Location"/>
+            <input type="text" id="searchSpeak" placeholder="Speaker Name"/>
+            <input type="text" id="searchOrg" placeholder="Organiser"/>
         </div>
        
         <table id="table" class="semTable" border="1" frame="void" rules="all" align="center">
@@ -125,6 +127,30 @@
     
             $rows.show().filter(function() {
             var text = $(this.cells[1]).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+            }).hide();
+            });
+            ]]>
+            
+            <![CDATA[
+            var $rows = $('#table tbody tr');
+            $('#searchSpeak').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+            $rows.show().filter(function() {
+            var text = $(this.cells[4]).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+            }).hide();
+            });
+            ]]>
+            
+            <![CDATA[
+            var $rows = $('#table tbody tr');
+            $('#searchOrg').keyup(function() {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+            $rows.show().filter(function() {
+            var text = $(this.cells[5]).text().replace(/\s+/g, ' ').toLowerCase();
             return !~text.indexOf(val);
             }).hide();
             });
