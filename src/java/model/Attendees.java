@@ -55,9 +55,9 @@ public class Attendees implements Serializable{
     }
     
      public int countAttendees() {
-         int count=1;
+        int count=0;
         for (Attendee attendee : list) {
-            count++;
+            count=count+1;
         }
         return count;
     }

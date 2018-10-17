@@ -84,6 +84,7 @@
           
              Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
+          
         %>
 
         <div class="content">

@@ -65,10 +65,12 @@
             String venue = seminar.getVenue();
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
+            String venueCapacity = seminar.getVenueCapacity();
+            
 
             Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
-            attendeeResults.getList().clear();
+            
             ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 
             Attendees results = new Attendees();
@@ -124,6 +126,14 @@
             <tr>
                 <th>Venue: </th>
                 <td><%=venue%></td>
+            </tr>
+            <tr>
+                <th>Venue Capacity: </th>
+                <td><%=venueCapacity%></td>
+            </tr>
+            <tr>
+                <th>Registered Attendees: </th>
+                <td><%=attendeeResults.countAttendees()%></td>
             </tr>
             <tr>
                 <th>Email: </th>
