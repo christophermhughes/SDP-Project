@@ -70,6 +70,15 @@ public class Attendees implements Serializable{
         }
         return null;
     }
+    
+    public Attendee getAttendeeByEmail(String email) {
+        for (Attendee attendee : list) {
+            if (attendee.getEmail().equals(email)) {
+                return attendee;
+            }
+        }
+        return null;
+    }
 
     
 }
