@@ -47,7 +47,13 @@
                 session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("CreateSeminar.jsp");
             } else {
-                if(!validator.validateDate(date)){
+                if (!validator.validateName(seminarName) || !validator.validateName(speaker) || !validator.validateName(host)) {
+                    session.setAttribute("nameErr", "Name format for seminar, speaker or host is incorrect, please only use letters");
+                    response.sendRedirect("CreateSeminar.jsp");
+                } else if (seminars.getSeminarName(seminarName) != null) {
+                    session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
+                    response.sendRedirect("CreateSeminar.jsp");
+                } else if(!validator.validateDate(date)){
                     session.setAttribute("dateErr", "Date format is incorrect, please use the date picker to select a date");
                     response.sendRedirect("CreateSeminar.jsp");
                 }
@@ -55,18 +61,13 @@
                     session.setAttribute("timeErr", "Time format is incorrect, please use the time picker to select a time");
                     response.sendRedirect("CreateSeminar.jsp");
                 }
-                else if (seminars.getSeminarName(seminarName) != null) {
-                    session.setAttribute("existErr", "Sorry, there is already a seminar with that name");
+                else if(!validator.validateVenueCapacity(venueCapacity)){
+                    session.setAttribute("venueCapErr", "Please type in a number for venue capacity");
                     response.sendRedirect("CreateSeminar.jsp");
+                }
 
-//                Seminar seminar = seminars.getSeminar(seminarName);
-//                seminar.setTime(time);
-//                seminar.setDate(date);
-                    // seminar.setRoom(loc);
-                    // seminar.setAbstract(desc);
-                } else {
+                 else {
                     Seminar seminar = new Seminar(seminarID, seminarName, desc, speaker, speakerBio, host, date, time, duration, venue, venueCapacity, email);
-                    //session.setAttribute("seminar", seminar);
                     seminars.addSeminar(seminar);
                     seminarApp.updateXML(seminars, filePath);
                     session.setAttribute("createSeminar", "You have successfully created the Seminar: " + seminarName);
