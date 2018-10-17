@@ -13,6 +13,7 @@
         <title>Seminar Management System</title>
     </head>
     <body>
+
         <div class="header">
 
 
@@ -46,18 +47,20 @@
 
 
         </div>
-    <p>
-        <i>If I have a problem with the system, what do I do? </i><br>
-        Email or call our System Support centre at seminar_management@email.com or 0494838463<br><br>
-        <i>What happened if I accidentally deleted my reservation?</i><br>
-        You will be able to add yourself back into the seminar through our system if the seminar attendance is not of full capacity<br><br>
-        <i>How do I create a seminar?</i><br>
-        First, you need to have a UTS email. This will allow you to create a seminar straight away. If you want to know the steps, there is a easy tutorial on the web site under the help tab.<br><br>
-        <i>My username and password is not working what do I do?</i><br>
-        Please email or call our System Support centre at seminar_management@email.com or 0494838463<br><br>
-        <i>I can’t create a seminar?</i><br>
-        Please go to the Help section on our website where we have easy to follow instruction video. If you believe this is a system error, please email or call our System Support centre at seminar_management@email.com or 0494838463<br><br>
-    </p>       
-        
+        <div class="content">
+            <p>
+                <i>If I have a problem with the system, what do I do? </i><br>
+                Email or call our System Support centre at seminar_management@email.com or 0494838463<br><br>
+                <i>What happened if I accidentally deleted my reservation?</i><br>
+                You will be able to add yourself back into the seminar through our system if the seminar attendance is not of full capacity<br><br>
+                <i>How do I create a seminar?</i><br>
+                First, you need to have a UTS email. This will allow you to create a seminar straight away. If you want to know the steps, there is a easy tutorial on the web site under the help tab.<br><br>
+                <i>My username and password is not working what do I do?</i><br>
+                Please email or call our System Support centre at seminar_management@email.com or 0494838463<br><br>
+                <i>I can’t create a seminar?</i><br>
+                Please go to the Help section on our website where we have easy to follow instruction video. If you believe this is a system error, please email or call our System Support centre at seminar_management@email.com or 0494838463<br><br>
+            </p>       
+
+        </div>
     </body>
 </html>

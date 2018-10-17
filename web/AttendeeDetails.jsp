@@ -85,7 +85,7 @@
                     <select id="status" name="status">
                         <option value="Going" <%if (status.equals("Going")) {%> selected <%}%>>Going</option>
                         <option value="Interested" <%if (status.equals("Interested")) {%> selected <%}%>>Interested</option>
-                    </select>
+                    </select><br><br>
                     
                     <div class="buttonHolder">
                         <input type="submit" value="Update Attendee" formaction="UpdateAttendeeAction.jsp"/>

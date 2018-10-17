@@ -66,11 +66,10 @@
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
             String venueCapacity = seminar.getVenueCapacity();
-            
 
             Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
-            
+
             ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 
             Attendees results = new Attendees();
@@ -91,110 +90,145 @@
         <div class="content">
 
             <table class="attendeeInfoTable">
-            <tr>
-                <th>Seminar Name: </th>
-                <td><%=seminarName%></td>
-            </tr>
-            <tr>
-                <th>Seminar Description: </th>
-                <td><%=desc%></td>
-            </tr>
-            <tr>
-                <th>Speaker: </th>
-                <td><%=speaker%></td>
-            </tr>
-            <tr>
-                <th>Speaker Biography: </th>
-                <td><%=speakerBio%></td>
-            </tr>
-            <tr>
-                <th>Host:</th>
-                <td><%=host%></td>
-            </tr>
-            <tr>
-                <th>Date: </th>
-                <td><%=date%></td>
-            </tr>
-            <tr>
-                <th>Time: </th>
-                <td><%=time%></td>
-            </tr>
-            <tr>
-                <th>Duration: </th>
-                <td><%=duration%></td>
-            </tr>
-            <tr>
-                <th>Venue: </th>
-                <td><%=venue%></td>
-            </tr>
-            <tr>
-                <th>Venue Capacity: </th>
-                <td><%=venueCapacity%></td>
-            </tr>
-            <tr>
-                <th>Registered Attendees: </th>
-                <td><%=attendeeResults.countAttendees()%></td>
-            </tr>
-            <tr>
-                <th>Email: </th>
-                <td><%=email%></td>
-            </tr>
+                <tr>
+                    <th>Seminar Name: </th>
+                    <td><%=seminarName%></td>
+                </tr>
+                <tr>
+                    <th>Seminar Description: </th>
+                    <td><%=desc%></td>
+                </tr>
+                <tr>
+                    <th>Speaker: </th>
+                    <td><%=speaker%></td>
+                </tr>
+                <tr>
+                    <th>Speaker Biography: </th>
+                    <td><%=speakerBio%></td>
+                </tr>
+                <tr>
+                    <th>Host:</th>
+                    <td><%=host%></td>
+                </tr>
+                <tr>
+                    <th>Date: </th>
+                    <td><%=date%></td>
+                </tr>
+                <tr>
+                    <th>Time: </th>
+                    <td><%=time%></td>
+                </tr>
+                <tr>
+                    <th>Duration: </th>
+                    <td><%=duration%></td>
+                </tr>
+                <tr>
+                    <th>Venue: </th>
+                    <td><%=venue%></td>
+                </tr>
+                <tr>
+                    <th>Venue Capacity: </th>
+                    <td><%=venueCapacity%></td>
+                </tr>
+                <tr>
+                    <th>Registered Attendees: </th>
+                    <td><%=attendeeResults.countAttendees()%></td>
+                </tr>
+                <tr>
+                    <th>Email: </th>
+                    <td><%=email%></td>
+                </tr>
 
-        </table>
+            </table>
+
+            <div class="buttonHolder">
+                <input type="submit" id="modalBtn" value="Show/Hide Attendees"/>
+            </div>
 
 
 
-        <br>
-        <h1>Attendees</h1>
-        
-        <c:import url="WEB-INF\AttendeeResults.xml"
-                  var="inputDoc" />
+            <br>
+            <div id="AttendeesModal" class="modal">
+                <div class="modal-content"
+                     <h1>Attendees</h1>
+                    <span class="close">&times;</span>
 
-        <c:import url="WEB-INF\Attendees.xsl"
-                  var="stylesheet" />
+                    <c:import url="WEB-INF\AttendeeResults.xml"
+                              var="inputDoc" />
 
-        <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-            <x:param name="bgColor"  value="lightgreen" />
-        </x:transform>
-<%
+                    <c:import url="WEB-INF\Attendees.xsl"
+                              var="stylesheet" />
+
+                    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+                        <x:param name="bgColor"  value="lightgreen" />
+                    </x:transform>
+                </div>
+            </div>
+            <%
                 // Have a login option if not logged in. Have several options for a logged in organiser.
                 if (session.getAttribute("organiser") == null) {
             %>
-        <%-- Trying something with a pop up --%>       
-        <button class="open-button" onclick="openForm()">Attend Seminar</button>
+            <%-- Trying something with a pop up --%>       
+            <button class="open-button" onclick="openForm()">Attend Seminar</button>
 
-        <div class="form-popup" id="myForm">
-            <form action="AttendAction.jsp" class="form-container" method="post">
-                <label for="psw"><b>First Name</b></label>
-                <input type="text" placeholder="Enter First Name" name="attFirstName" required>
+            <div class="form-popup" id="myForm">
+                <form action="AttendAction.jsp" class="form-container" method="post">
+                    <label for="psw"><b>First Name</b></label>
+                    <input type="text" placeholder="Enter First Name" name="attFirstName" required>
 
-                <input type="hidden" name="semID" value="<%=seminarID%>"/><br>
+                    <input type="hidden" name="semID" value="<%=seminarID%>"/><br>
 
-                <label for="psw"><b>Last Name</b></label>
-                <input type="text" placeholder="Enter Last Name" name="attLastName" required>
+                    <label for="psw"><b>Last Name</b></label>
+                    <input type="text" placeholder="Enter Last Name" name="attLastName" required>
 
-                <label for="psw"><b>Phone no</b></label>
-                <input type="text" placeholder="Enter Phone no" name="attPhoneNumber" required>
+                    <label for="psw"><b>Phone no</b></label>
+                    <input type="text" placeholder="Enter Phone no" name="attPhoneNumber" required>
+
+                    <label for="psw"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="attEmail" required>
+
+                    <button type="submit" name="attendBtn" class="btn">Attend</button>
+                    <button type="submit" name="interestedBtn" class="btn"> Interested</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
                 
-                <label for="psw"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="attEmail" required>
+                // Get the modal
+                var modal = document.getElementById('AttendeesModal');
 
-                <button type="submit" name="attendBtn" class="btn">Attend</button>
-                <button type="submit" name="interestedBtn" class="btn"> Interested</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
+                // Get the button that opens the modal
+                var btn = document.getElementById("modalBtn");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
         </div>
-
-        <script>
-            function openForm() {
-                document.getElementById("myForm").style.display = "block";
-            }
-
-            function closeForm() {
-                document.getElementById("myForm").style.display = "none";
-            }
-        </script>
-        </div>
-<%} %>
+        <%}%>
     </body>
 </html>
