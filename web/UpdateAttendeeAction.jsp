@@ -32,12 +32,16 @@
             String status = request.getParameter("status");
 
             Organisers organisers = organiserApp.getOrganisers();
-
+            Attendees attendees = attendeeApp.getAttendees();
+            
             if (organisers.checkMatchingOrganiser(email, phoneNumber)) {
-                session.setAttribute("existErr", "Sorry an organiser can't be an attendee.");
+                session.setAttribute("organiserExistErr", "Sorry an organiser can't be an attendee.");
                 response.sendRedirect("MainAttendee.jsp");
+            } else if (attendees.getAttendeeByEmail(email) != null && !attendees.getAttendee(id).getEmail().equals(email)) {
+                session.setAttribute("attendeeExistErr", "Sorry there is already an attendee with that email.");
+                response.sendRedirect("MainAttendee.jsp");
+
             } else {
-                Attendees attendees = attendeeApp.getAttendees();
                 Attendee updateAttendee = attendees.getAttendee(id);
                 updateAttendee.setFirstName(firstName);
                 updateAttendee.setLastName(lastName);

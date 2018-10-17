@@ -50,17 +50,25 @@
             <%}%>
 
         </div>
-            
-                           <% if (session.getAttribute("existErr") != null) {%>
-                <script>
-                alert("Sorry, an organiser can't be an attendee");
-            </script>
-            <%
 
-                    session.removeAttribute("existErr");
-                }
+        <% if (session.getAttribute("organiserExistErr") != null) {%>
+        <script>
+            alert("Sorry, an organiser can't be an attendee");
+        </script>
+        <%
 
-            %>
+            session.removeAttribute("organiserExistErr");
+        } else if (session.getAttribute("attendeeExistErr") != null) {%>
+        <script>
+            alert("Sorry there is already an attendee with that email.");
+        </script>
+        <%
+
+                session.removeAttribute("attendeeExistErr");
+            }
+
+
+        %>
 
         <c:import url="WEB-INF\Seminars.xml"
                   var="inputDoc" />
