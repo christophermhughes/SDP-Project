@@ -87,7 +87,7 @@
                     <option value="CB03.01.005">CB03.01.005</option>
                     <option value="CB03.05.010">CB03.05.010</option>
                     <option value="CB04.02.CR.01">CB04.02.CR.01</option>
-                </select>
+                </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name ="venueCapacity"><br><br>
                 <br>
@@ -102,18 +102,24 @@
                 <br>
                 <c:if test="${emptyErr!=null}">
                     <font color="red"><c:out value="${emptyErr}"/></c:if></font>
+                <c:if test="${nameErr!=null}">
+                    <font color="red"><c:out value="${nameErr}"/></c:if></font>
                 <c:if test="${existErr!=null}">
                     <font color="red"><c:out value="${existErr}"/></c:if></font>
                 <c:if test="${dateErr!=null}">
                     <font color="red"><c:out value="${dateErr}"/></c:if></font>
                 <c:if test="${timeErr!=null}">
                     <font color="red"><c:out value="${timeErr}"/></c:if></font>
-
+                <c:if test="${venueCapErr!=null}">
+                    <font color="red"><c:out value="${venueCapErr}"/></c:if></font>
                 </form> 
 
             <%
                 if (session.getAttribute("emptyErr") != null) {
                     session.removeAttribute("emptyErr");
+                }
+                if (session.getAttribute("nameErr") != null) {
+                    session.removeAttribute("nameErr");
                 }
                 if (session.getAttribute("existErr") != null) {
                     session.removeAttribute("existErr");
@@ -124,6 +130,10 @@
                 if (session.getAttribute("timeErr") != null) {
                     session.removeAttribute("timeErr");
                 }
+                if (session.getAttribute("venueCapErr") != null) {
+                    session.removeAttribute("venueCapErr");
+                }
+                
             %>
 
             <script>
