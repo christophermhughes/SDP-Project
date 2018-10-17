@@ -90,8 +90,6 @@
                 </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name ="venueCapacity"><br><br>
-                <br>
-                <br>
 
 
                 <!--                Organiser ID<br>

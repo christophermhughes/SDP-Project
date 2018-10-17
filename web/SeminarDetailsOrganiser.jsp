@@ -45,8 +45,8 @@
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-         
-          <% String filePathTwo = application.getRealPath("WEB-INF/Attendees.xml");%>
+
+        <% String filePathTwo = application.getRealPath("WEB-INF/Attendees.xml");%>
         <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
             <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
         </jsp:useBean>
@@ -81,10 +81,10 @@
             String venueCapacity = seminar.getVenueCapacity();
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
-          
-             Attendees attendees = attendeeApp.getAttendees();
+
+            Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
-          
+
         %>
 
         <div class="content">
@@ -105,7 +105,7 @@
                 <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
                 <label>Time</label>
                 <input type="text" name="time" value="<%=time%>" id="timepicker"><br><br>
-                <input type="hidden" name="seminarID" value="<%=seminarID%>" id="timepicker"><br><br>
+                <input type="hidden" name="seminarID" value="<%=seminarID%>" id="timepicker">
                 <label>Duration</label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour" <%if (duration.equals("1 Hour")) {%> selected <%}%> >1 Hour</option>
@@ -130,11 +130,12 @@
                     <option value="CB01.06.13E" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB01.06.13E</option>
                     <option value="CB03.01.005" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB03.01.005</option>
                     <option value="CB03.05.010" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CCB03.05.010</option>
-                    <option value="CB04.02.CR.01" <%if (venue.equals("CB04.02.CR.01")) {%> selected <%}%> >CB04.02.CR.01/option>
+                    <option value="CB04.02.CR.01" <%if (venue.equals("CB04.02.CR.01")) {%> selected <%}%> >CB04.02.CR.01</option>
                 </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name="venueCapacity" value="<%=venueCapacity%>"><br><br>
-                <label> Number of Attendees: <%=attendeeResults.countAttendees()%></label>
+                <label> Number of Attendees: </label>
+                <input type="text" placeholder="<%=attendeeResults.countAttendees()%>" disabled><br><br>
                 <div class="buttonHolder">
                     <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
                     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
@@ -142,35 +143,38 @@
 
             </form><br>
 
-            
-             <div class="buttonHolder">
-                    <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
-                    <form id="printForm" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
-             </div>
 
-            <div id="AttendeesBlock">
-                <h1>Attendees</h1>
-<%         
-           
-            attendeeResults.getList().clear();
-            ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
+            <div class="buttonHolder">
+                <input type="submit" id="modalBtn" value="Show/Hide Attendees"/>
+                <form id="printForm" target="_blank" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
+            </div>
 
-            Attendees results = new Attendees();
+            <div id="AttendeesModal" class="modal">
+                <div class="modal-content">
+                    <h1>Attendees</h1>
+                    <span class="close">&times;</span>
+                    <%
 
-            for (Attendee a : seminarAttendees) {
-                results.addAttendee(a);
-            }
+                        attendeeResults.getList().clear();
+                        ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 
-            attendeeResultApp.updateXML(results, filePathThree);%>
-                <c:import url="WEB-INF\AttendeeResults.xml"
-                          var="inputDoc" />
+                        Attendees results = new Attendees();
 
-                <c:import url="WEB-INF\Attendees.xsl"
-                          var="stylesheet" />
+                        for (Attendee a : seminarAttendees) {
+                            results.addAttendee(a);
+                    }
 
-                <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-                    <x:param name="bgColor"  value="lightgreen" />
-                </x:transform>
+                    attendeeResultApp.updateXML(results, filePathThree);%>
+                    <c:import url="WEB-INF\AttendeeResults.xml"
+                              var="inputDoc" />
+
+                    <c:import url="WEB-INF\Attendees.xsl"
+                              var="stylesheet" />
+
+                    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+                        <x:param name="bgColor"  value="lightgreen" />
+                    </x:transform>
+                </div>
             </div>
 
             <script>
@@ -178,7 +182,7 @@
                 $("#datepicker").datepicker({
                     dateFormat: "yy-mm-dd",
                     minDate: 0
-                    
+
                 });
 
 
@@ -194,12 +198,29 @@
                     scrollbar: true
                 });
 
-                function toggleAttendees() {
-                    var x = document.getElementById("AttendeesBlock");
-                    if (x.style.display === "block") {
-                        x.style.display = "none";
-                    } else {
-                        x.style.display = "block";
+                // Get the modal
+                var modal = document.getElementById('AttendeesModal');
+
+// Get the button that opens the modal
+                var btn = document.getElementById("modalBtn");
+
+// Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+// When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+// When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
                     }
                 }
             </script>
