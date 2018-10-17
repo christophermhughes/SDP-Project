@@ -164,34 +164,6 @@
                     </x:transform>
                 </div>
             </div>
-            <%
-                // Have a login option if not logged in. Have several options for a logged in organiser.
-                if (session.getAttribute("organiser") == null) {
-            %>
-            <%-- Trying something with a pop up --%>       
-            <button class="open-button" onclick="openForm()">Attend Seminar</button>
-
-            <div class="form-popup" id="myForm">
-                <form action="AttendAction.jsp" class="form-container" method="post">
-                    <label for="psw"><b>First Name</b></label>
-                    <input type="text" placeholder="Enter First Name" name="attFirstName" required>
-
-                    <input type="hidden" name="semID" value="<%=seminarID%>"/><br>
-
-                    <label for="psw"><b>Last Name</b></label>
-                    <input type="text" placeholder="Enter Last Name" name="attLastName" required>
-
-                    <label for="psw"><b>Phone no</b></label>
-                    <input type="text" placeholder="Enter Phone no" name="attPhoneNumber" required>
-
-                    <label for="psw"><b>Email</b></label>
-                    <input type="text" placeholder="Enter Email" name="attEmail" required>
-
-                    <button type="submit" name="attendBtn" class="btn">Attend</button>
-                    <button type="submit" name="interestedBtn" class="btn"> Interested</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                </form>
-            </div>
 
             <script>
                 function openForm() {
@@ -201,7 +173,7 @@
                 function closeForm() {
                     document.getElementById("myForm").style.display = "none";
                 }
-                
+
                 // Get the modal
                 var modal = document.getElementById('AttendeesModal');
 
@@ -229,6 +201,36 @@
                 }
             </script>
         </div>
+
+        <%
+            // Have a login option if not logged in. Have several options for a logged in organiser.
+            if (session.getAttribute("organiser") == null) {
+        %>
+        <%-- Trying something with a pop up --%>       
+        <button class="open-button" onclick="openForm()">Attend Seminar</button>
+
+        <div class="form-popup" id="myForm">
+            <form action="AttendAction.jsp" class="form-container" method="post">
+                <label for="psw"><b>First Name</b></label>
+                <input type="text" placeholder="Enter First Name" name="attFirstName" required>
+
+                <input type="hidden" name="semID" value="<%=seminarID%>"/><br>
+
+                <label for="psw"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter Last Name" name="attLastName" required>
+
+                <label for="psw"><b>Phone no</b></label>
+                <input type="text" placeholder="Enter Phone no" name="attPhoneNumber" required>
+
+                <label for="psw"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="attEmail" required>
+
+                <button type="submit" name="attendBtn" class="btn">Attend</button>
+                <button type="submit" name="interestedBtn" class="btn"> Interested</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
         <%}%>
     </body>
 </html>
