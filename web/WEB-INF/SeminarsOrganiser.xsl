@@ -21,9 +21,9 @@
     <xsl:template match="Seminars">
         <div class="filters">
             <input type="text" id="searchDat" placeholder="DD/MM/YYYY"/>
-            <input type="text" id="searchLoc" placeholder="Location"/>
-            <input type="text" id="searchSpeak" placeholder="Location"/>
-            <input type="text" id="searchOrg" placeholder="Location"/>
+            <input type="text" id="searchLoc" placeholder="Venue"/>
+            <input type="text" id="searchSpeak" placeholder="Speaker"/>
+            <input type="text" id="searchOrg" placeholder="Organiser"/>
         </div>
         <table id="table" class="semTable" border="1" frame="void" rules="all" align="center">
             <thead>

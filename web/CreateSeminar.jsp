@@ -87,11 +87,9 @@
                     <option value="CB03.01.005">CB03.01.005</option>
                     <option value="CB03.05.010">CB03.05.010</option>
                     <option value="CB04.02.CR.01">CB04.02.CR.01</option>
-                </select>
+                </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name ="venueCapacity"><br><br>
-                <br>
-                <br>
 
 
                 <!--                Organiser ID<br>

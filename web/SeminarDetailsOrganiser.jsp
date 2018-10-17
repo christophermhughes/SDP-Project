@@ -105,7 +105,7 @@
                 <input type="text" name="date" value="<%=date%>" id="datepicker"><br><br>
                 <label>Time</label>
                 <input type="text" name="time" value="<%=time%>" id="timepicker"><br><br>
-                <input type="hidden" name="seminarID" value="<%=seminarID%>" id="timepicker"><br><br>
+                <input type="hidden" name="seminarID" value="<%=seminarID%>" id="timepicker">
                 <label>Duration</label>
                 <select id ="duration" name="duration">
                     <option value="1 Hour" <%if (duration.equals("1 Hour")) {%> selected <%}%> >1 Hour</option>
@@ -130,11 +130,12 @@
                     <option value="CB01.06.13E" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB01.06.13E</option>
                     <option value="CB03.01.005" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CB03.01.005</option>
                     <option value="CB03.05.010" <%if (venue.equals("CB01.04.09")) {%> selected <%}%> >CCB03.05.010</option>
-                    <option value="CB04.02.CR.01" <%if (venue.equals("CB04.02.CR.01")) {%> selected <%}%> >CB04.02.CR.01/option>
+                    <option value="CB04.02.CR.01" <%if (venue.equals("CB04.02.CR.01")) {%> selected <%}%> >CB04.02.CR.01</option>
                 </select><br><br>
                 <label> Venue Capacity </label>
                 <input type="text" name="venueCapacity" value="<%=venueCapacity%>"><br><br>
-                <label> Number of Attendees: <%=attendeeResults.countAttendees()%></label>
+                <label> Number of Attendees: </label>
+                <input type="text" placeholder="<%=attendeeResults.countAttendees()%>" disabled><br><br>
                 <div class="buttonHolder">
                     <input type="submit" value="Update Seminar" formaction="UpdateSeminarAction.jsp"/>
                     <input type="submit" value="Delete Seminar" onclick="return confirm('Are you sure you want to delete this seminar?')" formaction="DeleteSeminarAction.jsp"/>
@@ -145,7 +146,7 @@
             
              <div class="buttonHolder">
                     <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
-                    <form id="printForm" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
+                    <form id="printForm" target="_blank" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
              </div>
 
             <div id="AttendeesBlock">
