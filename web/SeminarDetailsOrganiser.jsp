@@ -45,8 +45,8 @@
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
-         
-          <% String filePathTwo = application.getRealPath("WEB-INF/Attendees.xml");%>
+
+        <% String filePathTwo = application.getRealPath("WEB-INF/Attendees.xml");%>
         <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
             <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
         </jsp:useBean>
@@ -81,10 +81,10 @@
             String venueCapacity = seminar.getVenueCapacity();
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
-          
-             Attendees attendees = attendeeApp.getAttendees();
+
+            Attendees attendees = attendeeApp.getAttendees();
             Attendees attendeeResults = attendeeResultApp.getAttendees();
-          
+
         %>
 
         <div class="content">
@@ -143,35 +143,38 @@
 
             </form><br>
 
-            
-             <div class="buttonHolder">
-                    <input type="submit" value="Show/Hide Attendees" onclick="toggleAttendees()"/>
-                    <form id="printForm" target="_blank" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
-             </div>
 
-            <div id="AttendeesBlock">
-                <h1>Attendees</h1>
-<%         
-           
-            attendeeResults.getList().clear();
-            ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
+            <div class="buttonHolder">
+                <input type="submit" id="modalBtn" value="Show/Hide Attendees"/>
+                <form id="printForm" target="_blank" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
+            </div>
 
-            Attendees results = new Attendees();
+            <div id="AttendeesModal" class="modal">
+                <div class="modal-content">
+                    <h1>Attendees</h1>
+                    <span class="close">&times;</span>
+                    <%
 
-            for (Attendee a : seminarAttendees) {
-                results.addAttendee(a);
-            }
+                        attendeeResults.getList().clear();
+                        ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 
-            attendeeResultApp.updateXML(results, filePathThree);%>
-                <c:import url="WEB-INF\AttendeeResults.xml"
-                          var="inputDoc" />
+                        Attendees results = new Attendees();
 
-                <c:import url="WEB-INF\Attendees.xsl"
-                          var="stylesheet" />
+                        for (Attendee a : seminarAttendees) {
+                            results.addAttendee(a);
+                    }
 
-                <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
-                    <x:param name="bgColor"  value="lightgreen" />
-                </x:transform>
+                    attendeeResultApp.updateXML(results, filePathThree);%>
+                    <c:import url="WEB-INF\AttendeeResults.xml"
+                              var="inputDoc" />
+
+                    <c:import url="WEB-INF\Attendees.xsl"
+                              var="stylesheet" />
+
+                    <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
+                        <x:param name="bgColor"  value="lightgreen" />
+                    </x:transform>
+                </div>
             </div>
 
             <script>
@@ -179,7 +182,7 @@
                 $("#datepicker").datepicker({
                     dateFormat: "yy-mm-dd",
                     minDate: 0
-                    
+
                 });
 
 
@@ -195,12 +198,29 @@
                     scrollbar: true
                 });
 
-                function toggleAttendees() {
-                    var x = document.getElementById("AttendeesBlock");
-                    if (x.style.display === "block") {
-                        x.style.display = "none";
-                    } else {
-                        x.style.display = "block";
+                // Get the modal
+                var modal = document.getElementById('AttendeesModal');
+
+// Get the button that opens the modal
+                var btn = document.getElementById("modalBtn");
+
+// Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+// When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+// When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
                     }
                 }
             </script>
