@@ -56,6 +56,15 @@ public class Organisers implements Serializable{
         }
         return null;
     }
+    
+    public Organiser getOrganiserByEmail(String email) {
+        for (Organiser organiser : list) {
+            if (organiser.getEmail().equals(email)) {
+                return organiser;
+            }
+        }
+        return null;
+    }
 
     public Organiser login(String email, String password) {
         // For each organiser in the list...
