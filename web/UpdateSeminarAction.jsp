@@ -35,13 +35,7 @@
             Seminars seminars = seminarApp.getSeminars();
             Seminar updateSeminar = seminars.getSeminar(id);
             
-            if(seminars.checkMatchingSeminar(name)){
-                %> 
-                <!-- Please format this <3 -->
-                <h1> Sorry this seminar name already exists :(</h1>
-        
-        <%
-            }else{
+            if(updateSeminar.getName().equals(name) ){
             updateSeminar.setName(name);
             updateSeminar.setDescription(desc);
             updateSeminar.setSpeaker(speaker);
@@ -56,6 +50,31 @@
             seminarApp.updateXML(seminars, filePath);
             session.setAttribute("updateSeminar", "You have succesfully updated the Seminar: " + name);
             response.sendRedirect("SeminarAction.jsp");
-}%>
+            return;
+            }else if(seminars.checkMatchingSeminar(name)){
+                %> 
+                <div class="error">
+                <!-- Please format this <3 -->
+                <h1> Sorry this seminar name already exists :(</h1>
+                <a href="javascript:history.back()">Go Back</a>
+                </div>
+        <%}else{
+ updateSeminar.setName(name);
+            updateSeminar.setDescription(desc);
+            updateSeminar.setSpeaker(speaker);
+            updateSeminar.setSpeakerBio(speakerBio);
+            updateSeminar.setHost(host);
+            updateSeminar.setDate(date);
+            updateSeminar.setTime(time);
+            updateSeminar.setDuration(duration);
+            updateSeminar.setVenue(venue);
+            updateSeminar.setVenueCapacity(venueCapacity);
+           
+            seminarApp.updateXML(seminars, filePath);
+            session.setAttribute("updateSeminar", "You have succesfully updated the Seminar: " + name);
+            response.sendRedirect("SeminarAction.jsp");
+            return;
+}
+           %>
     </body>
 </html>

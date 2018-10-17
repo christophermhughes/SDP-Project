@@ -31,7 +31,7 @@
     text-align: center;
     overflow: hidden;
 
-    outline: 1px dotted; /* outline doesn't occupy space like border does */"
+    outline: 3px solid; /* outline doesn't occupy space like border does */"
             >
     
                 <br/> 
