@@ -141,7 +141,8 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1>Help</h1>
-                <iframe width="420" height="345" src="https://www.youtube.com/embed/ln6d0Ju2jEM?list=PLE_hXZqpsCfgPitQ9eFTF5hKzj1TdrNM7">
+                <p> The following playlist demonstrates how to perform specific functions on this site</p>
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/ln6d0Ju2jEM?list=PLE_hXZqpsCfgPitQ9eFTF5hKzj1TdrNM7" allowfullscreen>
                 </iframe>
             </div>
 
