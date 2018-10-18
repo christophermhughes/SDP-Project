@@ -3,7 +3,7 @@
     <Organiser>
         <id>1</id>
         <firstName>Joe</firstName>
-        <lastName>yeee</lastName>
+        <lastName>Yeee</lastName>
         <phoneNumber>0487364738</phoneNumber>
         <email>Joey@gmail.com</email>
         <password>pass</password>
@@ -11,11 +11,11 @@
     </Organiser>
     <Organiser>
         <id>2</id>
-        <firstName>t</firstName>
-        <lastName>yeee</lastName>
+        <firstName>Billy</firstName>
+        <lastName>Woo</lastName>
         <phoneNumber>0498766321</phoneNumber>
-        <email>t@t.com</email>
-        <password>t</password>
+        <email>bill@live.com</email>
+        <password>ilovedonuts</password>
         <faculty>FEIT</faculty>  
     </Organiser>
 </Organisers>
