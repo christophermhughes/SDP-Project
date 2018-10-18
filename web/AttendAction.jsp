@@ -19,7 +19,7 @@
 
         <div class="error">
             
-
+            <!-- Imports for the various required data in the XML files. -->
             <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
             <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
                 <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>

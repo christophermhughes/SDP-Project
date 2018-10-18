@@ -20,6 +20,7 @@
         </table>
         <a href="logout.jsp">Logout</a>
         
+        <!-- Transforms the XML file into a HTML table using XSL -->
          <c:import url="WEB-INF\Organisers.xml"
                   var="inputDoc" />
 

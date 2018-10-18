@@ -21,7 +21,7 @@
     <body>
 
 
-
+        <!-- Imports for the various data in the XML files required-->
         <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
@@ -51,9 +51,12 @@
         </div>
 
         <%
-
+            //Checking which seminar the user selected
             String seminarName = request.getParameter("name");
+            //Getting the entire list of seminars
             Seminars seminars = seminarApp.getSeminars();
+            
+            //Getting the data on that specific seminar
             Seminar seminar = seminars.getSeminarName(seminarName);
             String desc = seminar.getDescription();
             String speaker = seminar.getSpeaker();
@@ -66,8 +69,10 @@
             String email = seminar.getOrganiserEmail();
             String seminarID = seminar.getId();
             String venueCapacity = seminar.getVenueCapacity();
-
+            
+            //Getting the list of all attendees
             Attendees attendees = attendeeApp.getAttendees();
+            //Getting the list of attending attendees
             Attendees attendeeResults = attendeeResultApp.getAttendees();
 
             ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
@@ -77,18 +82,12 @@
             for (Attendee a : seminarAttendees) {
                 results.addAttendee(a);
             }
-
+            
             attendeeResultApp.updateXML(results, filePathThree);
-            //Attendees AttendingAttendees;
+            %>
 
-            //Try to get the list of attendees, put all the ones with the right seminarID in another list
-            //and update the xml with it.
-            //attendeeApp.updateXML(attendees, filePathTwo);
-
-        %>
-
-        <div class="content">
-
+            <!-- Displaying the selected seminars content-->
+        <div class="content">     
             <table class="attendeeInfoTable">
                 <tr>
                     <th>Seminar Name: </th>
@@ -146,7 +145,7 @@
             </div>
 
 
-
+           <!--Using XSL to display the attending attendees from the results.xml file -->
             <br>
             <div id="AttendeesModal" class="modal">
                 <div class="modal-content"
@@ -165,6 +164,7 @@
                 </div>
             </div>
 
+                    <!--Code for the Attendee form -->
             <script>
                 function openForm() {
                     document.getElementById("myForm").style.display = "block";
@@ -206,7 +206,7 @@
             // Have a login option if not logged in. Have several options for a logged in organiser.
             if (session.getAttribute("organiser") == null) {
         %>
-        <%-- Trying something with a pop up --%>       
+        <%-- The attendee form  --%>       
         <button class="open-button" onclick="openForm()">Attend Seminar</button>
 
         <div class="form-popup" id="myForm">

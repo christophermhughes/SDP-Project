@@ -22,11 +22,12 @@
             </div>
 
             <%
-                // Have a login option if not logged in. Have several options for a logged in organiser.
+                //Checking if the user is logged in as an organiser. 
+                //Have a login option if not logged in. Have several options for a logged in organiser.
                 if (session.getAttribute("organiser") == null) {
             %>
 
-
+            <!-- Display this if the user is an organiser -->
             <ul class="nav">
                 <li class= "nav"><a href="MainAttendee.jsp" class="active">Seminars </a> </li>
                 <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" target="_blank"> Help </a> </li>
@@ -36,7 +37,7 @@
 
 
             <%} else {%>
-
+            <!-- Display this otherwise -->
             <ul class="nav">
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
                 <li class= "nav"><a href="MainAttendee.jsp" class="active"> All Seminars </a> </li>
@@ -52,7 +53,7 @@
 
         </div>
 
-
+        <!-- Using XSL to transform the data on the seminars into HTML-->
         <c:import url="WEB-INF\Seminars.xml"
                   var="inputDoc" />
 
