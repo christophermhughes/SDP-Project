@@ -36,6 +36,7 @@
     
                 <br/> 
                 <xsl:value-of select="Firstname" />
+                <xsl:text>        </xsl:text>
                 <xsl:value-of select="Lastname" />
 
             </div>
