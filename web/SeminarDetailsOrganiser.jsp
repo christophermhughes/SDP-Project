@@ -40,7 +40,7 @@
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
         </div>
-
+        <!-- Importing the required XML data-->
         <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
         <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
             <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
@@ -56,16 +56,7 @@
             <jsp:setProperty name="attendeeResultApp" property="filePath" value="<%=filePathThree%>"/>
         </jsp:useBean>
         <%
-            /*   
-        String semName = request.getParameter("semName");
-        Seminars seminars = seminarApp.getSeminars();
-        Seminar seminar = seminars.getSeminar(semName);
-        String time = seminar.getTime();
-        String date = seminar.getDate();
-        String loc = seminar.getRoom();
-        String desc = seminar.getAbstract();
-        int orgID = seminar.getUserID();
-             */
+            //Getting the seminar and the required information
             String seminarName = request.getParameter("name");
             Seminars seminars = seminarApp.getSeminars();
             Seminar seminar = seminars.getSeminarName(seminarName);
@@ -86,7 +77,7 @@
             Attendees attendeeResults = attendeeResultApp.getAttendees();
 
         %>
-
+        <!-- Displaying the seminar data-->
         <div class="content">
 
             <form class="form" action="CreateSeminarAction.jsp" method="post">
@@ -154,7 +145,7 @@
                     <h1>Attendees</h1>
                     <span class="close">&times;</span>
                     <%
-
+                        //Clearing the attendee list
                         attendeeResults.getList().clear();
                         ArrayList<Attendee> seminarAttendees = attendees.getAttendingAttendees(seminar.getId());
 
@@ -165,6 +156,7 @@
                     }
 
                     attendeeResultApp.updateXML(results, filePathThree);%>
+                    <!-- Displaying the required attendees using XSL-->
                     <c:import url="WEB-INF\AttendeeResults.xml"
                               var="inputDoc" />
 
@@ -176,7 +168,8 @@
                     </x:transform>
                 </div>
             </div>
-
+                    
+             <!--Jscript to make the function   -->
             <script>
 
                 $("#datepicker").datepicker({

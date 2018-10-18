@@ -14,6 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <!-- A temporary page that serves as a loading screen.-->
         <c:out value ="${createSeminar}"/>
         <c:out value ="${deleteSeminar}"/>
         <c:out value ="${updateSeminar}"/>

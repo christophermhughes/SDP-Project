@@ -82,12 +82,13 @@
 
             <%
                 } else {
-                    //Creating a new Attendee
 
+                    //Creating a new Attendee
                     Attendee attendee = new Attendee(attId, attFirstName, attLastName, attPhoneNumber, attEmail, semID, status);
                     session.setAttribute("attendee", attendee);
                     attendees.addAttendee(attendee);
-
+                    
+                    //Updating the xml
                     attendeeApp.updateXML(attendees, filePathTwo);
                     response.sendRedirect("MainAttendee.jsp");
                 }

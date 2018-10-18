@@ -25,7 +25,7 @@
                 // Have a login option if not logged in. Have several options for a logged in organiser.
                 if (session.getAttribute("organiser") == null) {
             %>
-
+            <!-- Simple form information for explaining the system. -->
             <ul class="nav">
                 <li class= "nav"><a href="MainAttendee.jsp">Seminars </a> </li>
                 <li class= "nav"><a id="helpBtn"> Help </a> </li>
@@ -77,7 +77,7 @@
             </div>
 
         </div>
-
+            <!-- Script for the pop-up-->
         <script>
             // Get the modal
             var modal = document.getElementById('popup');

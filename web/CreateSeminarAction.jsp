@@ -42,7 +42,8 @@
             String email = organiser.getEmail();
 
             SeminarValidator validator = new SeminarValidator();
-
+            
+            //Validation of the previous form information
             if (validator.checkEmpty(seminarName, desc, speaker, speakerBio, date, time, duration, venue)) {
                 session.setAttribute("emptyErr", "Please fill in the empty field.");
                 response.sendRedirect("CreateSeminar.jsp");

@@ -10,8 +10,8 @@ and open the template in the editor.
 
 @import "lesshat";
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-html { 
-    background:  url(https://gph.to/2AeXuiV) no-repeat center center fixed; 
+html {  
+    background-color: black;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
 

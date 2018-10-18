@@ -22,8 +22,8 @@
     </head>
     <body>
         <%
-            // Checking to see if an organiser is logged in
-            if (session.getAttribute("organiser") == null) {%>
+        // Checking to see if an organiser is logged in
+        if (session.getAttribute("organiser") == null) {%>
         You do not have access to this page.
         <%} else {%>
 

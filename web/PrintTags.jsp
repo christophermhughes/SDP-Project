@@ -9,6 +9,8 @@
 <%@page import="model.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+    <!-- Importing the attendee information-->
     <% String filePathTwo = application.getRealPath("WEB-INF/AttendeeResults.xml");%>
         <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
             <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePathTwo%>"/>
@@ -20,6 +22,7 @@
     </head>
     <body class="body">
         <span class="span">
+           <!-- Converting the attendee results to a HTML table using XSL-->
         <c:import url="WEB-INF\AttendeeResults.xml"
                   var="inputDoc" />
 

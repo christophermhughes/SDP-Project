@@ -13,13 +13,14 @@
         <title>Delete Attendee</title>
     </head>
     <body>
+        <!-- Getting the XML data required-->
         <% String filePath = application.getRealPath("WEB-INF/Attendees.xml");%>
         <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
             <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
 
         <% 
-            
+            //Getting attendee information to delete
             String id = request.getParameter("id");
             Attendees attendees = attendeeApp.getAttendees();            
             attendees.removeExistingAttendee(id);

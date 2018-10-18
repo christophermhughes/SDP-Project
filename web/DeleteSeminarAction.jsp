@@ -14,12 +14,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
 </head>
+<!-- Importing seminar data-->
 <% String filePath = application.getRealPath("WEB-INF/Seminars.xml");%>
 <jsp:useBean id="seminarApp" class="model.SeminarApplication" scope="application">
     <jsp:setProperty name="seminarApp" property="filePath" value="<%=filePath%>"/>
 </jsp:useBean>
 
-<%
+<%  //Deleting the seminar
     String name = request.getParameter("seminarName");
     Seminars seminars = seminarApp.getSeminars();
     seminars.removeExistingSeminar(name);

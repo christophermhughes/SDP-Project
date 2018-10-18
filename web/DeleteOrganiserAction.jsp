@@ -14,11 +14,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>JSP Page</title>
 </head>
+<!-- Getting the organiser data-->
 <% String filePath = application.getRealPath("WEB-INF/Organisers.xml");%>
 <jsp:useBean id="organiserApp" class="model.OrganiserApplication" scope="application">
     <jsp:setProperty name="organiserApp" property="filePath" value="<%=filePath%>"/>
 </jsp:useBean>
 <%
+    //Delete the organiser
     String orgEmail = request.getParameter("email");
     Organisers organisers = organiserApp.getOrganisers();
     organisers.removeExistingOrganiser(orgEmail);

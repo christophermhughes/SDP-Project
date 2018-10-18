@@ -32,7 +32,7 @@
             <div class="title">
                 <h1>Create Seminar</h1>
             </div>
-
+            <!-- Form for creating seminar-->
             <ul class="nav">
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
                 <li class= "nav"><a href="MainAttendee.jsp"> All Seminars </a> </li>
@@ -45,7 +45,7 @@
 
 
         </div>
-
+        
         <div class ="content" >
             <form class="form" action="CreateSeminarAction.jsp" method="post">
                 <label> Seminar Name </label>
@@ -98,6 +98,7 @@
                     <input type="submit" value="Add Seminar">
                 </div>
                 <br>
+                <!--Error checking the forms -->
                 <c:if test="${emptyErr!=null}">
                     <font color="red"><c:out value="${emptyErr}"/></c:if></font>
                 <c:if test="${nameErr!=null}">
@@ -112,7 +113,7 @@
                     <font color="red"><c:out value="${venueCapErr}"/></c:if></font>
                 </form> 
 
-            <%
+            <%  //Error validation
                 if (session.getAttribute("emptyErr") != null) {
                     session.removeAttribute("emptyErr");
                 }

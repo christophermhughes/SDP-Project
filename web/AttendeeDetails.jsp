@@ -30,7 +30,7 @@
                 // Have a login option if not logged in. Have several options for a logged in organiser.
                 if (session.getAttribute("organiser") == null) {
             %>
-
+            <!-- HTML from for logging in-->
             <ul class="nav">
                 <li class= "nav"><a href="login.jsp"> Login </a> </li>
                 <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" target="_blank"> Help </a> </li>
@@ -51,13 +51,15 @@
             <%}%>
             
         </div>
-
+            
+            <!-- Converting the attendees XML file into a HTML table-->
             <% String filePath = application.getRealPath("WEB-INF/Attendees.xml");%>
             <jsp:useBean id="attendeeApp" class="model.AttendeeApplication" scope="application">
                 <jsp:setProperty name="attendeeApp" property="filePath" value="<%=filePath%>"/>
             </jsp:useBean>
 
             <%
+                //Getting attendee information 
                 String attendeeId = request.getParameter("id");
                 Attendees attendees = attendeeApp.getAttendees();
                 Attendee attendee = attendees.getAttendee(attendeeId);
@@ -68,7 +70,8 @@
                 String seminarID = attendee.getSeminarID();
                 String status = attendee.getStatus();
             %>
-
+            
+            <!-- Displaying attendee information-->
             <div class="content">
 
                 <form class="form" method="post">

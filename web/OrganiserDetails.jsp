@@ -14,12 +14,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Organiser Details</title>
     </head>
+    <!-- Importing XML data organisers-->
       <% String filePath = application.getRealPath("WEB-INF/Organisers.xml");%>
         <jsp:useBean id="organiserApp" class="model.OrganiserApplication" scope="application">
             <jsp:setProperty name="organiserApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
         
     <% 
+        //Getting the organiser
         String orgId = request.getParameter("orgID");
         Organisers organisers = organiserApp.getOrganisers();
         Organiser organiser = organisers.getOrganiser(orgId);
