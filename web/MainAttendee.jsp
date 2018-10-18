@@ -73,7 +73,7 @@
                 <span class="close">&times;</span>
                 <h1>Help</h1>
                 <p> The following playlist demonstrates how to perform specific functions on this site</p> 
-                <iframe width="420" height="345" src="https://www.youtube.com/embed/ln6d0Ju2jEM?list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" allowfullscreen>
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/jDC_Yqi2u04?list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" allowfullscreen>
                 </iframe>
             </div>
 
