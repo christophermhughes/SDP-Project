@@ -30,7 +30,7 @@
             <!-- Display this if the user is an organiser -->
             <ul class="nav">
                 <li class= "nav"><a href="MainAttendee.jsp" class="active">Seminars </a> </li>
-                <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh" target="_blank"> Help </a> </li>
+                <li class= "nav"><a id="helpBtn"> Help </a> </li>
                 <li class= "nav"><a href="Faq.jsp"> FAQ </a> </li>
                 <li class= "nav"><a href="login.jsp"> Login </a> </li>
             </ul>
@@ -42,7 +42,7 @@
                 <li class= "nav"><a href="MainOrganiser.jsp"> My Seminars </a> </li>
                 <li class= "nav"><a href="MainAttendee.jsp" class="active"> All Seminars </a> </li>
                 <li class= "nav"><a href="CreateSeminar.jsp"> Create Seminar </a> </li>
-                <li class= "nav"><a href="https://www.youtube.com/watch?v=ln6d0Ju2jEM&list=PLE_hXZqpsCfgPitQ9eFTF5hKzj1TdrNM7" target="_blank"> Help </a> </li>
+                <li class= "nav"><a id="helpBtn"> Help </a> </li>
                 <li class= "nav"><a href="Faq.jsp"> FAQ </a> </li>
                 <li class= "nav"><a href="logout.jsp"> Logout </a> </li>
             </ul>
@@ -52,6 +52,7 @@
             <%}%>
 
         </div>
+
 
         <!-- Using XSL to transform the data on the seminars into HTML-->
         <c:import url="WEB-INF\Seminars.xml"
@@ -63,5 +64,46 @@
         <x:transform xml  = "${inputDoc}" xslt = "${stylesheet}">        
             <x:param name="bgColor"  value="lightgreen" />
         </x:transform>
+
+        <!-- The Modal -->
+        <div id="popup" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1>Help</h1>
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/ln6d0Ju2jEM?list=PLE_hXZqpsCfi7ekruv9a63vm0VdQxBZZh">
+                </iframe>
+            </div>
+
+        </div>
+
+        <script>
+            // Get the modal
+            var modal = document.getElementById('popup');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("helpBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>

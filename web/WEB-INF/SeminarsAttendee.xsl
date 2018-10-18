@@ -24,7 +24,7 @@
         <div class="filters">
             <input type="text" id="searchDat" placeholder="DD/MM/YYYY"/>
             <input type="text" id="searchLoc" placeholder="Venue"/>
-            <input type="text" id="searchSpeak" placeholder="Speaker Name"/>
+            <input type="text" id="searchSpeak" placeholder="Speaker"/>
             <input type="text" id="searchOrg" placeholder="Organiser"/>
         </div>
        

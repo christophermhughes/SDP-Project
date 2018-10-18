@@ -149,7 +149,7 @@
                 <form id="printForm" target="_blank" action="PrintTags.jsp"><input type="submit" value="Print Tags"/></form>
             </div>
 
-            <div id="AttendeesModal" class="modal">
+            <div id="popup" class="modal">
                 <div class="modal-content">
                     <h1>Attendees</h1>
                     <span class="close">&times;</span>
@@ -199,7 +199,7 @@
                 });
 
                 // Get the modal
-                var modal = document.getElementById('AttendeesModal');
+                var modal = document.getElementById('popup');
 
                 // Get the button that opens the modal
                 var btn = document.getElementById("modalBtn");

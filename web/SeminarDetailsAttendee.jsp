@@ -147,8 +147,8 @@
 
            <!--Using XSL to display the attending attendees from the results.xml file -->
             <br>
-            <div id="AttendeesModal" class="modal">
-                <div class="modal-content"
+            <div id="popup" class="modal">
+                <div class="modal-content">
                      <h1>Attendees</h1>
                     <span class="close">&times;</span>
 
@@ -175,7 +175,7 @@
                 }
 
                 // Get the modal
-                var modal = document.getElementById('AttendeesModal');
+                var modal = document.getElementById('popup');
 
                 // Get the button that opens the modal
                 var btn = document.getElementById("modalBtn");
