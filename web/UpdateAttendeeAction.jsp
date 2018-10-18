@@ -33,15 +33,25 @@
 
             Organisers organisers = organiserApp.getOrganisers();
             Attendees attendees = attendeeApp.getAttendees();
-            
-            if (organisers.checkMatchingOrganiser(email, phoneNumber)) {
-                session.setAttribute("organiserExistErr", "Sorry an organiser can't be an attendee.");
-                response.sendRedirect("MainAttendee.jsp");
-            } else if (attendees.getAttendeeByEmail(email) != null && !attendees.getAttendee(id).getEmail().equals(email)) {
-                session.setAttribute("attendeeExistErr", "Sorry there is already an attendee with that email.");
-                response.sendRedirect("MainAttendee.jsp");
 
-            } else {
+            if (organisers.checkMatchingOrganiser(email, phoneNumber)) {
+                //session.setAttribute("organiserExistErr", "Sorry an organiser can't be an attendee.");
+                //response.sendRedirect("AttendeeDetails.jsp");
+        %>
+
+        <script>
+            alert("Sorry, an organiser can't be an attendee");
+            history.back();
+        </script>
+        <%
+        } else if (attendees.getAttendeeByEmail(email) != null && !attendees.getAttendee(id).getEmail().equals(email)) {%>
+
+        <script>
+            alert("Sorry, there is already an attendee with that email");
+            history.back();
+        </script>
+
+        <%} else {
                 Attendee updateAttendee = attendees.getAttendee(id);
                 updateAttendee.setFirstName(firstName);
                 updateAttendee.setLastName(lastName);
@@ -50,6 +60,7 @@
                 updateAttendee.setStatus(status);
 
                 attendeeApp.updateXML(attendees, filePath);
+
                 session.setAttribute("updateAttendee", "You have succesfully updated the Attendee: " + firstName);
                 response.sendRedirect("MainAttendee.jsp");
 
